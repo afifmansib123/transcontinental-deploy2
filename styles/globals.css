@@ -56,7 +56,7 @@ textarea {
 .welcome-header {
   font-size: 45px; /* Set the font size to a really big value */
   text-align: center;
-  @apply my-3 rounded-lg bg-blue-500 p-3 text-blue-950;
+  @apply my-3 rounded-lg bg-blue-300 p-3 text-yellow-100;
   opacity: 0; /* Start with 0 opacity */
   animation: fadeIn 2s ease-in-out forwards; /* Apply the fade-in animation */
 }

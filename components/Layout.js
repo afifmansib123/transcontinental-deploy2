@@ -10,7 +10,7 @@ import { Store } from '../utils/Store';
 import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
-import NavbarBackground from '../public/images/navbar.gif'; 
+import NavbarBackground from '../public/images/navbar.png'; 
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -53,27 +53,14 @@ export default function Layout({ title, children }) {
       <div className="flex min-h-screen flex-col justify-between ">
         <header>
           <nav className="flex h-20 items-center px-4 justify-content justify-between shadow-md" style={{ backgroundImage: `url(${NavbarBackground.src})`, backgroundSize: 'cover' }}>
-            <Link href="/" className="text-lg font-bold">
-            Transcontinental Connections 
+            <Link legacyBehavior href="/" className="text-lg font-bold">
+            <a className="flex items-center text-lg font-bold">
+            Transcontinental Connections
+            <img src="images/images.jpeg" alt="Logo" className="h-9 mr-3" />
+          
+        </a>
             </Link>
-            <form
-              onSubmit={submitHandler}
-              className="mx-auto  hidden  justify-center md:flex"
-            >
-              <input
-                onChange={(e) => setQuery(e.target.value)}
-                type="text"
-                className="rounded-tr-none rounded-br-none p-1 text-sm   focus:ring-0"
-                placeholder="Search products"
-              />
-              <button
-                className="rounded rounded-tl-none rounded-bl-none bg-amber-300 p-1 text-sm dark:text-black"
-                type="submit"
-                id="button-addon2"
-              >
-                <SearchIcon className="h-5 w-5"></SearchIcon>
-              </button>
-            </form>
+
             <div className="flex items-center z-10">
               <Link href="/cart" className="p-2">
                 Cart
@@ -88,7 +75,7 @@ export default function Layout({ title, children }) {
                 'Loading'
               ) : session?.user ? (
                 <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text-blue-600">
+                  <Menu.Button className="text">
                     {session.user.name}
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
@@ -133,6 +120,24 @@ export default function Layout({ title, children }) {
               )}
             </div>
           </nav>
+          <form
+              onSubmit={submitHandler}
+              className="mx-auto mt-4 mb-2 md:mb-0 md:flex justify-center"
+            >
+              <input
+                onChange={(e) => setQuery(e.target.value)}
+                type="text"
+                className="rounded-tr-none rounded-br-none p-1 text-sm focus:ring-0 md:w-96"
+                placeholder="Search your liking"
+              />
+              <button
+                className="rounded rounded-tl-none rounded-bl-none bg-amber-300 p-1 text-sm dark:text-white"
+                type="submit"
+                id="button-addon2"
+              >
+                <SearchIcon className="h-5 w-5"></SearchIcon>
+              </button>
+            </form>
         </header>
         
         
