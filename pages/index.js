@@ -30,7 +30,7 @@ export default function Home({ products, featuredProducts }) {
 
   return (
     <Layout title="Home Page">
-      <Carousel showThumbs={false} autoPlay interval={1000}>
+      <Carousel showThumbs={false} autoPlay interval={500}>
         {featuredProducts.map((product) => (
           <div key={product._id}>
             <Link href={`#`} passHref className="flex">
