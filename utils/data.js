@@ -42,7 +42,7 @@ const data = {
       countInStock: 20,
       description: 'One of Our Best Manufactured Bulldozers locally from thailand',
       isFeatured: true,
-      banner: '/images/featured2.gif',
+      banner: '/images/featured3.gif',
     },
     {
       name: 'Sany Excavator',
@@ -56,7 +56,7 @@ const data = {
       countInStock: 9,
       description: 'this is another variant of Highest level standard factory tech , low cost equipment , will be your good chioce. Big market presence among the Sany excavator in global.',
       isFeatured: true,
-      banner: '/images/featured3.gif',
+      banner: '/images/featured4.gif',
     },
     {
       name: 'Non Branded Excavator',
@@ -69,6 +69,8 @@ const data = {
       numReviews: 13,
       countInStock: 1,
       description: 'A second hand local made excavator going for cheap price',
+      isFeatured: true,
+      banner: '/images/featured2.gif',
     },
     {
       name: 'Volvo excavator',

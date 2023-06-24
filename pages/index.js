@@ -30,15 +30,20 @@ export default function Home({ products, featuredProducts }) {
 
   return (
     <Layout title="Home Page">
-      <Carousel showThumbs={false} autoPlay>
+      <Carousel showThumbs={false} autoPlay interval={1000}>
         {featuredProducts.map((product) => (
           <div key={product._id}>
             <Link href={`#`} passHref className="flex">
-              <img src={product.banner} alt={product.name} height={200} width="100%"/>
+              <img src={product.banner} alt={product.name} className="carousel-image" />
             </Link>
-          </div>
+            </div>
         ))}
       </Carousel>
+
+      <div className="welcome-header">
+  <h1>Welcome To Transcontinental Connections</h1>
+</div>
+      
       <h2 className="h2 my-4">Latest Products</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
