@@ -10,7 +10,7 @@ import { Store } from '../utils/Store';
 import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
-import Sidebar from './sidebar';
+import NavbarBackground from '../public/images/navbar.gif'; 
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -52,7 +52,7 @@ export default function Layout({ title, children }) {
       
       <div className="flex min-h-screen flex-col justify-between ">
         <header>
-          <nav className="flex h-12 items-center px-4 justify-between shadow-md">
+          <nav className="flex h-20 items-center px-4 justify-content justify-between shadow-md" style={{ backgroundImage: `url(${NavbarBackground.src})`, backgroundSize: 'cover' }}>
             <Link href="/" className="text-lg font-bold">
             Transcontinental Connections 
             </Link>

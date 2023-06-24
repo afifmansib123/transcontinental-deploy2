@@ -41,7 +41,7 @@ export default function Home({ products, featuredProducts }) {
       </Carousel>
 
       <div className="welcome-header">
-  <h1>Welcome To Transcontinental Connections</h1>
+  <h1>Welcome To SUNMI -TH biot for business</h1>
 </div>
       
       <h2 className="h2 my-4">Latest Products</h2>
