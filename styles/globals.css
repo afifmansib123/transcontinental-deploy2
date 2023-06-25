@@ -29,6 +29,10 @@ a {
   @apply rounded bg-teal-400 py-2  px-4 text-yellow-200 shadow outline-none hover:bg-blue-700  active:bg-gray-300;
 }
 
+.button1 {
+  @apply rounded bg-orange-400 py-2 px-4 shadow outline-none hover:bg-amber-400  active:bg-amber-500;
+}
+
 input,
 select,
 textarea {
@@ -68,5 +72,14 @@ textarea {
   to {
     opacity: 1; /* Fade in to 100% opacity */
   }
+}
+
+.sidebar-open {
+  width: 60%;
+}
+
+.sidebar-closed {
+  width: 8;
+  overflow: hidden;
 }
 

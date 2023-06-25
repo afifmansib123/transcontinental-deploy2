@@ -11,8 +11,12 @@ import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
 import NavbarBackground from '../public/images/navbar.png'; 
+import SlidingPanel from 'react-sliding-side-panel';
 
 export default function Layout({ title, children }) {
+
+  const [openPanel, setOpenPanel] = useState(false);
+
   const { status, data: session } = useSession();
 
   const { state, dispatch } = useContext(Store);
@@ -142,6 +146,29 @@ export default function Layout({ title, children }) {
             
           </form>
         </header>
+
+        <div className="flex">
+        <div className={openPanel ? 'sidebar-open' : 'sidebar-closed'}>
+      <div>
+        <button className='button1' onClick={() => setOpenPanel(true)}>Catagories</button>
+      </div>
+      <SlidingPanel
+        type={'left'}
+        isOpen={openPanel}
+        size={10}
+      >
+        <div>
+          <div>My Panel Content</div>
+          <div>My Panel Content</div>
+          <div>My Panel Content</div>
+          <div>My Panel Content</div>
+          <div>My Panel Content</div>
+          <div>My Panel Content</div>
+          <button className='button1' onClick={() => setOpenPanel(false)}>close X</button>
+        </div>
+      </SlidingPanel>
+    </div>
+        
         
         
         <main className="container m-auto mt-4 px-4">
@@ -151,6 +178,7 @@ export default function Layout({ title, children }) {
           {children}
           
           </main>
+          </div>
         
         
         <footer className="flex h-10 justify-center items-center shadow-inner">
