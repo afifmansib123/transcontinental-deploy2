@@ -73,7 +73,7 @@ export default function ProductScreen(props) {
               <div>Status</div>
               <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
             </div>
-            {product.price>9000?
+            {product.price<9000?
             (<button
               className="primary-button w-full"
               onClick={addToCartHandler}
