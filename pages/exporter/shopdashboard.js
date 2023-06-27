@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Link from 'next/link';
 import { Bar } from 'react-chartjs-2';
+import { useSession } from 'next-auth/react';
 
 import {
   Chart as ChartJS,
@@ -46,6 +47,9 @@ function reducer(state, action) {
   }
 }
 function DashboardScreen() {
+
+  const { status, data: session } = useSession();
+
   const [{ loading, error, summary }, dispatch] = useReducer(reducer, {
     loading: true,
     summary: { salesData: [] },
@@ -76,6 +80,7 @@ function DashboardScreen() {
       },
     ],
   };
+  
   return (
     <Layout title="Exporter Dashboard">
       <div className="grid  md:grid-cols-4 md:gap-5">
@@ -98,7 +103,7 @@ function DashboardScreen() {
           </ul>
         </div>
         <div className="md:col-span-3">
-          <h1 className="mb-4 text-xl">Admin Dashboard</h1>
+          <h1 className="mb-4 text-xl">Shop Dashboard - {session.user.name}</h1>
           {loading ? (
             <div>Loading...</div>
           ) : error ? (

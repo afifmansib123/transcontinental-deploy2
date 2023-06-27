@@ -37,7 +37,7 @@ function Auth({ children, adminOnly , ExporterOnly}) {
     router.push('/unauthorized?message=admin login required');
   }
   if (ExporterOnly && !session.user.isExporter) {
-    router.push('/unauthorized?message=admin login required');
+    router.push('/unauthorized?message=exporter login required');
   }
 
   return children;
