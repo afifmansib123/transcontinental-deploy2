@@ -34,6 +34,7 @@ async function handler(req, res) {
     email,
     password: bcryptjs.hashSync(password),
     isAdmin: false,
+    isExporter: false,
   });
 
   const user = await newUser.save();
@@ -44,6 +45,7 @@ async function handler(req, res) {
     name: user.name,
     email: user.email,
     isAdmin: user.isAdmin,
+    isExporter : user.isExporter,
   });
 }
 

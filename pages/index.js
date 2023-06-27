@@ -11,6 +11,9 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Link from 'next/link';
 
 export default function Home({ products, featuredProducts }) {
+
+  //saving coebase before shop
+
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
 

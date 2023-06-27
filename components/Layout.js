@@ -59,8 +59,8 @@ export default function Layout({ title, children }) {
           <nav className="flex h-20 items-center px-4 justify-content justify-between shadow-md" style={{ backgroundImage: `url(${NavbarBackground.src})`, backgroundSize: 'cover' }}>
             <Link legacyBehavior href="/" className="text-lg font-bold">
             <a className="flex items-center text-lg font-bold">
-            Transcontinental Connections
-            <img src="images/images.jpeg" alt="Logo" className="h-9 mr-3" />
+            ----
+           
           
         </a>
             </Link>
