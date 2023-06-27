@@ -106,6 +106,16 @@ export default function Layout({ title, children }) {
                         </DropdownLink>
                       </Menu.Item>
                     )}
+                    {session.user.isExporter && (
+                      <Menu.Item>
+                        <DropdownLink
+                          className="dropdown-link"
+                          href="/exporter/shopdashboard"
+                        >
+                          Shop Dashboard
+                        </DropdownLink>
+                      </Menu.Item>
+                    )}
                     <Menu.Item>
                       <a
                         className="dropdown-link"

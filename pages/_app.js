@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
       <StoreProvider>
         <PayPalScriptProvider deferLoading={true}>
           {Component.auth ? (
-            <Auth adminOnly={Component.auth.adminOnly}>
+            <Auth adminOnly={Component.auth.adminOnly} ExporterOnly={Component.auth.ExporterOnly}>
               <Component {...pageProps} />
             </Auth>
           ) : (
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   );
 }
 
-function Auth({ children, adminOnly }) {
+function Auth({ children, adminOnly , ExporterOnly}) {
   const router = useRouter();
   const { status, data: session } = useSession({
     required: true,
@@ -34,6 +34,9 @@ function Auth({ children, adminOnly }) {
     return <div>Loading...</div>;
   }
   if (adminOnly && !session.user.isAdmin) {
+    router.push('/unauthorized?message=admin login required');
+  }
+  if (ExporterOnly && !session.user.isExporter) {
     router.push('/unauthorized?message=admin login required');
   }
 
