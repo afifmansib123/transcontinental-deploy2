@@ -1,31 +1,22 @@
-import { getSession } from 'next-auth/react';
+import { getToken } from 'next-auth/jwt';
 import Order from '../../../models/Order';
 import Product from '../../../models/Product';
 import User from '../../../models/User';
 import db from '../../../utils/db';
 
 const handler = async (req, res) => {
-  const session = await getSession({ req });
-  console.log(session);
-  if (!session || (session && !session.user.isExporter)) {
+  const user = await getToken({ req });
+  if (!user || (user && !user.isExporter)) {
     return res.status(401).send('signin required');
   }
 
   await db.connect();
 
-  const user = await User.findOne({ name: session.user.name });
-
-  if (!user) {
-    await db.disconnect();
-    return res.status(404).send('User not found');
-  }
-
-  const ordersCount = await Order.countDocuments({ user: user._id });
-  const productsCount = await Product.countDocuments({ user: user._id });
-  const usersCount = await User.countDocuments({ user: user._id });
+  const ordersCount = await Order.countDocuments();
+  const productsCount = await Product.countDocuments();
+  const usersCount = await User.countDocuments();
 
   const ordersPriceGroup = await Order.aggregate([
-    { $match: { user: user._id } },
     {
       $group: {
         _id: null,
@@ -37,7 +28,6 @@ const handler = async (req, res) => {
     ordersPriceGroup.length > 0 ? ordersPriceGroup[0].sales : 0;
 
   const salesData = await Order.aggregate([
-    { $match: { user: user._id } },
     {
       $group: {
         _id: { $dateToString: { format: '%Y-%m', date: '$createdAt' } },

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import Link from 'next/link';
 import { Bar } from 'react-chartjs-2';
-import { useSession } from 'next-auth/react';
 
 import {
   Chart as ChartJS,
@@ -46,10 +45,7 @@ function reducer(state, action) {
       state;
   }
 }
-function DashboardScreen() {
-
-  const { status, data: session } = useSession();
-
+function AdminDashboardScreen() {
   const [{ loading, error, summary }, dispatch] = useReducer(reducer, {
     loading: true,
     summary: { salesData: [] },
@@ -60,7 +56,7 @@ function DashboardScreen() {
     const fetchData = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`/api/exporter/shopsummary`);
+        const { data } = await axios.get(`/api/exporter/summary`);
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
@@ -80,30 +76,25 @@ function DashboardScreen() {
       },
     ],
   };
-  
   return (
-    <Layout title="Exporter Dashboard">
+    <Layout title="Admin Dashboard">
       <div className="grid  md:grid-cols-4 md:gap-5">
         <div>
           <ul>
             <li>
-              <Link legacyBehavior href="/exporter/shopdashboard">
-                <a className="font-bold">Dashboard</a>
+              <Link href="/exporter/dashboard" className="font-bold">
+                Dashboard
               </Link>
             </li>
-            <li>
-              <Link href="/exporter/orders">Orders</Link>
-            </li>
+            
             <li>
               <Link href="/exporter/products">Products</Link>
             </li>
-            <li>
-              <Link href="/exporter/users">Users</Link>
-            </li>
+            
           </ul>
         </div>
         <div className="md:col-span-3">
-          <h1 className="mb-4 text-xl">Shop Dashboard - {session.user.name}</h1>
+          <h1 className="mb-4 text-xl">Admin Dashboard</h1>
           {loading ? (
             <div>Loading...</div>
           ) : error ? (
@@ -147,5 +138,5 @@ function DashboardScreen() {
   );
 }
 
-DashboardScreen.auth = { ExporterOnly: true };
-export default DashboardScreen;
+AdminDashboardScreen.auth = { ExporterOnly: true };
+export default AdminDashboardScreen;
