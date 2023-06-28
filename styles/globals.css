@@ -75,11 +75,13 @@ textarea {
 }
 
 .sidebar-open {
-  width: 60%;
+  width: fit-content; /* Adjusts the width to fit the content */
+  max-width: 80%; /* Limit the maximum width of the panel */
+  overflow: hidden; /* Hides any overflowing content */
 }
 
 .sidebar-closed {
-  width: 8;
-  overflow: hidden;
+  width: 8; /* Set a fixed width for the closed state */
+  overflow: hidden; /* Hides any overflowing content */
 }
 
