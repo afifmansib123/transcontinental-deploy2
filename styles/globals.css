@@ -74,14 +74,30 @@ textarea {
   }
 }
 
-.sidebar-open {
-  width: fit-content; /* Adjusts the width to fit the content */
-  max-width: 80%; /* Limit the maximum width of the panel */
-  overflow: hidden; /* Hides any overflowing content */
+.sliding-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Initially hides the menu off-screen */
+  width: 30%; /* Adjust the width as desired */
+  height: 100vh; /* Takes up the full height of the screen */
+  background-color: #ffffff; /* Set the background color */
+  transition: left 0.3s ease; /* Add a smooth sliding animation */
 }
 
-.sidebar-closed {
-  width: 8; /* Set a fixed width for the closed state */
-  overflow: hidden; /* Hides any overflowing content */
+.menu-content {
+  padding: 1rem; /* Add padding to the menu content */
 }
+
+.button1 {
+  margin: 1rem;
+  position: sticky;
+  top: 20px; /* Adjust the top position according to your needs */
+  right: 20px;
+}
+
+.menu-open {
+  left: 0; /* Shows the menu by bringing it to the left side of the screen */
+}
+
+
 

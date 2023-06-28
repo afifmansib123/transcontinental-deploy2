@@ -11,11 +11,17 @@ import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
 import NavbarBackground from '../public/images/navbar.png'; 
-import SlidingPanel from 'react-sliding-side-panel';
+ 
 
 export default function Layout({ title, children }) {
 
-  const [openPanel, setOpenPanel] = useState(false);
+  
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleMenu = () => {
+      setIsOpen(!isOpen);
+    };
+  
 
   const { status, data: session } = useSession();
 
@@ -56,6 +62,8 @@ export default function Layout({ title, children }) {
       
       <div className="flex min-h-screen flex-col justify-between ">
         <header>
+
+          
           <nav className="flex h-20 items-center px-4 justify-content justify-between shadow-md" style={{ backgroundImage: `url(${NavbarBackground.src})`, backgroundSize: 'cover' }}>
             <Link legacyBehavior href="/" className="text-lg font-bold">
             <a className="flex items-center text-lg font-bold">
@@ -157,33 +165,33 @@ export default function Layout({ title, children }) {
           </form>
         </header>
 
-        <div className="flex">
-        <div className={openPanel ? 'sidebar-open' : 'sidebar-closed'}>
-      <div>
-        <button className='button1' onClick={() => setOpenPanel(true)}>Catagories</button>
-      </div>
-      <SlidingPanel
-        type={'left'}
-        isOpen={openPanel}
-        size={10}
-      >
         <div>
+      <button className="button1" onClick={toggleMenu}>
+        Categories
+      </button>
+      <div className={`sliding-menu ${isOpen ? 'menu-open' : ''}`}>
+        <div className="menu-content">
           <div>My Panel Content</div>
           <div>My Panel Content</div>
           <div>My Panel Content</div>
           <div>My Panel Content</div>
           <div>My Panel Content</div>
           <div>My Panel Content</div>
-          <button className='button1' onClick={() => setOpenPanel(false)}>close X</button>
+          <button className="button1" onClick={toggleMenu}>
+            Close X
+          </button>
         </div>
-      </SlidingPanel>
+      </div>
     </div>
+
+        <div className="flex">
+        
         
         
         
         <main className="container m-auto mt-4 px-4">
 
-
+       
          
           {children}
           
