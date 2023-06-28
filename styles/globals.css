@@ -23,14 +23,14 @@ a {
 }
 
 .primary-button {
-  @apply rounded bg-lime-500 py-2 px-4 shadow outline-none hover:bg-yellow-500  active:bg-white;
+  @apply rounded bg-blue-400 py-2 px-4 shadow outline-none hover:bg-green-500  active:bg-white;
 }
 .default-button {
   @apply rounded bg-teal-400 py-2  px-4 text-yellow-200 shadow outline-none hover:bg-blue-700  active:bg-gray-300;
 }
 
 .button1 {
-  @apply rounded bg-orange-400 py-2 px-4 shadow outline-none hover:bg-amber-400  active:bg-amber-500;
+  @apply rounded bg-blue-200 py-2 px-4 shadow outline-none hover:bg-green-500  active:bg-white;
 }
 
 input,
@@ -78,9 +78,10 @@ textarea {
   position: fixed;
   top: 0;
   left: -100%; /* Initially hides the menu off-screen */
-  width: 30%; /* Adjust the width as desired */
+  width: 20%; /* Adjust the width as desired */
   height: 100vh; /* Takes up the full height of the screen */
-  background-color: #ffffff; /* Set the background color */
+  background-color: #CAEEF7
+  ; /* Set the background color */
   transition: left 0.3s ease; /* Add a smooth sliding animation */
 }
 
@@ -93,6 +94,7 @@ textarea {
   position: sticky;
   top: 20px; /* Adjust the top position according to your needs */
   right: 20px;
+  border-radius: 9999px;
 }
 
 .menu-open {

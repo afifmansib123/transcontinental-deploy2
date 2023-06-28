@@ -147,20 +147,22 @@ export default function Layout({ title, children }) {
             className="mx-auto mt-4 mb-2 flex flex-col items-center md:flex-row md:justify-center"
           >
             
-            <input
-              onChange={(e) => setQuery(e.target.value)}
-              type="text"
-              className="rounded-tr-none rounded-br-none p-1 text-sm focus:ring-0 w-full md:w-96 mb-2 md:mb-0 md:mr-2"
-              placeholder="Search your liking"
-            />
-            
-            <button
-              className="rounded rounded-tl-none rounded-bl-none bg-yellow-300 p-1 text-sm dark:text-white"
-              type="submit"
-              id="button-addon2"
-            >
-              <SearchIcon className=" h-5 w-20"></SearchIcon>
-            </button>
+            <div className="flex justify-center w-full">
+  <input
+    onChange={(e) => setQuery(e.target.value)}
+    type="text"
+    className="rounded-tr-none rounded-br-none p-1 text-sm focus:ring-0 w-full md:w-96"
+    placeholder="Search your liking"
+  />
+
+  <button
+    className="rounded rounded-tl-none rounded-bl-none bg-orange-400 p-1 text-sm dark:text-white"
+    type="submit"
+    id="button-addon2"
+  >
+    <SearchIcon className="h-5 w-20"></SearchIcon>
+  </button>
+</div>
             
           </form>
         </header>
@@ -171,7 +173,7 @@ export default function Layout({ title, children }) {
       </button>
       <div className={`sliding-menu ${isOpen ? 'menu-open' : ''}`}>
         <div className="menu-content">
-          <Link href={`search?query=&category=machine`}>machine</Link>
+          <Link className='button1' href={`search?query=&category=machine`}>machine</Link>
           <div>My Panel Content</div>
           <div>My Panel Content</div>
           <div>My Panel Content</div>
