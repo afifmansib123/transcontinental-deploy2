@@ -36,10 +36,36 @@ export default function ProductScreen(props) {
       <div className="py-2">
         <Link href="/">back to products</Link>
       </div>
-      <div className="grid md:grid-cols-4 md:gap-3">
-        <div className="md:col-span-2">
+      <div className="grid md:grid-cols-5 md:gap-3">
+        <div className="md:col-span-1">
         <Image
-            src={product.image}
+            src={product.image1}
+            alt={product.name}
+            width={640}
+            height={640}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          ></Image>
+        </div>
+        <div className="md:col-span-1">
+        <Image
+            src={product.image2}
+            alt={product.name}
+            width={640}
+            height={640}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          ></Image>
+        </div>
+        <div className="md:col-span-1">
+        <Image
+            src={product.image3}
             alt={product.name}
             width={640}
             height={640}

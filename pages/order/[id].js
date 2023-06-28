@@ -222,7 +222,7 @@ function OrderScreen() {
                           className="flex items-center"
                         >
                           <Image
-                            src={item.image}
+                            src={item.image1}
                             alt={item.name}
                             width={50}
                             height={50}

@@ -141,17 +141,13 @@ export default function AdminProductEditScreen() {
             <li>
               <Link href="/exporter/dashboard">Dashboard</Link>
             </li>
-            <li>
-              <Link href="/exporter/orders">Orders</Link>
-            </li>
+            
             <li>
               <Link href="/exporter/products" className="font-bold">
                 Products
               </Link>
             </li>
-            <li>
-              <Link href="/exporter/users">Users</Link>
-            </li>
+            
           </ul>
         </div>
         <div className="md:col-span-3">

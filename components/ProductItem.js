@@ -7,7 +7,7 @@ export default function ProductItem({ product, addToCartHandler }) {
     <div className="card">
       <Link href={`/product/${product.slug}`}>
         <img
-          src={product.image}
+          src={product.image1}
           alt={product.name}
           className="rounded shadow object-cover h-64 w-full"
         />
