@@ -171,7 +171,7 @@ export default function Layout({ title, children }) {
       </button>
       <div className={`sliding-menu ${isOpen ? 'menu-open' : ''}`}>
         <div className="menu-content">
-          <div>My Panel Content</div>
+          <Link href={`search?query=&category=machine`}>machine</Link>
           <div>My Panel Content</div>
           <div>My Panel Content</div>
           <div>My Panel Content</div>
