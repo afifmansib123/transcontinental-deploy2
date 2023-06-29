@@ -14,6 +14,10 @@ a {
   @apply text-blue-600 hover:text-blue-800;
 }
 
+.heading {
+  @apply text-black hover:text-blue-800;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -96,6 +100,7 @@ textarea {
   top: 20px; /* Adjust the top position according to your needs */
   right: 20px;
   border-radius: 9999px;
+  margin-left: 1rem;
 }
 
 .menu-open {
@@ -111,9 +116,42 @@ textarea {
 }
 
 .sticky{
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+  
+
 }
+
+
+
+/* Adjustments for smaller screen sizes */
+@media (max-width: 640px) {
+  .sticky-header {
+    flex-direction: column;
+  }
+
+  .sticky-header > * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .sticky-header > *:first-child {
+    margin-top: 0;
+  }
+
+  .sticky-header > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .sticky-header .flex.items-center.z-10 {
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Changed from 'center' to 'flex-start' */
+    gap: 1rem; /* Added gap between elements */
+  }
+
+  .sticky-header .relative.ml-4 {
+    margin-left: 0;
+    margin-top: 1rem; /* Added margin-top to create space between elements */
+  }
+}
+
 
 

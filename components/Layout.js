@@ -11,6 +11,7 @@ import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
 import NavbarBackground from '../public/images/navbar.png';
+import Image from 'next/image';
 
 
 
@@ -67,90 +68,92 @@ export default function Layout({ title, children }) {
 
 
           <nav className="sticky-header flex h-20 items-center px-4 justify-content justify-between shadow-md" style={{ backgroundImage: `url(${NavbarBackground.src})`, backgroundSize: 'cover' }}>
-            <Link legacyBehavior href="/" className="text-lg font-bold">
+          
+          <Link legacyBehavior href="/" className="text-lg font-bold">
               <a className="flex items-center text-lg font-bold">
-                BACK OFFICE
-
-
-              </a>
+                <Image src={`/images/logo-main.png`} width={170} height={100}></Image>
+                <h1 className="heading">TRANSCONTINENTAL CONNECTIONS</h1>
+                </a>
             </Link>
-
-
-            <button className="button1" onClick={toggleMenu}>
-              See All Categories
-            </button>
 
 
 
 
             <div className="flex items-center z-10">
-              <Link href="/cart" className="p-2">
-                Cart
-                {cartItemsCount > 0 && (
-                  <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
-                    {cartItemsCount}
-                  </span>
-                )}
-              </Link>
+  <div className="relative">
+    <Link href="/cart" className="p-2">
+      <span className="relative">
+        Cart
+        {cartItemsCount > 0 && (
+          <span className="absolute -top-2 -right-2 bg-red-600 rounded-full px-2 py-1 text-xs font-bold text-white">
+            {cartItemsCount}
+          </span>
+        )}
+      </span>
+    </Link>
+  </div>
 
-              {status === 'loading' ? (
-                'Loading'
-              ) : session?.user ? (
-                <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text">
-                    {session.user.name}
-                  </Menu.Button>
-                  <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white  shadow-lg ">
-                    <Menu.Item>
-                      <DropdownLink className="dropdown-link" href="/profile">
-                        Profile
-                      </DropdownLink>
-                    </Menu.Item>
-                    <Menu.Item>
-                      <DropdownLink
-                        className="dropdown-link"
-                        href="/order-history"
-                      >
-                        Order History
-                      </DropdownLink>
-                    </Menu.Item>
-                    {session.user.isAdmin && (
-                      <Menu.Item>
-                        <DropdownLink
-                          className="dropdown-link"
-                          href="/admin/dashboard"
-                        >
-                          Admin Dashboard
-                        </DropdownLink>
-                      </Menu.Item>
-                    )}
-                    {session.user.isExporter && (
-                      <Menu.Item>
-                        <DropdownLink
-                          className="dropdown-link"
-                          href="/exporter/dashboard"
-                        >
-                          Shop Dashboard
-                        </DropdownLink>
-                      </Menu.Item>
-                    )}
-                    <Menu.Item>
-                      <a
-                        className="dropdown-link"
-                        href="#"
-                        onClick={logoutClickHandler}
-                      >
-                        Logout
-                      </a>
-                    </Menu.Item>
-                  </Menu.Items>
-                </Menu>
-              ) : (
-                <Link href="/login" className="p-2">
-                  Login
-                </Link>
-              )}
-            </div>
+  {status === 'loading' ? (
+    'Loading'
+  ) : session?.user ? (
+    <div className="relative ml-4">
+      <Menu as="div" className="relative inline-block">
+        <Menu.Button className="text">
+          {session.user.name}
+        </Menu.Button>
+        <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg">
+          <Menu.Item>
+            <DropdownLink className="dropdown-link" href="/profile">
+              Profile
+            </DropdownLink>
+          </Menu.Item>
+          <Menu.Item>
+            <DropdownLink
+              className="dropdown-link"
+              href="/order-history"
+            >
+              Order History
+            </DropdownLink>
+          </Menu.Item>
+          {session.user.isAdmin && (
+            <Menu.Item>
+              <DropdownLink
+                className="dropdown-link"
+                href="/admin/dashboard"
+              >
+                Admin Dashboard
+              </DropdownLink>
+            </Menu.Item>
+          )}
+          {session.user.isExporter && (
+            <Menu.Item>
+              <DropdownLink
+                className="dropdown-link"
+                href="/exporter/dashboard"
+              >
+                Shop Dashboard
+              </DropdownLink>
+            </Menu.Item>
+          )}
+          <Menu.Item>
+            <a
+              className="dropdown-link"
+              href="#"
+              onClick={logoutClickHandler}
+            >
+              Logout
+            </a>
+          </Menu.Item>
+        </Menu.Items>
+      </Menu>
+    </div>
+  ) : (
+    <Link href="/login" className="p-2 ml-4">
+      Login
+    </Link>
+  )}
+</div>
+
           </nav>
 
 
@@ -159,6 +162,11 @@ export default function Layout({ title, children }) {
 
 
           <nav className="bg-blue-400 border-blue-700 dark:bg-gray-900 dark:border-gray-700 display: flex flex-direction: column">
+            
+          <button className="button1" onClick={toggleMenu}>
+              Categories
+            </button>
+            
             <div className="max-w-screen-xl flex flex-wrap items-center justify-center  mx-auto p-4">
 
               <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
