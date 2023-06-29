@@ -19,18 +19,18 @@ a {
 }
 
 .card {
-  @apply mb-5  block   rounded-lg border border-gray-200  shadow-md;
+  @apply mb-5  block   rounded-lg border border-gray-200  shadow-md ;
 }
 
 .primary-button {
-  @apply rounded bg-gray-400 py-2 px-4 shadow outline-none hover:bg-green-500  active:bg-white;
+  @apply rounded bg-orange-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
 }
 .default-button {
-  @apply rounded bg-teal-400 py-2  px-4 text-yellow-200 shadow outline-none hover:bg-blue-700  active:bg-gray-300;
+  @apply rounded bg-teal-300 py-2  px-4 text-yellow-200 shadow outline-none hover:bg-blue-700  active:bg-gray-300;
 }
 
 .button1 {
-  @apply rounded bg-blue-200 py-2 px-4 shadow outline-none hover:bg-green-500  active:bg-white;
+  @apply rounded bg-orange-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
 }
 
 input,

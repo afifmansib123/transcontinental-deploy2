@@ -8,6 +8,7 @@ import Layout from '../../components/Layout';
 import Product from '../../models/Product';
 import db from '../../utils/db';
 import { Store } from '../../utils/Store';
+import SimpleImageSlider from "react-simple-image-slider";
 
 export default function ProductScreen(props) {
   const { product } = props;
@@ -31,51 +32,49 @@ export default function ProductScreen(props) {
     router.push('/cart');
   };
 
+  const sliderImages = [
+    {
+       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTdUmK6fRPfPQIMyOxUOjiTnR2VYizvkkWUxLhGoVJNobm5Id3fpRhsIGtPj3H06ujPb4&usqp=CAU",
+    },
+    {
+       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQduUpBWhSdgkWqqIrSmw5MMU697Xlx3SCjlB4eZSv0Q&s",
+    },
+    {
+       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTnzApyh1ZmbXLBUg_iFRio23hzRyAJfwBRfnVozXdEnu-NK4jFt2_gsYujKf-CbT6Cr_A&usqp=CAU",
+    },
+    {
+       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTDnfOIY9gjVyoT4ulMp55roiV5KefqaDByUc0HdD8p3tdpXuwxTaXjhLdyUFeQzZ2ZwE&usqp=CAU",
+    },
+    {
+       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcR3IVlvufXIDZXxq0O8SVqwU2HeO6y7as0OXJl-YT55BA&s",
+    },
+    {
+       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQs_7aafRRY4vEbWz2wydowaogMmGI7mRVG6MQfZVtKDFXUGqt5iF-Mu0AYMQBEeznPkU&usqp=CAU",
+    },
+    {
+       url: "https://smartslider3.com/wpcontent/uploads/2019/01/photo_slideshow.jpg",
+    },
+ ];
+
   return (
     <Layout title={product.name}>
       <div className="py-2">
         <Link href="/">back to products</Link>
       </div>
       <div className="grid md:grid-cols-5 md:gap-3">
-        <div className="md:col-span-1">
-        <Image
-            src={product.image1}
-            alt={product.name}
-            width={640}
-            height={640}
-            sizes="100vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-          ></Image>
-        </div>
-        <div className="md:col-span-1">
-        <Image
-            src={product.image2}
-            alt={product.name}
-            width={640}
-            height={640}
-            sizes="100vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-          ></Image>
-        </div>
-        <div className="md:col-span-1">
-        <Image
-            src={product.image3}
-            alt={product.name}
-            width={640}
-            height={640}
-            sizes="100vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-          ></Image>
-        </div>
+      <div className="md:col-span-3">
+         <SimpleImageSlider
+          width={700}
+          height={500}
+          images={[
+            { url: product.image1 },
+            { url: product.image2 },
+            { url: product.image3 },
+          ]}
+          showNavs={true}
+          
+        />
+      </div>
         <div>
           <ul>
             <li>
