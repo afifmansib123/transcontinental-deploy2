@@ -46,7 +46,7 @@ const data = {
       countInStock: 9,
       description: 'Highest level standard factory tech , low cost equipment , will be your good chioce. Big market presence among the Sany excavator in global.',
       isFeatured: true,
-      banner: '/images/featured1.gif',
+      banner: '/images/featured-1.jpeg',
     },
     {
       name: 'Sany Excavator',
@@ -61,6 +61,8 @@ const data = {
       numReviews: 10,
       countInStock: 20,
       description: 'One of Our Best Manufactured Bulldozers locally from thailand',
+      isFeatured: true,
+      banner: '/images/featured-2.jpeg',
       
       
     },
@@ -77,7 +79,8 @@ const data = {
       numReviews: 10,
       countInStock: 9,
       description: 'this is another variant of Highest level standard factory tech , low cost equipment , will be your good chioce. Big market presence among the Sany excavator in global.',
-      
+      isFeatured: true,
+      banner: '/images/featured-3.gif',
       
     },
     {
@@ -93,7 +96,7 @@ const data = {
       numReviews: 13,
       countInStock: 1,
       description: 'A second hand local made excavator going for cheap price',
-      
+     
       
     },
     {

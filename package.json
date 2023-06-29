@@ -17,6 +17,7 @@
     "bcryptjs": "^2.4.3",
     "chart.js": "^4.2.1",
     "cloudinary": "^1.37.2",
+    "font-awesome": "^4.7.0",
     "js-cookie": "^3.0.5",
     "mogoose": "^0.0.1-security",
     "mongoose": "^7.3.1",

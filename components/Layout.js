@@ -10,18 +10,19 @@ import { Store } from '../utils/Store';
 import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
-import NavbarBackground from '../public/images/navbar.png'; 
- 
+import NavbarBackground from '../public/images/navbar.png';
+
+
 
 export default function Layout({ title, children }) {
 
-  
-    const [isOpen, setIsOpen] = useState(false);
-  
-    const toggleMenu = () => {
-      setIsOpen(!isOpen);
-    };
-  
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
 
   const { status, data: session } = useSession();
 
@@ -32,7 +33,7 @@ export default function Layout({ title, children }) {
     if (cart.cartItems) {
       setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
     }
-    
+
   }, [cart.cartItems]);
 
   const logoutClickHandler = () => {
@@ -55,23 +56,32 @@ export default function Layout({ title, children }) {
         <title>{title ? title + ' - Transcontinental Connections' : 'Transcontinental Connections'}</title>
         <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css. That's a common CDN URL for loading Font Awesome 4.7.0."></link>
       </Head>
 
       <ToastContainer position="bottom-center" limit={1} />
 
-      
-      <div className="flex min-h-screen flex-col justify-between ">
+
+      <div className="flex min-h-screen flex-col justify-between">
         <header>
 
-          
-          <nav className="flex h-20 items-center px-4 justify-content justify-between shadow-md" style={{ backgroundImage: `url(${NavbarBackground.src})`, backgroundSize: 'cover' }}>
+
+          <nav className="sticky-header flex h-20 items-center px-4 justify-content justify-between shadow-md" style={{ backgroundImage: `url(${NavbarBackground.src})`, backgroundSize: 'cover' }}>
             <Link legacyBehavior href="/" className="text-lg font-bold">
-            <a className="flex items-center text-lg font-bold">
-            BACK OFFICE 
-           
-          
-        </a>
+              <a className="flex items-center text-lg font-bold">
+                BACK OFFICE
+
+
+              </a>
             </Link>
+
+
+            <button className="button1" onClick={toggleMenu}>
+              See All Categories
+            </button>
+
+
+
 
             <div className="flex items-center z-10">
               <Link href="/cart" className="p-2">
@@ -142,70 +152,97 @@ export default function Layout({ title, children }) {
               )}
             </div>
           </nav>
+
+
+
+
+
+
+          <nav className="bg-blue-400 border-blue-700 dark:bg-gray-900 dark:border-gray-700 display: flex flex-direction: column">
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-center  mx-auto p-4">
+
+              <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-200 rounded-lg bg-blue-400 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-red dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-600 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About Us</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+
           <form
             onSubmit={submitHandler}
             className="mx-auto mt-4 mb-2 flex flex-col items-center md:flex-row md:justify-center"
           >
-            
-            <div className="flex justify-center w-full">
-  <input
-    onChange={(e) => setQuery(e.target.value)}
-    type="text"
-    className="rounded-tr-none rounded-br-none p-1 text-sm focus:ring-0 w-full md:w-96"
-    placeholder="Search your liking"
-  />
 
-  <button
-    className="rounded rounded-tl-none rounded-bl-none bg-orange-400 p-1 text-sm dark:text-white"
-    type="submit"
-    id="button-addon2"
-  >
-    <SearchIcon className="h-5 w-20"></SearchIcon>
-  </button>
-</div>
-            
+            <div className="flex justify-center w-full">
+              <input
+                onChange={(e) => setQuery(e.target.value)}
+                type="text"
+                className="rounded-tr-none rounded-br-none p-1 text-sm focus:ring-0 w-full md:w-96"
+                placeholder="Search your liking"
+              />
+
+              <button
+                className="rounded rounded-tl-none rounded-bl-none bg-orange-400 p-1 text-sm dark:text-white"
+                type="submit"
+                id="button-addon2"
+              >
+                <SearchIcon className="h-5 w-20"></SearchIcon>
+              </button>
+            </div>
+
           </form>
+
         </header>
 
         <div>
-      <button className="button1" onClick={toggleMenu}>
-        Categories
-      </button>
-      <div className={`sliding-menu ${isOpen ? 'menu-open' : ''}`}>
-        <div className="menu-content">
-          <Link className='button1' href={`search?query=&category=machine`}>machine</Link>
-          <div>My Panel Content</div>
-          <div>My Panel Content</div>
-          <div>My Panel Content</div>
-          <div>My Panel Content</div>
-          <div>My Panel Content</div>
-          <button className="button1" onClick={toggleMenu}>
-            Close X
-          </button>
+          <div className={`sliding-menu ${isOpen ? 'menu-open' : ''}`}>
+            <div className="menu-content">
+              <Link className='button1' href={`search?query=&category=machine`}>machine</Link>
+              <div>My Panel Content</div>
+              <div>My Panel Content</div>
+              <div>My Panel Content</div>
+              <div>My Panel Content</div>
+              <div>My Panel Content</div>
+              <button className="button1" onClick={toggleMenu}>
+                Close X
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
         <div className="flex">
-        
-        
-        
-        
-        <main className="container m-auto mt-4 px-4">
 
-       
-         
-          {children}
-          
+
+
+
+          <main className="container m-auto mt-4 px-4 w-full">
+
+
+
+            {children}
+
           </main>
-          </div>
-        
-        
+        </div>
+
+
         <footer className="flex h-10 justify-center items-center shadow-inner">
           <p>Copyright © Afif Mansib Chowdhury</p>
         </footer>
       </div>
-      
+
     </>
   );
 }

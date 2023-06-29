@@ -33,7 +33,8 @@ export default function Home({ products, featuredProducts }) {
 
   return (
     <Layout title="Home Page">
-      <Carousel showThumbs={false} autoPlay interval={500}>
+      
+      <Carousel showThumbs={false} autoPlay interval={700} className="full-screen" style={{ width: '100%', height: '100%' }}>
         {featuredProducts.map((product) => (
           <div key={product._id}>
             <Link href={`#`} passHref className="flex">
@@ -42,7 +43,7 @@ export default function Home({ products, featuredProducts }) {
             </div>
         ))}
       </Carousel>
-
+      
       <div className="welcome-header">
   <h1>Welcome To Transcontinental Connections</h1>
 </div>
