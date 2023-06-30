@@ -63,7 +63,9 @@ export default function AdminProductEditScreen() {
         setValue('name', data.name);
         setValue('slug', data.slug);
         setValue('price', data.price);
-        setValue('image', data.image);
+        setValue('image1', data.image1);
+        setValue('image2', data.image2);
+        setValue('image3', data.image3);
         setValue('category', data.category);
         setValue('brand', data.brand);
         setValue('countInStock', data.countInStock);
@@ -78,7 +80,55 @@ export default function AdminProductEditScreen() {
 
   const router = useRouter();
 
-  const uploadHandler = async (e, imageField = 'image') => {
+  const uploadHandler1 = async (e, imageField = 'image1') => {
+    const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`;
+    try {
+      dispatch({ type: 'UPLOAD_REQUEST' });
+      const {
+        data: { signature, timestamp },
+      } = await axios('/api/exporter/cloudinary-sign');
+
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('signature', signature);
+      formData.append('timestamp', timestamp);
+      formData.append('api_key', process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY);
+      const { data } = await axios.post(url, formData);
+      dispatch({ type: 'UPLOAD_SUCCESS' });
+      setValue(imageField, data.secure_url);
+      toast.success('File uploaded successfully');
+    } catch (err) {
+      dispatch({ type: 'UPLOAD_FAIL', payload: getError(err) });
+      toast.error(getError(err));
+    }
+  };
+
+  const uploadHandler2 = async (e, imageField = 'image2') => {
+    const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`;
+    try {
+      dispatch({ type: 'UPLOAD_REQUEST' });
+      const {
+        data: { signature, timestamp },
+      } = await axios('/api/exporter/cloudinary-sign');
+
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('signature', signature);
+      formData.append('timestamp', timestamp);
+      formData.append('api_key', process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY);
+      const { data } = await axios.post(url, formData);
+      dispatch({ type: 'UPLOAD_SUCCESS' });
+      setValue(imageField, data.secure_url);
+      toast.success('File uploaded successfully');
+    } catch (err) {
+      dispatch({ type: 'UPLOAD_FAIL', payload: getError(err) });
+      toast.error(getError(err));
+    }
+  };
+
+  const uploadHandler3 = async (e, imageField = 'image3') => {
     const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`;
     try {
       dispatch({ type: 'UPLOAD_REQUEST' });
@@ -107,7 +157,9 @@ export default function AdminProductEditScreen() {
     slug,
     price,
     category,
-    image,
+    image1,
+    image2,
+    image3,
     brand,
     countInStock,
     description,
@@ -119,7 +171,9 @@ export default function AdminProductEditScreen() {
         slug,
         price,
         category,
-        image,
+        image1,
+        image2,
+        image3,
         brand,
         countInStock,
         description,
@@ -141,13 +195,17 @@ export default function AdminProductEditScreen() {
             <li>
               <Link href="/exporter/dashboard">Dashboard</Link>
             </li>
-            
+            <li>
+              <Link href="/exporter/orders">Orders</Link>
+            </li>
             <li>
               <Link href="/exporter/products" className="font-bold">
                 Products
               </Link>
             </li>
-            
+            <li>
+              <Link href="/exporter/users">Users</Link>
+            </li>
           </ul>
         </div>
         <div className="md:col-span-3">
@@ -205,17 +263,17 @@ export default function AdminProductEditScreen() {
                 )}
               </div>
               <div className="mb-4">
-                <label htmlFor="image">image</label>
+                <label htmlFor="image">image1</label>
                 <input
                   type="text"
                   className="w-full"
-                  id="image"
-                  {...register('image', {
+                  id="image1"
+                  {...register('image1', {
                     required: 'Please enter image',
                   })}
                 />
-                {errors.image && (
-                  <div className="text-red-500">{errors.image.message}</div>
+                {errors.image1 && (
+                  <div className="text-red-500">{errors.image1.message}</div>
                 )}
               </div>
               <div className="mb-4">
@@ -224,11 +282,67 @@ export default function AdminProductEditScreen() {
                   type="file"
                   className="w-full"
                   id="imageFile"
-                  onChange={uploadHandler}
+                  onChange={uploadHandler1}
                 />
 
                 {loadingUpload && <div>Uploading....</div>}
               </div>
+
+
+              <div className="mb-4">
+                <label htmlFor="image">image 2</label>
+                <input
+                  type="text"
+                  className="w-full"
+                  id="image2"
+                  {...register('image2', {
+                    required: 'Please enter image',
+                  })}
+                />
+                {errors.image2 && (
+                  <div className="text-red-500">{errors.image2.message}</div>
+                )}
+              </div>
+              <div className="mb-4">
+                <label htmlFor="imageFile">Upload image</label>
+                <input
+                  type="file"
+                  className="w-full"
+                  id="imageFile"
+                  onChange={uploadHandler2}
+                />
+
+                {loadingUpload && <div>Uploading....</div>}
+              </div>
+
+              <div className="mb-4">
+                <label htmlFor="image">image 3</label>
+                <input
+                  type="text"
+                  className="w-full"
+                  id="image3"
+                  {...register('image3', {
+                    required: 'Please enter image',
+                  })}
+                />
+                {errors.image3 && (
+                  <div className="text-red-500">{errors.image3.message}</div>
+                )}
+              </div>
+              <div className="mb-4">
+                <label htmlFor="imageFile">Upload image</label>
+                <input
+                  type="file"
+                  className="w-full"
+                  id="imageFile"
+                  onChange={uploadHandler3}
+                />
+
+                {loadingUpload && <div>Uploading....</div>}
+              </div>
+
+
+
               <div className="mb-4">
                 <label htmlFor="category">category</label>
                 <input
@@ -295,7 +409,7 @@ export default function AdminProductEditScreen() {
                 </button>
               </div>
               <div className="mb-4">
-                <Link href={`exporter/products`}>Back</Link>
+                <Link href={`/exporter/products`}>Back</Link>
               </div>
             </form>
           )}
