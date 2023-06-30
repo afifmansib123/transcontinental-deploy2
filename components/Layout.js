@@ -67,92 +67,22 @@ export default function Layout({ title, children }) {
         <header>
 
 
-          <nav className="sticky-header flex h-20 items-center px-4 justify-content justify-between shadow-md" style={{ backgroundImage: `url(${NavbarBackground.src})`, backgroundSize: 'cover' }}>
-          
-          <Link legacyBehavior href="/" className="text-lg font-bold">
+          <nav className="flex-col sticky-header flex items-center px-4 justify-content shadow-md">
+
+            <Link legacyBehavior href="/" className="text-lg font-bold">
               <a className="flex items-center text-lg font-bold">
-                <Image src={`/images/logo-main.png`} width={170} height={100}></Image>
-                <h1 className="heading">TRANSCONTINENTAL CONNECTIONS</h1>
-                </a>
+                <Image src={`/images/logo-1.png`} width={170} height={100}></Image>
+                <div className='ml-2'>
+                  <h1 >SUNMI THAILAND</h1>
+                  <h2>biot for business</h2>
+                </div>
+              </a>
             </Link>
 
 
 
 
-            <div className="flex items-center z-10">
-  <div className="relative">
-    <Link href="/cart" className="p-2">
-      <span className="relative">
-        Cart
-        {cartItemsCount > 0 && (
-          <span className="absolute -top-2 -right-2 bg-red-600 rounded-full px-2 py-1 text-xs font-bold text-white">
-            {cartItemsCount}
-          </span>
-        )}
-      </span>
-    </Link>
-  </div>
 
-  {status === 'loading' ? (
-    'Loading'
-  ) : session?.user ? (
-    <div className="relative ml-4">
-      <Menu as="div" className="relative inline-block">
-        <Menu.Button className="text">
-          {session.user.name}
-        </Menu.Button>
-        <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg">
-          <Menu.Item>
-            <DropdownLink className="dropdown-link" href="/profile">
-              Profile
-            </DropdownLink>
-          </Menu.Item>
-          <Menu.Item>
-            <DropdownLink
-              className="dropdown-link"
-              href="/order-history"
-            >
-              Order History
-            </DropdownLink>
-          </Menu.Item>
-          {session.user.isAdmin && (
-            <Menu.Item>
-              <DropdownLink
-                className="dropdown-link"
-                href="/admin/dashboard"
-              >
-                Admin Dashboard
-              </DropdownLink>
-            </Menu.Item>
-          )}
-          {session.user.isExporter && (
-            <Menu.Item>
-              <DropdownLink
-                className="dropdown-link"
-                href="/exporter/dashboard"
-              >
-                Shop Dashboard
-              </DropdownLink>
-            </Menu.Item>
-          )}
-          <Menu.Item>
-            <a
-              className="dropdown-link"
-              href="#"
-              onClick={logoutClickHandler}
-            >
-              Logout
-            </a>
-          </Menu.Item>
-        </Menu.Items>
-      </Menu>
-    </div>
-  ) : (
-    <Link href="/login" className="p-2 ml-4">
-      Login
-    </Link>
-  )}
-</div>
 
           </nav>
 
@@ -160,19 +90,18 @@ export default function Layout({ title, children }) {
 
 
 
+          <nav className="bg-blue-400 border-blue-700 dark:bg-gray-900 dark:border-gray-700 flex-col">
 
-          <nav className="bg-blue-400 border-blue-700 dark:bg-gray-900 dark:border-gray-700 display: flex flex-direction: column">
-            
-          <button className="button1" onClick={toggleMenu}>
-              Categories
-            </button>
-            
+
+
             <div className="max-w-screen-xl flex flex-wrap items-center justify-center  mx-auto p-4">
 
               <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-200 rounded-lg bg-blue-400 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-red dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-200 rounded-lg bg-blue-400 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-red dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li>
+                  
                     <a href="#" class="block py-2 pl-3 pr-4 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
+                  
                   </li>
                   <li>
                     <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-600 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About Us</a>
@@ -187,6 +116,85 @@ export default function Layout({ title, children }) {
               </div>
             </div>
           </nav>
+
+
+          <div className="flex items-center justify-center pr-4 ">
+            <div className="relative">
+              <button className="button1" onClick={toggleMenu}>
+                See All Categories
+              </button>
+              <Link href="/cart" className="p-2">
+                <span className="relative">
+                  Cart
+                  {cartItemsCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-600 rounded-full px-2 py-1 text-xs font-bold text-white">
+                      {cartItemsCount}
+                    </span>
+                  )}
+                </span>
+              </Link>
+            </div>
+
+            {status === 'loading' ? (
+              'Loading'
+            ) : session?.user ? (
+              <div className="relative ml-4">
+                <Menu as="div" className="relative inline-block">
+                  <Menu.Button className="text">
+                    {session.user.name}
+                  </Menu.Button>
+                  <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg">
+                    <Menu.Item>
+                      <DropdownLink className="dropdown-link" href="/profile">
+                        Profile
+                      </DropdownLink>
+                    </Menu.Item>
+                    <Menu.Item>
+                      <DropdownLink
+                        className="dropdown-link"
+                        href="/order-history"
+                      >
+                        Order History
+                      </DropdownLink>
+                    </Menu.Item>
+                    {session.user.isAdmin && (
+                      <Menu.Item>
+                        <DropdownLink
+                          className="dropdown-link"
+                          href="/admin/dashboard"
+                        >
+                          Admin Dashboard
+                        </DropdownLink>
+                      </Menu.Item>
+                    )}
+                    {session.user.isExporter && (
+                      <Menu.Item>
+                        <DropdownLink
+                          className="dropdown-link"
+                          href="/exporter/dashboard"
+                        >
+                          Shop Dashboard
+                        </DropdownLink>
+                      </Menu.Item>
+                    )}
+                    <Menu.Item>
+                      <a
+                        className="dropdown-link"
+                        href="#"
+                        onClick={logoutClickHandler}
+                      >
+                        Logout
+                      </a>
+                    </Menu.Item>
+                  </Menu.Items>
+                </Menu>
+              </div>
+            ) : (
+              <Link href="/login" className="p-2 ml-4">
+                Login
+              </Link>
+            )}
+          </div>
 
 
           <form
