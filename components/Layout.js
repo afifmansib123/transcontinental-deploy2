@@ -226,15 +226,23 @@ export default function Layout({ title, children }) {
         <div>
           <div className={`sliding-menu ${isOpen ? 'menu-open' : ''}`}>
             <div className="menu-content">
-              <Link className='button1' href={`search?query=&category=machine`}>machine</Link>
-              <div>My Panel Content</div>
-              <div>My Panel Content</div>
-              <div>My Panel Content</div>
-              <div>My Panel Content</div>
-              <div>My Panel Content</div>
+              <ul>
+                <li>
+              <Link href={`search?query=&category=machine`}>machine</Link>
+              </li>
+              <li>
+              <Link href={`search?query=&category=car`}>Car</Link>
+              </li>
+              <li>
+              <Link href={`search?query=&category=excavator`}>Excavator</Link>
+              </li>
+              <li>
+              <Link href={`search?query=&category=vegetables`}>Vegetables</Link>
+              </li>
               <button className="button1" onClick={toggleMenu}>
                 Close X
               </button>
+              </ul>
             </div>
           </div>
         </div>

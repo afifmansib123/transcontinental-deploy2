@@ -153,5 +153,9 @@ textarea {
   }
 }
 
+.links {
+  @apply rounded bg-green-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
+}
+
 
 
