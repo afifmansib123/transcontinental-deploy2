@@ -133,11 +133,11 @@ export default function LoginScreen() {
           <button className="primary-button">Register</button>
         </div>
         <div className="mb-4 ">
-          Open a shop 
-          <Link legacyBehavior href={`/registeradmin`}>
-          <button className="default-button">
-            Register a trader account
-            </button>
+          
+          <Link className="linktor" legacyBehavior href={`/registeshop`}>
+          
+            Open a Shop/Exporter Account
+            
             </Link>
         </div>
       </form>
