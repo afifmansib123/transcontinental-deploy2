@@ -85,15 +85,18 @@ export default function LoginScreen() {
         <div className="mb-4 ">
           <button className="primary-button">Login</button>
         </div>
+        
+
+        <GoogleButton/>
+        <br/>
+
         <div className="mb-4 ">
           Don&apos;t have an account? &nbsp;
-          <Link href={`/register?redirect=${redirect || '/'}`}>Register</Link>
+          <Link style={{color:"green"}} href={`/register?redirect=${redirect || '/'}`}>Register</Link>
           
         </div>
 
-        <GoogleButton/>
-
-        <Link className="linktor" legacyBehavior href={`/registeshop`}>
+        <Link legacyBehavior href={`/registeshop`}>
           
           Open a Shop/Exporter Account
           
