@@ -17,6 +17,7 @@ export default function Home({ products, featuredProducts }) {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
 
+ 
   const addToCartHandler = async (product) => {
     const existItem = cart.cartItems && cart.cartItems.find((x) => x.slug === product.slug);
     const quantity = existItem ? existItem.quantity + 1 : 1;
@@ -43,6 +44,15 @@ export default function Home({ products, featuredProducts }) {
             </div>
         ))}
       </Carousel>
+
+
+
+
+
+
+
+
+
       
       <div className="welcome-header">
   <h1>Welcome To Transcontinental Connections</h1>
@@ -56,6 +66,7 @@ export default function Home({ products, featuredProducts }) {
             key={product.slug}
             addToCartHandler={addToCartHandler}
           ></ProductItem>
+          
         ))}
       </div>
     </Layout>
