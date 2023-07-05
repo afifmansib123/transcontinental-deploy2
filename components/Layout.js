@@ -120,8 +120,9 @@ export default function Layout({ title, children }) {
 
           <div className="flex items-center justify-center pr-4 ">
             <div className="relative">
-              <button className="button1" onClick={toggleMenu}>
-                See All Categories
+              <button className="button1 flex items-center" onClick={toggleMenu}>
+               <Image src={`/images/catagory.png`} alt="catagoty" height={20} width={20}/>
+               <span className="ml-4">see all catagories</span>
               </button>
               <Link href="/cart" className="p-2">
                 <span className="relative">
