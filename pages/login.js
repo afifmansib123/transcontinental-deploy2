@@ -6,6 +6,8 @@ import Layout from '../components/Layout';
 import { getError } from '../utils/error';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
+////
+import { GoogleButton } from '../components/googlebutton';
 
 export default function LoginScreen() {
   const { data: session } = useSession();
@@ -88,6 +90,8 @@ export default function LoginScreen() {
           <Link href={`/register?redirect=${redirect || '/'}`}>Register</Link>
           
         </div>
+
+        <GoogleButton/>
 
         <Link className="linktor" legacyBehavior href={`/registeshop`}>
           
