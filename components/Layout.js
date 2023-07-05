@@ -73,8 +73,8 @@ export default function Layout({ title, children }) {
               <a className="flex items-center text-lg font-bold">
                 <Image src={`/images/logo-1.png`} width={170} height={100}></Image>
                 <div className='ml-2'>
-                  <h1 >SUNMI THAILAND</h1>
-                  <h2>biot for business</h2>
+                  <h1 style={{fontSize:23, color:"#035075"}}>TRANSCONTINENTAL CONNECTIONS</h1>
+                  <h2 className="flex"style={{fontSize:20, color:"#1C6080"}}>we grow as you grow...</h2>
                 </div>
               </a>
             </Link>
@@ -90,7 +90,7 @@ export default function Layout({ title, children }) {
 
 
 
-          <nav className="bg-blue-400 border-blue-700 dark:bg-gray-900 dark:border-gray-700 flex-col">
+          <nav className="flex justify-center  bg-blue-400 border-blue-700 dark:bg-gray-900 dark:border-gray-700 flex-col " >
 
 
 
@@ -99,18 +99,18 @@ export default function Layout({ title, children }) {
               <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                 <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-200 rounded-lg bg-blue-400 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-red dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li>
-                  
-                    <a href="#" class="block py-2 pl-3 pr-4 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
-                  
+
+                    <a href="#" class="block py-2 pl-3 pr-4 text-white  rounded  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-600 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" style={{fontSize:23}}>Home</a>
+
                   </li>
                   <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-600 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About Us</a>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-600 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" style={{fontSize:23}}>About Us</a>
                   </li>
                   <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" style={{fontSize:23}}>Pricing</a>
                   </li>
                   <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" style={{fontSize:23}}>Contact</a>
                   </li>
                 </ul>
               </div>
@@ -119,11 +119,12 @@ export default function Layout({ title, children }) {
 
 
           <div className="flex items-center justify-center pr-4 ">
-            <div className="relative">
+            
               <button className="button1 flex items-center" onClick={toggleMenu}>
-               <Image src={`/images/catagory.png`} alt="catagoty" height={20} width={20}/>
-               <span className="ml-4">see all catagories</span>
+                <Image src={`/images/catagory.png`} alt="catagoty" height={20} width={20} />
+                <span className="ml-4">see all catagories</span>
               </button>
+              <br/>
               <Link href="/cart" className="p-2">
                 <span className="relative">
                   Cart
@@ -134,7 +135,7 @@ export default function Layout({ title, children }) {
                   )}
                 </span>
               </Link>
-            </div>
+            
 
             {status === 'loading' ? (
               'Loading'
@@ -229,20 +230,20 @@ export default function Layout({ title, children }) {
             <div className="menu-content">
               <ul>
                 <li>
-              <Link href={`search?query=&category=machine`}>machine</Link>
-              </li>
-              <li>
-              <Link href={`search?query=&category=car`}>Car</Link>
-              </li>
-              <li>
-              <Link href={`search?query=&category=excavator`}>Excavator</Link>
-              </li>
-              <li>
-              <Link href={`search?query=&category=vegetables`}>Vegetables</Link>
-              </li>
-              <button className="button1" onClick={toggleMenu}>
-                Close X
-              </button>
+                  <Link href={`search?query=&category=machine`}>machine</Link>
+                </li>
+                <li>
+                  <Link href={`search?query=&category=car`}>Car</Link>
+                </li>
+                <li>
+                  <Link href={`search?query=&category=excavator`}>Excavator</Link>
+                </li>
+                <li>
+                  <Link href={`search?query=&category=vegetables`}>Vegetables</Link>
+                </li>
+                <button className="button1" onClick={toggleMenu}>
+                  Close X
+                </button>
               </ul>
             </div>
           </div>

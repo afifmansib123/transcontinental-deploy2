@@ -27,7 +27,7 @@ a {
 }
 
 .primary-button {
-  @apply rounded bg-orange-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
+  @apply rounded bg-blue-300 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
 }
 .default-button {
   @apply rounded bg-teal-300 py-2  px-4 text-yellow-200 shadow outline-none hover:bg-blue-700  active:bg-gray-300;
@@ -64,7 +64,7 @@ textarea {
 .welcome-header {
   font-size: 45px; /* Set the font size to a really big value */
   text-align: center;
-  @apply my-3 rounded-lg bg-blue-300 p-3 text-yellow-100;
+  @apply my-3 rounded-lg bg-blue-400 p-3 text-yellow-100;
   opacity: 0; /* Start with 0 opacity */
   animation: fadeIn 2s ease-in-out forwards; /* Apply the fade-in animation */
 }
