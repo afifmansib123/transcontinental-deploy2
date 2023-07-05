@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useContext } from 'react';
+import { useContext , useState} from 'react';
 import { toast } from 'react-toastify';
 import Layout from '../components/Layout';
 import ProductItem from '../components/ProductItem';
@@ -11,6 +11,21 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Link from 'next/link';
 
 export default function Home({ products, featuredProducts }) {
+
+  const pageSize = 8; // Number of products to display per page
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  // ... (existing code)
+
+  // Function to handle page change
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  // Calculate the start and end index for products to display on the current page
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  const productsToShow = products.slice(startIndex, endIndex);
 
   //saving coebase before shop
 
@@ -60,13 +75,25 @@ export default function Home({ products, featuredProducts }) {
       
       <h2 className="h2 my-4">Latest Products</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {products.map((product) => (
+      {productsToShow.map((product) => (
           <ProductItem
             product={product}
             key={product.slug}
             addToCartHandler={addToCartHandler}
           ></ProductItem>
-          
+        ))}
+      </div>
+
+
+      <div className="pagination">
+        {Array.from({ length: Math.ceil(products.length / pageSize) }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handlePageChange(index + 1)}
+            className={index + 1 === currentPage ? 'active' : ''}
+          >
+            {index + 1}
+          </button>
         ))}
       </div>
     </Layout>

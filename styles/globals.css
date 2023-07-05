@@ -157,5 +157,24 @@ textarea {
   @apply rounded bg-green-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
 
 
