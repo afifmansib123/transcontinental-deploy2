@@ -73,8 +73,8 @@ export default function Layout({ title, children }) {
               <a className="flex items-center text-lg font-bold">
                 <Image src={`/images/mainlogo.png`} width={190} height={120}></Image>
                 <div className='ml-2'>
-                  <h1 style={{fontSize:35, color:"#035075" }}>TRANSCONTINENTAL</h1>
-                  <h1 className='ml-12' style={{fontSize:35, color:"#035075" }}>CONNECTIONS</h1>
+                  <h1 style={{fontSize:35, color:"#033570" }}>TRANSCONTINENTAL</h1>
+                  <h1 className='ml-12' style={{fontSize:35, color:"#5786BD" }}>CONNECTIONS</h1>
                   
                 </div>
               </a>

@@ -9,6 +9,7 @@ import { Store } from '../utils/Store';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home({ products, featuredProducts }) {
 
@@ -52,7 +53,7 @@ export default function Home({ products, featuredProducts }) {
 
 <div className='welcome-header'>
           <h1 className='flex justify-center'  style={{fontSize:35, color:"white" , whiteSpace: "nowrap"}}>NO.1 BUSINESS PORTAL OF ASIA</h1>
-          <h1 className='flex justify-center'  style={{fontSize:20, color:"white" , whiteSpace: "nowrap"}}>IMPORT EXPORT TRADE</h1>
+          <h1 className='flex justify-center'  style={{fontSize:20, color:"white" , whiteSpace: "nowrap"}}>IMPORT - EXPORT - TRADE</h1>
           </div>
       
       <Carousel showThumbs={false} autoPlay interval={800} className="full-screen" style={{ width: '100%', height: '100%' }}>
@@ -65,6 +66,19 @@ export default function Home({ products, featuredProducts }) {
         ))}
       </Carousel>
 
+          <br></br>
+          <br/>
+          
+          <Link href="search?query=">
+          <h1 className='flex justify-center'  style={{fontSize:25, color:"#10539D" , whiteSpace: "nowrap"}}>search with ease<Image src={`/images/y.png`} alt="hello" height = {10} width={40}/></h1>
+      <br/>
+      <div className="full-spanning-row" style={{height:50}}>
+  <button className="full-width-button" style={{backgroundColor:"#2567B5"}}>Catagories</button>
+  <button className="full-width-button" style={{backgroundColor:"#6790C0"}}>Brands</button>
+  <button className="full-width-button" style={{backgroundColor:"#A8C2DF"}}>Prices</button>
+  <button className="full-width-button" style={{backgroundColor:"#CEDDEE"}}>Featured</button>
+</div>
+</Link>
 
 
 
@@ -82,11 +96,7 @@ export default function Home({ products, featuredProducts }) {
         ))}
       </div>
 
-      <div className="full-spanning-row">
-  <button className="full-width-button" style={{backgroundColor:"greenyellow"}}>Button 1</button>
-  <button className="full-width-button" style={{backgroundColor:"red"}}>Button 2</button>
-  <button className="full-width-button" style={{backgroundColor:"blue"}}>Button 3</button>
-</div>
+
 
 
       <div className="pagination">
