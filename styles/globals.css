@@ -168,7 +168,7 @@ textarea {
   margin: 0 0.25rem;
   border: 1px solid #ffb908;
   cursor: pointer;
-  background-color: rgb(56, 184, 34);
+  background-color: rgb(34, 129, 184);
 }
 
 .pagination button.active {

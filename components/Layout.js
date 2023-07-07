@@ -75,7 +75,6 @@ export default function Layout({ title, children }) {
                 <div className='ml-2'>
                   <h1 style={{fontSize:35, color:"#033570" }}>TRANSCONTINENTAL</h1>
                   <h1 className='ml-12' style={{fontSize:35, color:"#5786BD" }}>CONNECTIONS</h1>
-                  
                 </div>
               </a>
             </Link>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useContext , useState} from 'react';
+import { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import Layout from '../components/Layout';
 import ProductItem from '../components/ProductItem';
@@ -15,7 +15,7 @@ export default function Home({ products, featuredProducts }) {
 
   const pageSize = 8; // Number of products to display per page
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   // ... (existing code)
 
   // Function to handle page change
@@ -33,61 +33,61 @@ export default function Home({ products, featuredProducts }) {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
 
- 
+
   const addToCartHandler = async (product) => {
     const existItem = cart.cartItems && cart.cartItems.find((x) => x.slug === product.slug);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
-  
+
     if (data.countInStock < quantity) {
       return toast.error('Sorry. Product is out of stock');
     }
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
-  
+
     toast.success('Product added to the cart');
   };
-  
+
 
   return (
     <Layout title="Home Page">
 
-<div className='welcome-header'>
-          <h1 className='flex justify-center'  style={{fontSize:35, color:"white" , whiteSpace: "nowrap"}}>NO.1 BUSINESS PORTAL OF ASIA</h1>
-          <h1 className='flex justify-center'  style={{fontSize:20, color:"white" , whiteSpace: "nowrap"}}>IMPORT - EXPORT - TRADE</h1>
-          </div>
-      
+      <div className='welcome-header'>
+        <h1 className='flex justify-center' style={{ fontSize: 35, color: "white", whiteSpace: "nowrap" }}>NO.1 BUSINESS PORTAL OF ASIA</h1>
+        <h1 className='flex justify-center' style={{ fontSize: 20, color: "white", whiteSpace: "nowrap" }}>IMPORT EXPORT & TRADE</h1>
+      </div>
+
       <Carousel showThumbs={false} autoPlay interval={800} className="full-screen" style={{ width: '100%', height: '100%' }}>
         {featuredProducts.map((product) => (
           <div key={product._id}>
             <Link href={`#`} passHref className="flex">
               <img src={product.banner} alt={product.name} className="carousel-image" />
             </Link>
-            </div>
+          </div>
         ))}
       </Carousel>
 
-          <br></br>
-          <br/>
-          
-          <Link href="search?query=">
-          <h1 className='flex justify-center'  style={{fontSize:25, color:"#10539D" , whiteSpace: "nowrap"}}>search with ease<Image src={`/images/y.png`} alt="hello" height = {10} width={40}/></h1>
-      <br/>
-      <div className="full-spanning-row" style={{height:50}}>
-  <button className="full-width-button" style={{backgroundColor:"#2567B5"}}>Catagories</button>
-  <button className="full-width-button" style={{backgroundColor:"#6790C0"}}>Brands</button>
-  <button className="full-width-button" style={{backgroundColor:"#A8C2DF"}}>Prices</button>
-  <button className="full-width-button" style={{backgroundColor:"#CEDDEE"}}>Featured</button>
-</div>
-</Link>
+      <br></br>
+      <br />
+
+      <Link href="search?query=">
+        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>search with ease<Image src={`/images/y.png`} alt="hello" height={10} width={40} /></h1>
+        <br />
+        <div className="full-spanning-row" style={{ height: 50 }}>
+          <button className="full-width-button" style={{ backgroundColor: "#2567B5" }}>Catagories</button>
+          <button className="full-width-button" style={{ backgroundColor: "#6790C0" }}>Brands</button>
+          <button className="full-width-button" style={{ backgroundColor: "#A8C2DF" }}>Prices</button>
+          <button className="full-width-button" style={{ backgroundColor: "#CEDDEE" }}>Featured</button>
+        </div>
+      </Link>
 
 
 
-      
-  
-      
+
+
+
       <h2 className="h2 my-4">Latest Products</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-      {productsToShow.map((product) => (
+        {productsToShow.map((product) => (
           <ProductItem
             product={product}
             key={product.slug}
