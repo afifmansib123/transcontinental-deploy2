@@ -71,17 +71,14 @@ export default function Layout({ title, children }) {
 
             <Link legacyBehavior href="/" className="text-lg font-bold">
               <a className="flex items-center text-lg font-bold">
-                <Image src={`/images/logo-1.png`} width={170} height={100}></Image>
+                <Image src={`/images/mainlogo.png`} width={190} height={120}></Image>
                 <div className='ml-2'>
-                  <h1 style={{fontSize:23, color:"#035075"}}>TRANSCONTINENTAL CONNECTIONS</h1>
-                  <h2 className="flex"style={{fontSize:20, color:"#1C6080"}}>we grow as you grow...</h2>
+                  <h1 style={{fontSize:35, color:"#035075" }}>TRANSCONTINENTAL</h1>
+                  <h1 className='ml-12' style={{fontSize:35, color:"#035075" }}>CONNECTIONS</h1>
+                  
                 </div>
               </a>
             </Link>
-
-
-
-
 
 
           </nav>
@@ -121,13 +118,14 @@ export default function Layout({ title, children }) {
           <div className="flex items-center justify-center pr-4 ">
             
               <button className="button1 flex items-center" onClick={toggleMenu}>
-                <Image src={`/images/catagory.png`} alt="catagoty" height={20} width={20} />
-                <span className="ml-4">see all catagories</span>
+                <Image src={`/images/mainlogo4.png`} alt="catagoty" height={25} width={25} />
+                <span className="flex items-center ml-4 mr-4" style={{fontSize:25, color: 'white '}}>see all catagories</span>
+                <Image src={`/images/mainlogo7.png`} alt="catagoty" height={25} width={25} />
               </button>
               <br/>
               <Link href="/cart" className="p-2">
                 <span className="relative">
-                  Cart
+                  <p style={{color:"black", fontSize:25}}>Cart</p>
                   {cartItemsCount > 0 && (
                     <span className="absolute -top-2 -right-2 bg-red-600 rounded-full px-2 py-1 text-xs font-bold text-white">
                       {cartItemsCount}
@@ -192,7 +190,7 @@ export default function Layout({ title, children }) {
                 </Menu>
               </div>
             ) : (
-              <Link href="/login" className="p-2 ml-4">
+              <Link href="/login" className="p-2 ml-4" style={{color:"black", fontSize:25}}>
                 Login
               </Link>
             )}

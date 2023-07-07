@@ -34,7 +34,7 @@ a {
 }
 
 .button1 {
-  @apply rounded bg-orange-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
+  @apply rounded bg-orange-500 py-2 px-4 shadow outline-none active:bg-white;
 }
 
 input,
