@@ -86,7 +86,7 @@ export default function Layout({ title, children }) {
 
 
 
-          <nav className="flex justify-center  bg-blue-900 border-blue-700 dark:bg-gray-900 dark:border-gray-700 flex-col " >
+          <nav className=" flex justify-center  bg-blue-900 border-blue-700 dark:bg-gray-900 dark:border-gray-700 flex-col " >
 
 
 
@@ -116,9 +116,9 @@ export default function Layout({ title, children }) {
 
           <div className="flex items-center justify-center pr-4 ">
             
-              <button className="button1 flex items-center" onClick={toggleMenu}>
+              <button  className="button1 flex items-center" onClick={toggleMenu}>
                 <Image src={`/images/mainlogo4.png`} alt="catagoty" height={25} width={25} />
-                <span className="flex items-center ml-4 mr-4" style={{fontSize:25, color: 'white '}}>see all catagories</span>
+                <span className=" flex items-center ml-4 mr-4" style={{fontSize:25, color: 'white '}}>see all catagories</span>
   
               </button>
               <br/>

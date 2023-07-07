@@ -72,11 +72,11 @@ export default function Home({ products, featuredProducts }) {
       <Link href="search?query=">
         <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>search with ease<Image src={`/images/y.png`} alt="hello" height={10} width={40} /></h1>
         <br />
-        <div className="full-spanning-row" style={{ height: 50 }}>
-          <button className="full-width-button" style={{ backgroundColor: "#2567B5" }}>Catagories</button>
-          <button className="full-width-button" style={{ backgroundColor: "#6790C0" }}>Brands</button>
-          <button className="full-width-button" style={{ backgroundColor: "#A8C2DF" }}>Prices</button>
-          <button className="full-width-button" style={{ backgroundColor: "#CEDDEE" }}>Featured</button>
+         <div className="full-spanning-row" style={{ height: 80 }}> 
+          <button className="full-width-button" style={{ fontSize:25, color:"Black", backgroundColor: "#2567B5" }}>Catagories</button>
+          <button className="full-width-button" style={{ fontSize:25, color:"Black",backgroundColor: "#6790C0" }}>Brands</button>
+          <button className="full-width-button" style={{ fontSize:25, color:"Black",backgroundColor: "#A8C2DF" }}>Prices</button>
+          <button className="full-width-button" style={{ fontSize:25, color:"Black",backgroundColor: "#CEDDEE" }}>Featured</button>
         </div>
       </Link>
 

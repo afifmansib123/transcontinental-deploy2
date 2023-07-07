@@ -187,6 +187,11 @@ textarea {
   width: 100%;
 }
 
+.hagu{
+  position: sticky;
+top: 0
+}
+
 
 
 
