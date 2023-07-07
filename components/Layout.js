@@ -87,14 +87,14 @@ export default function Layout({ title, children }) {
 
 
 
-          <nav className="flex justify-center  bg-blue-400 border-blue-700 dark:bg-gray-900 dark:border-gray-700 flex-col " >
+          <nav className="flex justify-center  bg-blue-900 border-blue-700 dark:bg-gray-900 dark:border-gray-700 flex-col " >
 
 
 
             <div className="max-w-screen-xl flex flex-wrap items-center justify-center  mx-auto p-4">
 
               <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-                <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-200 rounded-lg bg-blue-400 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-red dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-red-200 rounded-lg bg-blue-900 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-red dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                   <li>
 
                     <a href="#" class="block py-2 pl-3 pr-4 text-white  rounded  hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-blue-600 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" style={{fontSize:23}}>Home</a>
@@ -120,7 +120,7 @@ export default function Layout({ title, children }) {
               <button className="button1 flex items-center" onClick={toggleMenu}>
                 <Image src={`/images/mainlogo4.png`} alt="catagoty" height={25} width={25} />
                 <span className="flex items-center ml-4 mr-4" style={{fontSize:25, color: 'white '}}>see all catagories</span>
-                <Image src={`/images/mainlogo7.png`} alt="catagoty" height={25} width={25} />
+  
               </button>
               <br/>
               <Link href="/cart" className="p-2">
@@ -140,7 +140,7 @@ export default function Layout({ title, children }) {
             ) : session?.user ? (
               <div className="relative ml-4">
                 <Menu as="div" className="relative inline-block">
-                  <Menu.Button className="text">
+                  <Menu.Button className="text" style={{color:"black", fontSize:25}}>
                     {session.user.name}
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg">
@@ -196,6 +196,8 @@ export default function Layout({ title, children }) {
             )}
           </div>
 
+          <br/>
+
 
           <form
             onSubmit={submitHandler}
@@ -220,7 +222,10 @@ export default function Layout({ title, children }) {
             </div>
 
           </form>
-
+          <br/>
+          <br/>
+          
+          
         </header>
 
         <div>

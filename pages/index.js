@@ -49,6 +49,11 @@ export default function Home({ products, featuredProducts }) {
 
   return (
     <Layout title="Home Page">
+
+<div className='welcome-header'>
+          <h1 className='flex justify-center'  style={{fontSize:35, color:"white" , whiteSpace: "nowrap"}}>NO.1 BUSINESS PORTAL OF ASIA</h1>
+          <h1 className='flex justify-center'  style={{fontSize:20, color:"white" , whiteSpace: "nowrap"}}>IMPORT EXPORT TRADE</h1>
+          </div>
       
       <Carousel showThumbs={false} autoPlay interval={800} className="full-screen" style={{ width: '100%', height: '100%' }}>
         {featuredProducts.map((product) => (
@@ -63,15 +68,8 @@ export default function Home({ products, featuredProducts }) {
 
 
 
-
-
-
-
-
       
-      <div className="welcome-header">
-  <h1>Welcome To Transcontinental Connections</h1>
-</div>
+  
       
       <h2 className="h2 my-4">Latest Products</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
@@ -83,6 +81,12 @@ export default function Home({ products, featuredProducts }) {
           ></ProductItem>
         ))}
       </div>
+
+      <div className="full-spanning-row">
+  <button className="full-width-button" style={{backgroundColor:"greenyellow"}}>Button 1</button>
+  <button className="full-width-button" style={{backgroundColor:"red"}}>Button 2</button>
+  <button className="full-width-button" style={{backgroundColor:"blue"}}>Button 3</button>
+</div>
 
 
       <div className="pagination">
