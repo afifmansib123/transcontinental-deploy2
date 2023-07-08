@@ -51,6 +51,8 @@ function OrderScreen() {
   const { query } = useRouter();
   const orderId = query.id;
 
+  const router = useRouter()
+
   const [
     {
       loading,
@@ -178,6 +180,7 @@ function OrderScreen() {
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
+          <div className="card1  p-5 flex justify-center items-center" style={{backgroundColor:"#B4F2D5"}}><p style={{color:"green"}}>Your Order Has Been Recieved. Wait For Us to Contact You.</p></div>
             <div className="card  p-5">
               <h2 className="mb-2 text-lg">Shipping Address</h2>
               <div>
@@ -198,7 +201,7 @@ function OrderScreen() {
               {isPaid ? (
                 <div className="alert-success">Paid at {paidAt}</div>
               ) : (
-                <div className="alert-error">Not paid</div>
+                <div className="alert-error">Either You Did not Complete Debit/Credit/Paypal Payment or Chose other methods. Please wait for us to Contact you.</div>
               )}
             </div>
 
@@ -303,11 +306,77 @@ function OrderScreen() {
               </ul>
             </div>
             
-            <div className="card  p-6">
-              <h2 className="mb-2 text-lg flex items-center" style={{color:"RED", backgroundColor:"yellow"}}>ATTENTION - PLEASE READ! </h2>
-              <p>If you Have Selected to Pay With Other Methods Than Credit/Debit Card or Paypal, Our Customer Service will get Back to you regarding your order shortly. Please be Patient until that. Thank you for Choosing Transcontinental Connections.</p>
+            <div className="card  p-6 flex items-center" style={{color:"RED", backgroundColor:"#D8F35E"}} >
+              <h2 className="mb-2 text-lg " style={{color:"RED", backgroundColor:"#D1FF00"}}>ATTENTION - PLEASE READ! </h2>
+              <p>Regarding alternative payment methods other than debit/credit cards or PayPal, our esteemed Customer Service team will promptly reach out to you. If your payment status displays as unpaid, Wait for our customer service to contact you.</p>
             </div>
 
+            <div className="card  p-6 flex items-center" style={{color:"RED", backgroundColor:"#D8F35E"}} >
+              <p>debit/credit/paypal এর বাইরে যেকোনো পেমেন্ট পদ্ধতির সম্পর্কে, আমাদের customer service শীঘ্রই আপনার সাথে যোগাযোগ করবে। যদি আপনার পেমেন্ট unpaid হিসাবে প্রদর্শিত হয়, অনুগ্রহ করে আমাদের যোগাযোগের অপেক্ষা করুন।</p>
+            </div>
+
+            <div className="card p-5">
+              <h2 className="mb-2 text-lg">Available Payment Methods : </h2>
+            </div>
+
+            <div className="card1  p-6  w-full" style = {{backgroundColor:"#D9F9EA"}} >
+            <Image className='mr-2'
+                            src={`/images/bank.png`}
+                            alt={"putki"}
+                            width={80}
+                            height={80}
+                            style={{
+                              maxWidth: '100%',
+                              height: 'auto',
+                            }}/><tr/> Krungsi Bank (Thailand Only) Prompt-pay/Transfer : 0932503470
+                      
+            </div>
+
+            <div className="card1  p-6  w-full" style = {{backgroundColor:"#D9F9EA"}} >
+            <Image className='mr-2'
+                            src={`/images/bikash.png`}
+                            alt={"putki"}
+                            width={80}
+                            height={80}
+                            style={{
+                              maxWidth: '100%',
+                              height: 'auto',
+                            }}/><tr/> Bikash (BD Only) - xxx
+                      
+            </div>
+
+            <div className="card1  p-6  w-full" style = {{backgroundColor:"#D9F9EA"}} >
+            <Image className='mr-2'
+                            src={`/images/trust.png`}
+                            alt={"putki"}
+                            width={80}
+                            height={80}
+                            style={{
+                              maxWidth: '100%',
+                              height: 'auto',
+                            }}/><tr/> Bikash (BD Only) - xxx
+                      
+            </div>
+
+           
+            <Link href={'https://wa.me/qr/5F5HNMVGOJ32N1'}>
+            <div className="card1  p-6  w-full" style = {{backgroundColor:"#D9F9EA"}} >
+
+
+            <Image className='mr-2'
+                            src={`/images/lc.jpeg`}
+                            alt={"putki"}
+                            width={80}
+                            height={80}
+                            style={{
+                              maxWidth: '100%',
+                              height: 'auto',
+                            }}/><tr/> Letter of Credit
+                      
+            </div>
+            </Link>
+
+            
           </div>
         </div>
       )}

@@ -26,8 +26,15 @@ a {
   @apply mb-5  block   rounded-lg border border-gray-200  shadow-md ;
 }
 
+.card1 {
+  @apply mb-5  block flex items-center  rounded-lg border border-gray-200  shadow-md ;
+}
+
 .primary-button {
   @apply rounded bg-orange-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
+}
+.primary-button1 {
+  @apply rounded bg-green-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
 }
 .default-button {
   @apply rounded bg-blue-500 py-2  px-4 text-yellow-200 shadow outline-none hover:bg-blue-700  active:bg-gray-300;

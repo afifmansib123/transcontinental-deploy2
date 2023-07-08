@@ -103,7 +103,7 @@ export default function PlaceOrderScreen() {
                     <th className="px-5 text-left">Item</th>
                     <th className="    p-5 text-right">Quantity</th>
                     <th className="  p-5 text-right">Price</th>
-                    <th className="p-5 text-right">Subtotal</th>
+                    <th className="p-5 text-right">ITEM-PRICE</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -152,28 +152,32 @@ export default function PlaceOrderScreen() {
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Tax</div>
-                    <div>BDT{taxPrice}</div>
+                    <div>To be Discussed</div>
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Shipping</div>
-                    <div>BDT{shippingPrice}</div>
+                    <div>To Be Discussed</div>
                   </div>
                 </li>
-                <li>
-                  <div className="mb-2 flex justify-between">
-                    <div>Total</div>
-                    <div>BDT{totalPrice}</div>
-                  </div>
-                </li>
+                
                 <li>
                   <button
                     disabled={loading}
                     onClick={placeOrderHandler}
                     className="primary-button w-full"
                   >
-                    {loading ? 'Loading...' : 'Place Order'}
+                    {loading ? 'Loading...' : 'Proceed To Import'}
+                  </button>
+                  <p>Dont have an import lisence?</p>
+                  <p>use our import services</p>
+                  <button
+                    disabled={loading}
+                    onClick={placeOrderHandler}
+                    className="primary-button1 w-full"
+                  >
+                    {loading ? 'Loading...' : 'TC IMPORT SERVICE'}
                   </button>
                 </li>
               </ul>
