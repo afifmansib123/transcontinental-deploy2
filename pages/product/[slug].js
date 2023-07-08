@@ -70,6 +70,8 @@ export default function ProductScreen(props) {
             { url: product.image1 },
             { url: product.image2 },
             { url: product.image3 },
+            { url: product.image4 },
+            { url: product.image5 },
           ]}
           showNavs={true}
           
