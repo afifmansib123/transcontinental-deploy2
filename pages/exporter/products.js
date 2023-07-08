@@ -5,6 +5,7 @@ import React, { useEffect, useReducer } from 'react';
 import { toast } from 'react-toastify';
 import Layout from '../../components/Layout';
 import { getError } from '../../utils/error';
+import { useSession } from 'next-auth/react';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -35,6 +36,10 @@ function reducer(state, action) {
 }
 export default function AdminProdcutsScreen() {
   const router = useRouter();
+
+
+  const user = useSession()
+  const username = user.data.user.name
 
   const [
     { loading, error, products, loadingCreate, successDelete, loadingDelete },
@@ -111,7 +116,7 @@ export default function AdminProdcutsScreen() {
         </div>
         <div className="overflow-x-auto md:col-span-3">
           <div className="flex justify-between">
-            <h1 className="mb-4 text-xl">Products</h1>
+            <h1 className="mb-4 text-xl">Welcome {user.data.user.name} to Your Shop</h1>
             {loadingDelete && <div>Deleting item...</div>}
             <button
               disabled={loadingCreate}
@@ -136,7 +141,6 @@ export default function AdminProdcutsScreen() {
                     <th className="p-5 text-left">CATEGORY</th>
                     <th className="p-5 text-left">COUNT</th>
                     <th className="p-5 text-left">RATING</th>
-                    <th className="p-5 text-left">ACTIONS</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -148,23 +152,6 @@ export default function AdminProdcutsScreen() {
                       <td className=" p-5 ">{product.category}</td>
                       <td className=" p-5 ">{product.countInStock}</td>
                       <td className=" p-5 ">{product.rating}</td>
-                      <td className=" p-5 ">
-                        <Link
-                          href={`/exporter/product/${product._id}`}
-                          type="button"
-                          className="default-button"
-                        >
-                          Edit
-                        </Link>
-                        &nbsp;
-                        <button
-                          onClick={() => deleteHandler(product._id)}
-                          className="default-button"
-                          type="button"
-                        >
-                          Delete
-                        </button>
-                      </td>
                     </tr>
                   ))}
                 </tbody>
