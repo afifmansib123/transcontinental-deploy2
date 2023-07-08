@@ -124,7 +124,7 @@ function OrderScreen() {
       .create({
         purchase_units: [
           {
-            amount: { value: totalPrice },
+            amount: { value: Math.ceil(totalPrice/72) },
           },
         ],
       })
@@ -302,6 +302,12 @@ function OrderScreen() {
                 )}
               </ul>
             </div>
+            
+            <div className="card  p-6">
+              <h2 className="mb-2 text-lg flex items-center" style={{color:"RED", backgroundColor:"yellow"}}>ATTENTION - PLEASE READ! </h2>
+              <p>If you Have Selected to Pay With Other Methods Than Credit/Debit Card or Paypal, Our Customer Service will get Back to you regarding your order shortly. Please be Patient until that. Thank you for Choosing Transcontinental Connections.</p>
+            </div>
+
           </div>
         </div>
       )}
