@@ -24,6 +24,7 @@ export default function ShippingScreen() {
 useEffect(() => {
   if (shippingAddress) {
     setValue('fullName', shippingAddress.fullName);
+    setValue('phone', shippingAddress.phone);
     setValue('address', shippingAddress.address);
     setValue('city', shippingAddress.city);
     setValue('postalCode', shippingAddress.postalCode);
@@ -34,10 +35,10 @@ useEffect(() => {
 // ...
 
 
-  const submitHandler = ({ fullName, address, city, postalCode, country }) => {
+  const submitHandler = ({ fullName, phone, address, city, postalCode, country }) => {
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
-      payload: { fullName, address, city, postalCode, country },
+      payload: { fullName, phone, address, city, postalCode, country },
     });
     Cookies.set(
       'cart',
@@ -45,6 +46,7 @@ useEffect(() => {
         ...cart,
         shippingAddress: {
           fullName,
+          phone,
           address,
           city,
           postalCode,
@@ -76,6 +78,20 @@ useEffect(() => {
           />
           {errors.fullName && (
             <div className="text-red-500">{errors.fullName.message}</div>
+          )}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="phone">Phone number - Provide country code (+66/+88 ex.)</label>
+          <input
+            className="w-full"
+            id="phone"
+            autoFocus
+            {...register('phone', {
+              required: 'phone number is required',
+            })}
+          />
+          {errors.fullName && (
+            <div className="text-red-500">{errors.phone.message}</div>
           )}
         </div>
         <div className="mb-4">
