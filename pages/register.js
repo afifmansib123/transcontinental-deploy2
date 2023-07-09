@@ -134,7 +134,7 @@ export default function LoginScreen() {
         </div>
         <div className="mb-4 ">
           
-          <Link className="linktor" legacyBehavior href={`/registeshop`}>
+          <Link className="linktor" legacyBehavior href={`/registershop`} style={{color:"green"}}>
           
             Open a Shop/Exporter Account
             

@@ -101,7 +101,7 @@ export default function LoginScreen() {
         <div className="flex justify-center mb-4">
         <p style={{fontSize:20}}>Start selling?
 
-        <Link style={{color:"green"}} href={`/registeshop`}>
+        <Link style={{color:"green"}} href={`/registershop`}>
           
          Open a Shop/Exporter Account 
          

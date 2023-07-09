@@ -28,7 +28,7 @@ export default function LoginScreen() {
   } = useForm();
   const submitHandler = async ({ name, email, password }) => {
     try {
-      await axios.post('/api/auth/signupadmin', {
+      await axios.post('/api/auth/signupshop', {
         name,
         email,
         password,
@@ -52,7 +52,8 @@ export default function LoginScreen() {
         className="mx-auto max-w-screen-md"
         onSubmit={handleSubmit(submitHandler)}
       >
-        <h1 className="mb-4 text-xl">Create ad Admin Account</h1>
+        <h1 className="mb-4 text-xl" style={{fontSize:25,color:"#72B05B"}}>Youre Registering An Exporter/Seller Account</h1>
+        <h1 className="mb-4 text-xl" style={{fontSize:25,color:"#69C248"}}>Congratulations!</h1>
         <div className="mb-4">
           <label htmlFor="name">Name</label>
           <input
@@ -130,7 +131,11 @@ export default function LoginScreen() {
         </div>
 
         <div className="mb-4 ">
-          <button className="default-button">Register admin account</button>
+          <button className="primary-button">Register</button>
+        </div>
+        <div className="mb-4 ">
+          
+          
         </div>
       </form>
     </Layout>
