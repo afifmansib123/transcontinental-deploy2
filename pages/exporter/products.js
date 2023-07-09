@@ -116,7 +116,7 @@ export default function AdminProdcutsScreen() {
         </div>
         <div className="overflow-x-auto md:col-span-3">
           <div className="flex justify-between">
-            <h1 className="mb-4 text-xl">Welcome {user.data.user.name} to Your Shop</h1>
+            <h1 className="mb-4 text-xl">welcome {user.data.user.name} to your shop</h1>
             {loadingDelete && <div>Deleting item...</div>}
             <button
               disabled={loadingCreate}

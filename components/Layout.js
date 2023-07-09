@@ -117,8 +117,8 @@ export default function Layout({ title, children }) {
           <div className="flex items-center justify-center pr-4 ">
             
               <button  className="button1 flex items-center" onClick={toggleMenu}>
-                <Image src={`/images/mainlogo4.png`} alt="catagoty" height={25} width={25} />
-                <span className=" flex items-center ml-4 mr-4" style={{fontSize:25, color: 'white '}}>see all catagories</span>
+                <Image src={`/images/boxpic.png`} alt="hello" height={30} width={25} />
+                <span className=" flex items-center ml-4 mr-4" style={{fontSize:23, color: "#4A4F48"}}>All catagories</span>
   
               </button>
               <br/>

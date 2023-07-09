@@ -2,6 +2,8 @@ import { getToken } from 'next-auth/jwt';
 import Product from '../../../../models/Product';
 import db from '../../../../utils/db';
 
+
+
 const handler = async (req, res) => {
   const user = await getToken({ req });
   if (!user || !user.isExporter) {
@@ -15,7 +17,12 @@ const handler = async (req, res) => {
     return res.status(400).send({ message: 'Method not allowed' });
   }
 };
+
+
 const postHandler = async (req, res) => {
+
+  const user = await getToken({ req });
+
   await db.connect();
   const newProduct = new Product({
     name: 'sample name',
