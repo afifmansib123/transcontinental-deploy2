@@ -38,6 +38,7 @@ const putHandler = async (req, res) => {
     product.brand = req.body.brand;
     product.countInStock = req.body.countInStock;
     product.description = req.body.description;
+    product.uploader = req.body.uploader;
     await product.save();
     await db.disconnect();
     res.send({ message: 'Product updated successfully' });

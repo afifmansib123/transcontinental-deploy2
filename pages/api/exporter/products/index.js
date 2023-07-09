@@ -37,6 +37,7 @@ const postHandler = async (req, res) => {
     description: 'sample description',
     rating: 0,
     numReviews: 0,
+    uploader : user.name,
   });
 
   const product = await newProduct.save();

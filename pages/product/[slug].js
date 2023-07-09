@@ -56,8 +56,11 @@ export default function ProductScreen(props) {
     },
  ];
 
+
+
   return (
     <Layout title={product.name}>
+      <h1 className='flex items-center justify-center' style={{backgroundColor: "#203F9F", fontSize:25, color: "white"}}>BROUGHT TO YOU BY -{product.uploader}'S SHOP</h1>
       <div className="py-2">
         <Link href="/">back to products</Link>
       </div>

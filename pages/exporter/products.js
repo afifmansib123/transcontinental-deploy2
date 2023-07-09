@@ -144,7 +144,8 @@ export default function AdminProdcutsScreen() {
                   </tr>
                 </thead>
                 <tbody>
-                  {products.map((product) => (
+                  {products.filter((product)=>product.uploader===username
+                  ).map((product) => (
                     <tr key={product._id} className="border-b">
                       <td className=" p-5 ">{product._id.substring(20, 24)}</td>
                       <td className=" p-5 ">{product.name}</td>
@@ -152,8 +153,9 @@ export default function AdminProdcutsScreen() {
                       <td className=" p-5 ">{product.category}</td>
                       <td className=" p-5 ">{product.countInStock}</td>
                       <td className=" p-5 ">{product.rating}</td>
+                      <td>{product.uploader}</td>
                     </tr>
-                  ))}
+))}
                 </tbody>
               </table>
             </div>

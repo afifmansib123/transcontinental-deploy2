@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Layout from '../../../components/Layout';
 import { getError } from '../../../utils/error';
+import { useSession } from 'next-auth/react';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -39,6 +40,11 @@ function reducer(state, action) {
   }
 }
 export default function AdminProductEditScreen() {
+
+  //-------------//
+  const user = useSession()
+  const username = user.data.user.name
+
   const { query } = useRouter();
   const productId = query.id;
   const [{ loading, error, loadingUpdate, loadingUpload }, dispatch] =
@@ -70,6 +76,7 @@ export default function AdminProductEditScreen() {
         setValue('brand', data.brand);
         setValue('countInStock', data.countInStock);
         setValue('description', data.description);
+        setValue('uploader', username)
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
@@ -163,6 +170,7 @@ export default function AdminProductEditScreen() {
     brand,
     countInStock,
     description,
+    uploader,
   }) => {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
@@ -177,6 +185,7 @@ export default function AdminProductEditScreen() {
         brand,
         countInStock,
         description,
+        uploader,
       });
       dispatch({ type: 'UPDATE_SUCCESS' });
       toast.success('Product updated successfully');
