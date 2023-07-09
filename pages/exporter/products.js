@@ -103,7 +103,7 @@ export default function AdminProdcutsScreen() {
         <div>
           <ul>
             <li>
-              <Link href="/exporter/dashboard">Dashboard</Link>
+              <Link href="/exporter/dashboard">Website Life</Link>
             </li>
             
             <li>
@@ -153,7 +153,7 @@ export default function AdminProdcutsScreen() {
                       <td className=" p-5 ">{product.category}</td>
                       <td className=" p-5 ">{product.countInStock}</td>
                       <td className=" p-5 ">{product.rating}</td>
-                      <td>{product.uploader}</td>
+                      <td><Link href={`/product/${product.slug}`}>Details</Link></td>
                     </tr>
 ))}
                 </tbody>

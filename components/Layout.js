@@ -170,7 +170,7 @@ export default function Layout({ title, children }) {
                       <Menu.Item>
                         <DropdownLink
                           className="dropdown-link"
-                          href="/exporter/dashboard"
+                          href="/exporter/products"
                         >
                           Shop Dashboard
                         </DropdownLink>
