@@ -70,7 +70,7 @@ export default function Home({ products, featuredProducts }) {
       <br />
 
       <Link href="search?query=">
-        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>search with ease<Image src={`/images/y.png`} alt="hello" height={10} width={40} /></h1>
+        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>SEARCH WITH EASE<Image src={`/images/y.png`} alt="hello" height={10} width={40} className='ml-3'/></h1>
         <br />
          <div className="full-spanning-row" style={{ height: 80 }}> 
           <button className="full-width-button" style={{ fontSize:25, color:"Black", backgroundColor: "#2567B5" }}>Catagories</button>
@@ -85,7 +85,7 @@ export default function Home({ products, featuredProducts }) {
 
 
 
-      <h2 className="h2 my-4">Latest Products</h2>
+      <h2 className="h2 my-4 flex justify-center" style={{color: "#0C3B7E", fontSize:30}}>Latest Arrivals</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {productsToShow.map((product) => (
           <ProductItem
@@ -94,6 +94,11 @@ export default function Home({ products, featuredProducts }) {
             addToCartHandler={addToCartHandler}
           ></ProductItem>
         ))}
+      </div>
+
+
+      <div>
+      <Image src={`/images/background3.png`} width={100} height={80} className="full-screen"></Image>
       </div>
 
 

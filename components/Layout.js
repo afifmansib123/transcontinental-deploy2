@@ -216,7 +216,7 @@ export default function Layout({ title, children }) {
                 type="submit"
                 id="button-addon2"
               >
-                <SearchIcon className="h-5 w-20"></SearchIcon>
+                <SearchIcon className="h-10 w-20" style={{color:"#005CBD"}}></SearchIcon>
               </button>
             </div>
 

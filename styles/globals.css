@@ -97,6 +97,13 @@ textarea {
   z-index: 9999
 }
 
+@media (min-width: 768px) {
+  .sliding-menu {
+    width: 25%; /* Adjust the width for larger screens */
+    left: -100%; /* Initially hides the menu off-screen for larger screens */
+  }
+}
+
 .menu-content {
   padding: 1rem; /* Add padding to the menu content */
 }
@@ -198,6 +205,57 @@ textarea {
   position: sticky;
 top: 0
 }
+
+/* Button Styles */
+.see-details-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+
+.buttonx {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.seedetails:hover {
+  background-color: #1750A3;
+}
+
+.seedetails{
+    @apply rounded;
+    background-color : #1854AA;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
 
 
 
