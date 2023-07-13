@@ -81,20 +81,20 @@ export default function ProductScreen(props) {
         />
       </div>
         <div>
-          <ul>
+          <ol >
             <li>
-              <h1 className="text-lg">{product.name}</h1>
+              <h1 className="text-lg" style={{color:"#0B2A81"}}>{product.name}</h1>
             </li>
-            <li>Category: {product.category}</li>
-            <li>Brand: {product.brand}</li>
-            <li>
+            <li style={{color:"#0B183D"}}>Category: {product.category}</li>
+            <li style={{color:"#0B183D"}}>Brand: {product.brand}</li>
+            <li style={{color:"#0B183D"}}>
               {product.rating} of {product.numReviews} reviews
             </li>
-            <li>Description: {product.description}</li>
-          </ul>
+            <li style={{color:"#0B183D"}}>Description: {product.description}</li>
+          </ol>
         </div>
-        <div>
-          <div className="card p-5">
+        <div><br/>
+          <div className="card p-5" style={{color:"#091E5F", backgroundColor:"#D5D9E8"}}>
             <div className="mb-2 flex justify-between">
               <div>Price</div>
               <div>BDT{product.price}</div>
@@ -103,15 +103,22 @@ export default function ProductScreen(props) {
               <div>Status</div>
               <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
             </div>
-            {product.price<9000?
-            (<button
-              className="primary-button w-full"
+            
+            <button
+              className="ml-0 flex justify-center primary-button w-full"
               onClick={addToCartHandler}
             >
-              Add to cart
-            </button>)
-            : (<button>talk man..</button>)
-}
+             <Image src={`/images/cart1.png`} width={40} height={40}/> <p style={{color:"white", fontSize:25}}>Add to cart</p>
+            </button>
+
+            <br/>
+
+            <button
+              className="ml-0 flex justify-center primary-button2 w-full"
+              onClick={addToCartHandler}
+            >
+             <Image src={`/images/whatsapp.png`} width={40} height={40}/> <p className='ml-2' style={{color:"white", fontSize:25}}>Contact Us</p>
+            </button>
           </div>
         </div>
       </div>

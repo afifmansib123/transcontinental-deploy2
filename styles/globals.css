@@ -31,7 +31,10 @@ a {
 }
 
 .primary-button {
-  @apply rounded bg-orange-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
+  @apply rounded bg-blue-500 py-2 px-4 shadow outline-none hover:bg-blue-950  active:bg-white;
+}
+.primary-button2 {
+  @apply rounded bg-green-600 py-2 px-4 shadow outline-none hover:bg-blue-950  active:bg-white;
 }
 .primary-button1 {
   @apply rounded bg-green-400 py-2 px-4 shadow outline-none hover:bg-orange-600  active:bg-white;
@@ -91,7 +94,7 @@ textarea {
   left: -100%; /* Initially hides the menu off-screen */
   width: 40%; /* Adjust the width as desired */
   height: 100vh; /* Takes up the full height of the screen */
-  background-color: #e9f1ff
+  background-color: #B0CBFC
   ; /* Set the background color */
   transition: left 0.3s ease; /* Add a smooth sliding animation */
   z-index: 9999
@@ -248,6 +251,31 @@ top: 0
     font-size: 16px;
     cursor: pointer;
 }
+.image-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+
+}
+
+.image-overlay-text {
+  color: black;
+  font-size: 16px;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

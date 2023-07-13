@@ -97,8 +97,12 @@ export default function Home({ products, featuredProducts }) {
       </div>
 
 
-      <div>
-      <Image src={`/images/background3.png`} width={100} height={80} className="full-screen"></Image>
+      <div style={{ position: "relative"}}>
+      <Image src={`/images/background4.gif`} width={100} height={100} className="full-screen"></Image>
+      <div className="image-overlay mb-0 mt-0">
+        <p className='flex justify-center mb-0 mt-0' style = {{fontSize:21, color: "#1C448C"}}>WHO ARE WE?</p>
+    <p className="image-overlay-text" style={{color: "#15336A"}}>TC is the leading import-export trade hub in Bangladesh, with HQ in both Thailand. Our platform facilitates import-export operations across diverse industries personalizing virtual storefronts,robust logistics networks, and dedicated support in smooth transactions. Committed to sustainability,trade and ethical sourcing.<Link style={{color:"#D14343"}} href={`/aboutus`}>...see more</Link></p>
+  </div>
       </div>
 
 
