@@ -61,8 +61,8 @@ export default function ProductScreen(props) {
   return (
     <Layout title={product.name}>
       <h1 className='flex items-center justify-center' style={{backgroundColor: "#203F9F", fontSize:25, color: "white"}}>BROUGHT TO YOU BY -{product.uploader}'S SHOP</h1>
-      <div className="py-2">
-        <Link href="/">back to products</Link>
+      <div className="flex justify-start" style={{display:"incline-block"}}>
+        <Link href="/"> <Image src={`/images/back1.png`} width={30} height={30}/> back to products  </Link>
       </div>
       <div className="grid md:grid-cols-5 md:gap-3">
       <div className="md:col-span-3">
@@ -112,12 +112,25 @@ export default function ProductScreen(props) {
             </button>
 
             <br/>
-
+            <p className=' flex justify-center' style={{color:"Blue", fontSize:25}}>Contact Vendor</p><br/>
+            <button
+              className="ml-0 flex justify-center primary-button4 w-full"
+              onClick={addToCartHandler}
+            >
+             <Image src={`/images/call.png`} width={40} height={40}/> <p className='ml-4 mt-1 flex justify-center' style={{color:"white", fontSize:22}}>Call seller</p><br/>
+            </button> <br/>
             <button
               className="ml-0 flex justify-center primary-button2 w-full"
               onClick={addToCartHandler}
             >
-             <Image src={`/images/whatsapp.png`} width={40} height={40}/> <p className='ml-2' style={{color:"white", fontSize:25}}>Contact Us</p>
+             <Image src={`/images/whatsapp.png`} width={40} height={40}/> <p className='ml-4 mt-1 flex justify-center' style={{color:"white", fontSize:22}}>Whatsapp</p><br/>
+            </button> <br/>
+
+            <button
+              className="ml-0 flex justify-center primary-button3 w-full"
+              onClick={addToCartHandler}
+            >
+             <Image src={`/images/messenger.png`} width={40} height={40}/> <p className='ml-4 mt-1 flex justify-center' style={{color:"black", fontSize:22}}>Messenger</p><br/>
             </button>
           </div>
         </div>
