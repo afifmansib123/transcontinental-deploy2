@@ -109,6 +109,22 @@ export default function Home({ products, featuredProducts }) {
 
 
 
+      <h2 className="h2 my-4 flex justify-center" style={{color: "#0C3B7E", fontSize:30}}>Latest Arrivals</h2>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        {productsToShow.filter((product)=>product.category === "excavator")
+        .slice(0,4)
+        .map((product) => (
+          <ProductItem
+            product={product}
+            key={product.slug}
+            addToCartHandler={addToCartHandler}
+          ></ProductItem>
+        ))}
+        
+      </div>
+
+
+
 
       <div className="pagination">
         {Array.from({ length: Math.ceil(products.length / pageSize) }).map((_, index) => (
