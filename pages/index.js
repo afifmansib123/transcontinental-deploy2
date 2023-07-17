@@ -56,11 +56,13 @@ export default function Home({ products, featuredProducts }) {
         <h1 className='flex justify-center' style={{ fontSize: 20, color: "white", whiteSpace: "nowrap" }}>IMPORT EXPORT & TRADE</h1>
       </div>
 
-      <Carousel showThumbs={false} autoPlay interval={800} className="full-screen" style={{ width: '100%', height: '100%' }}>
-        {featuredProducts.map((product) => (
+      <Carousel showThumbs={false} autoPlay interval={1500} className="full-screen object-fill" style={{ width: '100%', height: '100%' }}>
+        {featuredProducts.map((product, index) => (
           <div key={product._id}>
             <Link href={`#`} passHref className="flex">
               <img src={product.banner} alt={product.name} className="carousel-image" />
+              
+              {index === 1 && <div className="overlay-text" style={{color:"#072644",  fontSize: 30, top:200}}> IMPORT EXPORT & TRADE WORLDWIDE <br/>Meet & Close deals with <br></br>Hundreds of Vendors in global Market</div>}
             </Link>
           </div>
         ))}

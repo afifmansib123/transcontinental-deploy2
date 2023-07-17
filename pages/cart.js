@@ -29,7 +29,7 @@ function CartScreen() {
   };
   return (
     <Layout title="Shopping Cart">
-      <h1 className="mb-4 text-xl">Shopping Cart</h1>
+      <h1 className="mb-4 text-xl" style={{color:"#072644"}}>Please varify Your Items of Selection Before Furter Inquiry</h1>
       {cartItems.length === 0 ? (
         <div>
           Cart is empty. <Link href="/">Go shopping</Link>
@@ -105,7 +105,7 @@ function CartScreen() {
                   onClick={() => router.push('login?redirect=/shipping')}
                   className="primary-button w-full"
                 >
-                  Check Out
+                  Proceed
                 </button>
               </li>
             </ul>

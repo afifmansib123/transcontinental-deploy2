@@ -77,6 +77,20 @@ textarea {
   object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 
+.carousel-image-container {
+  position: relative;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 0px;
+  white-space: nowrap;
+}
+
 .welcome-header {
   font-size: 45px; /* Set the font size to a really big value */
   text-align: center;

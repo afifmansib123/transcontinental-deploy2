@@ -108,11 +108,11 @@ export default function ProductScreen(props) {
               className="ml-0 flex justify-center primary-button w-full"
               onClick={addToCartHandler}
             >
-             <Image src={`/images/cart1.png`} width={40} height={40}/> <p style={{color:"white", fontSize:25}}>Add to cart</p>
+             <Image src={`/images/cart1.png`} width={40} height={40}/> <p style={{color:"white", fontSize:25}}>Proceed</p>
             </button>
 
             <br/>
-            <p className=' flex justify-center' style={{color:"Blue", fontSize:25}}>Contact Vendor</p><br/>
+            <p className=' flex justify-center' style={{color:"Blue", fontSize:25, whiteSpace:"nowrap"}}>Contact Us Directly</p><br/>
             <button
               className="ml-0 flex justify-center primary-button4 w-full"
               onClick={addToCartHandler}
