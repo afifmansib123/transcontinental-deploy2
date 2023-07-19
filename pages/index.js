@@ -82,16 +82,19 @@ export default function Home({ products, featuredProducts }) {
          <button className="full-width-button" style={{ fontSize: 25, color: "Black", backgroundColor: "#A8C2DF" }}><Link href="search?query="> Prices</Link></button>
         <button className="full-width-button" style={{ fontSize: 25, color: "Black", backgroundColor: "#CEDDEE" }}><Link href="search?query="> Featured</Link></button>
         </div>
-      
+      <br/> <br/>
+
+      <h1 className='flex justify-center' style={{ fontSize: 29, color: "#0B145D", whiteSpace: "nowrap" }}>Import Heavy Machines</h1>
 
 
-        <div className='grid grid-cols-4 gap-0 md:grid-cols-4 lg:grid-cols-4 items-center'>
-        <div class="dropdown">
-          <Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image>
-          <div class="dropdown-content">
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={220}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={220}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={220}></Image></a>
+        <div className='grid grid-cols-4  gap-0 md:grid-cols-4 lg:grid-cols-4 items-center'>
+        <div class="dropdown mb-2">
+          <Image class="dropbtn" src={`/images/excicon4.jpeg`} height={250} width={250}></Image>
+          <div class="dropdown-content " >
+            <a href="#"><Image class="dropbtn" src={`/images/miniicon1.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>(3~5) Tons </p></a>
+            <a href="#"><Image class="dropbtn" src={`/images/microexc.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(6~8) Tons </p></a>
+            <a href="#"><Image class="dropbtn" src={`/images/third.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(10-16) Tons </p></a>
+            <a href="#"><Image class="dropbtn" src={`/images/fourth.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(20) Tons </p></a><br/>
           </div>
         </div>
 
@@ -108,8 +111,8 @@ export default function Home({ products, featuredProducts }) {
           <Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image>
           <div class="dropdown-content">
           <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={220}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={100}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={100}></Image></a>
+            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image></a>
+            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image></a>
           </div>
         </div>
 
@@ -126,7 +129,7 @@ export default function Home({ products, featuredProducts }) {
 
 
 
-      <h2 className="h2 my-4 flex justify-center" style={{ color: "#0C3B7E", fontSize: 30 }}>Latest Arrivals</h2>
+      <h2 className="h2 my-4 flex justify-center" style={{ color: "#0B145D", fontSize: 30 }}>Latest Arrivals</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {productsToShow.map((product) => (
           <ProductItem
