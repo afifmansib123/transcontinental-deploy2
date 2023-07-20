@@ -34,67 +34,67 @@ export default function ProductScreen(props) {
 
   const sliderImages = [
     {
-       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTdUmK6fRPfPQIMyOxUOjiTnR2VYizvkkWUxLhGoVJNobm5Id3fpRhsIGtPj3H06ujPb4&usqp=CAU",
+      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTdUmK6fRPfPQIMyOxUOjiTnR2VYizvkkWUxLhGoVJNobm5Id3fpRhsIGtPj3H06ujPb4&usqp=CAU",
     },
     {
-       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQduUpBWhSdgkWqqIrSmw5MMU697Xlx3SCjlB4eZSv0Q&s",
+      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQduUpBWhSdgkWqqIrSmw5MMU697Xlx3SCjlB4eZSv0Q&s",
     },
     {
-       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTnzApyh1ZmbXLBUg_iFRio23hzRyAJfwBRfnVozXdEnu-NK4jFt2_gsYujKf-CbT6Cr_A&usqp=CAU",
+      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTnzApyh1ZmbXLBUg_iFRio23hzRyAJfwBRfnVozXdEnu-NK4jFt2_gsYujKf-CbT6Cr_A&usqp=CAU",
     },
     {
-       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTDnfOIY9gjVyoT4ulMp55roiV5KefqaDByUc0HdD8p3tdpXuwxTaXjhLdyUFeQzZ2ZwE&usqp=CAU",
+      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTDnfOIY9gjVyoT4ulMp55roiV5KefqaDByUc0HdD8p3tdpXuwxTaXjhLdyUFeQzZ2ZwE&usqp=CAU",
     },
     {
-       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcR3IVlvufXIDZXxq0O8SVqwU2HeO6y7as0OXJl-YT55BA&s",
+      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcR3IVlvufXIDZXxq0O8SVqwU2HeO6y7as0OXJl-YT55BA&s",
     },
     {
-       url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQs_7aafRRY4vEbWz2wydowaogMmGI7mRVG6MQfZVtKDFXUGqt5iF-Mu0AYMQBEeznPkU&usqp=CAU",
+      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQs_7aafRRY4vEbWz2wydowaogMmGI7mRVG6MQfZVtKDFXUGqt5iF-Mu0AYMQBEeznPkU&usqp=CAU",
     },
     {
-       url: "https://smartslider3.com/wpcontent/uploads/2019/01/photo_slideshow.jpg",
+      url: "https://smartslider3.com/wpcontent/uploads/2019/01/photo_slideshow.jpg",
     },
- ];
+  ];
 
 
 
   return (
     <Layout title={product.name}>
-      <h1 className='flex items-center justify-center' style={{backgroundColor: "#203F9F", fontSize:25, color: "white"}}>BROUGHT TO YOU BY -{product.uploader}'S SHOP</h1>
+      <h1 className='flex items-center justify-center' style={{ backgroundColor: "#203F9F", fontSize: 25, color: "white" }}>BROUGHT TO YOU BY -{product.uploader}'S SHOP</h1>
       <div className="flex justify-start">
-        <Link href="/"> <Image src={`/images/back1.png`} width={30} height={30}/> back to products  </Link>
+        <Link href="/"> <Image src={`/images/back1.png`} width={30} height={30} /> back to products  </Link>
       </div>
       <div className="grid md:grid-cols-5 md:gap-3">
-      <div className="md:col-span-3">
-         <SimpleImageSlider
-          width={500}
-          height={500}
-          images={[
-            { url: product.image1 },
-            { url: product.image2 },
-            { url: product.image3 },
-            { url: product.image4 },
-            { url: product.image5 },
-          ]}
-          showNavs={true}
-          
-        />
-      </div>
+        <div className="md:col-span-3">
+          <SimpleImageSlider
+            width={500}
+            height={500}
+            images={[
+              { url: product.image1 },
+              { url: product.image2 },
+              { url: product.image3 },
+              { url: product.image4 },
+              { url: product.image5 },
+            ]}
+            showNavs={true}
+
+          />
+        </div>
         <div>
           <ol >
             <li>
-              <h1 className="text-lg" style={{color:"#0B2A81"}}>{product.name}</h1>
+              <h1 className="text-lg" style={{ color: "#0B2A81" }}>{product.name}</h1>
             </li>
-            <li style={{color:"#0B183D"}}>Category: {product.category}</li>
-            <li style={{color:"#0B183D"}}>Brand: {product.brand}</li>
-            <li style={{color:"#0B183D"}}>
+            <li style={{ color: "#0B183D" }}>Category: {product.category}</li>
+            <li style={{ color: "#0B183D" }}>Brand: {product.brand}</li>
+            <li style={{ color: "#0B183D" }}>
               {product.rating} of {product.numReviews} reviews
             </li>
-            <li style={{color:"#0B183D"}}>Description: {product.description}</li>
+            <li style={{ color: "#0B183D" }}>Description: {product.description}</li>
           </ol>
         </div>
-        <div><br/>
-          <div className="card p-5" style={{color:"#091E5F", backgroundColor:"#D5D9E8"}}>
+        <div><br />
+          <div className="card p-5" style={{ color: "#091E5F", backgroundColor: "#D5D9E8" }}>
             <div className="mb-2 flex justify-between">
               <div>Price</div>
               <div>BDT{product.price}</div>
@@ -104,33 +104,46 @@ export default function ProductScreen(props) {
               <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
             </div>
             
+            { product.price < 9000?(
             <button
               className="ml-0 flex justify-center primary-button w-full"
               onClick={addToCartHandler}
             >
-             <Image src={`/images/cart1.png`} width={40} height={40}/> <p style={{color:"white", fontSize:25}}>Proceed</p>
-            </button>
+              <Image src={`/images/cartmain2.png`} width={40} height={40} className='mr-3' /> <p style={{ color: "white", fontSize: 25 }}>Add Item</p>
+            </button>) : (<div><button
+              className="ml-0 flex justify-center primary-button w-full"
+              
+            >
+              <Image src={`/images/cartmain2.png`} width={40} height={40} className='mr-3'/> <p style={{ color: "white", fontSize: 25 }}>Add</p>
+            </button><br></br>
+            <p className='flex justify-center flex-nowrap'>No Direct Payments for</p>
+            <p className='flex justify-center flex-nowrap'>this item. TC will guide </p>
+            <p className='flex justify-center flex-nowrap'>you on Payment process</p>
+            </div>
+          
+            )
+            }
 
-            <br/>
-            <p className=' flex justify-center' style={{color:"Blue", fontSize:25, whiteSpace:"nowrap"}}>Contact Us Directly</p><br/>
+            <br />
+            <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact Directly</p><br />
             <button
               className="ml-0 flex justify-center primary-button4 w-full"
               onClick={addToCartHandler}
             >
-             <Image src={`/images/call.png`} width={40} height={40}/> <p className='ml-4 mt-1 flex justify-center' style={{color:"white", fontSize:22}}>Call seller</p><br/>
-            </button> <br/>
+              <Image src={`/images/call2.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "white", fontSize: 22 }}>Call</p><br />
+            </button> <br />
             <button
               className="ml-0 flex justify-center primary-button2 w-full"
               onClick={addToCartHandler}
             >
-             <Image src={`/images/whatsapp.png`} width={40} height={40}/> <p className='ml-4 mt-1 flex justify-center' style={{color:"white", fontSize:22}}>Whatsapp</p><br/>
-            </button> <br/>
+              <Image src={`/images/wasap.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "White", fontSize: 22 }}>Whatsapp</p><br />
+            </button> <br />
 
             <button
               className="ml-0 flex justify-center primary-button3 w-full"
               onClick={addToCartHandler}
             >
-             <Image src={`/images/messenger.png`} width={40} height={40}/> <p className='ml-4 mt-1 flex justify-center' style={{color:"black", fontSize:22}}>Messenger</p><br/>
+              <Image src={`/images/ms1.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "black", fontSize: 22 }}>Messenger</p><br />
             </button>
           </div>
         </div>

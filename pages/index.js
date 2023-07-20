@@ -99,29 +99,29 @@ export default function Home({ products, featuredProducts }) {
         </div>
 
         <div class="dropdown">
-          <Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image>
+          <Image class="dropbtn" src={`/images/grader2.png`} height={250} width={250}></Image>
           <div class="dropdown-content">
-          <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image></a>
+          <a href="#"><Image class="dropbtn" src={`/images/graders10.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Graders</p></a>
+            <a href="#"><Image class="dropbtn" src={`/images/rollers2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Rollers</p></a>
+            <a href="#"><Image class="dropbtn" src={`/images/paver1.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Pavers</p></a>
           </div>
         </div>
 
         <div class="dropdown">
-          <Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image>
+          <Image class="dropbtn" src={`/images/crane3.png`} height={250} width={250}></Image>
           <div class="dropdown-content">
-          <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={220}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image></a>
+          <a href="#"><Image class="dropbtn" src={`/images/cranes6.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Cranes</p></a>
+            <a href="#"><Image class="dropbtn" src={`/images/wheel2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Wheel-loaders</p></a>
+            <a href="#"><Image class="dropbtn" src={`/images/tractor.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Tractors</p></a>
           </div>
         </div>
 
         <div class="dropdown">
-          <Image class="dropbtn" src={`/images/background1.png`} height={250} width={250}></Image>
+          <Image class="dropbtn" src={`/images/parts2.jpeg`} height={250} width={250}></Image>
           <div class="dropdown-content">
-          <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={220}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={220}></Image></a>
-            <a href="#"><Image class="dropbtn" src={`/images/background1.png`} height={250} width={220}></Image></a>
+          <a href="#"><Image class="dropbtn" src={`/images/blades.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Spare Parts</p></a>
+            <a href="#"><Image class="dropbtn" src={`/images/more.webp`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>many more</p></a>
+          
           </div>
         </div>
 
