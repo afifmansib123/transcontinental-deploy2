@@ -23,6 +23,8 @@ const postHandler = async (req, res) => {
     image1: '/images/shirt1.jpg',
     image2: '/images/shirt1.jpg',
     image3: '/images/shirt1.jpg',
+    image4: '/images/shirt1.jpg',
+    image5: '/images/shirt1.jpg',
     price: 0,
     category: 'sample category',
     brand: 'sample brand',
@@ -30,6 +32,7 @@ const postHandler = async (req, res) => {
     description: 'sample description',
     rating: 0,
     numReviews: 0,
+    payment : 'hello',
   });
 
   const product = await newProduct.save();

@@ -124,6 +124,8 @@ export default function ProductScreen(props) {
             )
             }
 
+            {product.payment === "LC" ? (<div><p>kutta</p></div>) : (<div><p>shuor</p></div>)}
+
             <br />
             <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact Directly</p><br />
             <button

@@ -72,6 +72,7 @@ export default function AdminProductEditScreen() {
         setValue('brand', data.brand);
         setValue('countInStock', data.countInStock);
         setValue('description', data.description);
+        setValue('payment', data.payment)
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
@@ -215,6 +216,7 @@ export default function AdminProductEditScreen() {
     brand,
     countInStock,
     description,
+    payment,
   }) => {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
@@ -231,6 +233,7 @@ export default function AdminProductEditScreen() {
         brand,
         countInStock,
         description,
+        payment,
       });
       dispatch({ type: 'UPDATE_SUCCESS' });
       toast.success('Product updated successfully');
@@ -496,6 +499,22 @@ export default function AdminProductEditScreen() {
                 {errors.description && (
                   <div className="text-red-500">
                     {errors.description.message}
+                  </div>
+                )}
+              </div>
+              <div className="mb-4">
+                <label htmlFor="payment">Payment</label>
+                <input
+                  type="text"
+                  className="w-full"
+                  id="payment"
+                  {...register('payment', {
+                    required: 'Please enter payment',
+                  })}
+                />
+                {errors.payment && (
+                  <div className="text-red-500">
+                    {errors.payment.message}
                   </div>
                 )}
               </div>

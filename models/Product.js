@@ -18,6 +18,7 @@ const productSchema = new mongoose.Schema(
     description: { type: String, required: true },
     isFeatured: { type: Boolean, default: false },
     uploader : {type: String, required:false, default:"TC TRADERS"},
+    payment: {type: String, required:false, default:"LC"},
     banner: String,
   },
   {
