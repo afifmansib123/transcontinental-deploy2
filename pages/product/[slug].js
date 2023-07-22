@@ -61,7 +61,7 @@ export default function ProductScreen(props) {
   return (
     <Layout title={product.name}>
       <h1 className='flex items-center justify-center' style={{ backgroundColor: "#203F9F", fontSize: 25, color: "white" }}>BROUGHT TO YOU BY -{product.uploader}'S SHOP</h1>
-      <div className="flex justify-start">
+      <div className="flex justify-start flex-nowrap">
         <Link href="/"> <Image src={`/images/back1.png`} width={30} height={30} /> back to products  </Link>
       </div>
       <div className="grid md:grid-cols-5 md:gap-3">
@@ -102,50 +102,56 @@ export default function ProductScreen(props) {
             <div className="mb-2 flex justify-between">
               <div>Status</div>
               <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
-            </div>
+            </div><br/>
+
+            <p className='flex justify-center flex-nowrap' style={{color: "#741F0F"}}>* Please Note* </p>
+            <p className='flex justify-center flex-nowrap'>This is only Item Price</p>
+            <p className='flex justify-center flex-nowrap'>Shipping And Import Prices</p>
+            <p className='flex justify-center flex-nowrap'>will be specified later</p><br/>
             
-            { product.price < 9000?(
+            { product.payment !== "LC"?(
             <button
               className="ml-0 flex justify-center primary-button w-full"
               onClick={addToCartHandler}
             >
               <Image src={`/images/cartmain2.png`} width={40} height={40} className='mr-3' /> <p style={{ color: "white", fontSize: 25 }}>Add Item</p>
             </button>) : (<div><button
-              className="ml-0 flex justify-center primary-button w-full"
-              
+              className="ml-0 flex justify-center primary-button6 w-full"
+              onClick={addToCartHandler}
             >
-              <Image src={`/images/cartmain2.png`} width={40} height={40} className='mr-3'/> <p style={{ color: "white", fontSize: 25 }}>Add</p>
+              <Image src={`/images/rightside.webp`} width={40} height={40} className='mr-3'/> <p style={{ color: "black", fontSize: 25 }}>Proceed</p>
             </button><br></br>
-            <p className='flex justify-center flex-nowrap'>No Direct Payments for</p>
-            <p className='flex justify-center flex-nowrap'>this item. TC will guide </p>
-            <p className='flex justify-center flex-nowrap'>you on Payment process</p>
+            <p className='flex justify-center flex-nowrap'>This is an Import Item</p>
+            <p className='flex justify-center flex-nowrap'>Cant be bought directly</p>
+            <p className='flex justify-center flex-nowrap'>Proceed Above Or</p>
+            <p className='flex justify-center flex-nowrap'>Contact Us Directly</p>
             </div>
           
             )
             }
 
-            {product.payment === "LC" ? (<div><p>kutta</p></div>) : (<div><p>shuor</p></div>)}
 
             <br />
-            <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact Directly</p><br />
+            <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact And Inspect</p><br />
             <button
               className="ml-0 flex justify-center primary-button4 w-full"
-              onClick={addToCartHandler}
+              onClick={()=>{window.location.href=`tel:${+660932503470}`}}
             >
               <Image src={`/images/call2.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "white", fontSize: 22 }}>Call</p><br />
             </button> <br />
             <button
               className="ml-0 flex justify-center primary-button2 w-full"
-              onClick={addToCartHandler}
+              onClick={()=>{window.location.href=`https://wa.me/+66932503470`}}
             >
               <Image src={`/images/wasap.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "White", fontSize: 22 }}>Whatsapp</p><br />
             </button> <br />
 
             <button
               className="ml-0 flex justify-center primary-button3 w-full"
-              onClick={addToCartHandler}
+              onClick={()=>{window.location.href=`https://m.me/afif.mansib`}}
             >
-              <Image src={`/images/ms1.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "black", fontSize: 22 }}>Messenger</p><br />
+              <Image src={`/images/ms1.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "black", fontSize: 22 }}
+              >Messenger</p><br />
             </button>
           </div>
         </div>

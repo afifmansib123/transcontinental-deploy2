@@ -10,6 +10,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 function CartScreen() {
+
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
@@ -27,9 +28,15 @@ function CartScreen() {
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
     toast.success('Product updated in the cart');
   };
+
+  const LC = cartItems.some((item)=>item.payment==="LC")
+  const NotLC = cartItems.some((item)=>item.payment!=="LC")
+
   return (
     <Layout title="Shopping Cart">
+
       <h1 className="mb-4 text-xl" style={{color:"#072644"}}>Please varify Your Items of Selection Before Furter Inquiry</h1>
+      
       {cartItems.length === 0 ? (
         <div>
           Cart is empty. <Link href="/">Go shopping</Link>
@@ -101,14 +108,20 @@ function CartScreen() {
                 </div>
               </li>
               <li>
-                <button
+                {LC && NotLC ? (<button
+                  onClick={() => toast("You Have LC and Direct Pay Items Together, Sperately Order them Please")}
+                  className="primary-button w-full"
+                >
+                  Cannot Proceed 
+                </button>) : (<button
                   onClick={() => router.push('login?redirect=/shipping')}
                   className="primary-button w-full"
                 >
                   Proceed
-                </button>
+                </button>)}
               </li>
             </ul>
+            
           </div>
         </div>
       )}
