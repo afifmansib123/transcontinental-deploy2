@@ -5,6 +5,7 @@ import CheckoutWizard from '../components/CheckoutWizard';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 export default function ShippingScreen() {
   const {
@@ -65,7 +66,7 @@ useEffect(() => {
         className="mx-auto max-w-screen-md"
         onSubmit={handleSubmit(submitHandler)}
       >
-        <h1 className="mb-4 text-xl">Shipping Address</h1>
+        <h1 className="mb-4 text-xl">Please Fill In Your details</h1>
         <div className="mb-4">
           <label htmlFor="fullName">Full Name</label>
           <input
@@ -81,10 +82,11 @@ useEffect(() => {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="phone">Phone number - Provide country code (+66/+88 ex.)</label>
+          <label htmlFor="phone">Contact - Phone</label>
           <input
             className="w-full"
             id="phone"
+            placeholder='Specify country code please (+66/+880 etc)'
             autoFocus
             {...register('phone', {
               required: 'phone number is required',
@@ -95,7 +97,7 @@ useEffect(() => {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address">Delivery Address Details</label>
           <input
             className="w-full"
             id="address"
@@ -122,10 +124,11 @@ useEffect(() => {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="postalCode">Postal Code</label>
+          <label htmlFor="postalCode">Whatsapp/Messenger/Line contact:</label>
           <input
             className="w-full"
             id="postalCode"
+            placeholder='ex.   whatsapp +6602...'
             {...register('postalCode', {
               required: 'Please enter postal code',
             })}
@@ -148,7 +151,8 @@ useEffect(() => {
           )}
         </div>
         <div className="mb-4 flex justify-between">
-          <button className="primary-button">Next</button>
+          <button className="ml-0 flex justify-center primary-button6 w-full"
+                ><Image src={`/images/rightside.webp`} width={40} height={40} className='mr-3'/> <p style={{ color: "black", fontSize: 25 }}>Proceed</p></button>
         </div>
       </form>
     </Layout>

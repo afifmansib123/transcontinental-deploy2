@@ -102,22 +102,22 @@ function CartScreen() {
           <div className="card p-5">
             <ul>
               <li>
-                <div className="pb-3 text-xl">
-                  ITEM PRICE - ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : BDT
-                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                <div className="card p-5" style={{color:"#040742"}}> <p className='flex justify-center'>
+                  ITEM PRICE  ({cartItems.reduce((a, c) => a + c.quantity, 0)} items) <br/>TOTAL : (
+                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)} taka) </p>
                 </div>
               </li>
               <li>
                 {LC && NotLC ? (<button
-                  onClick={() => toast("You Have LC and Direct Pay Items Together, Sperately Order them Please")}
-                  className="primary-button w-full"
-                >
-                  Cannot Proceed 
-                </button>) : (<button
+              className="ml-0 flex justify-center primary-button6 w-full flex-nowrap"
+              onClick={()=>{return toast.error("You have LC and Direct Pay items together. Please inquire them seperately")}}
+            >
+              <Image src={`/images/rightside.webp`} width={40} height={40} className='mr-2'/> <p className='flex-nowrap' style={{ color: "black", fontSize: 25 }}>Cannot Proceed</p>
+            </button>) : (<button
                   onClick={() => router.push('login?redirect=/shipping')}
-                  className="primary-button w-full"
-                >
-                  Proceed
+                  className="ml-0 flex justify-center primary-button6 w-full"
+                ><Image src={`/images/rightside.webp`} width={40} height={40} className='mr-3'/> <p style={{ color: "black", fontSize: 25 }}>Proceed</p>
+                  
                 </button>)}
               </li>
             </ul>

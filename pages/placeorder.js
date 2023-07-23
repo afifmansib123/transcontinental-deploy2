@@ -25,8 +25,8 @@ export default function PlaceOrderScreen() {
     );
   }
   
-  const shippingPrice = itemsPrice > 200 ? 0 : 15;
-  const taxPrice = round2(itemsPrice * 0.15);
+  const shippingPrice = round2(itemsPrice * 0.30);
+  const taxPrice = round2(itemsPrice * 0.20);
   const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
 
   const router = useRouter();
@@ -66,37 +66,38 @@ export default function PlaceOrderScreen() {
     }
   };
 
+  const LC = cartItems.some((item)=>item.payment==="LC")
+  const NotLC = cartItems.some((item)=>item.payment!=="LC")
+
   return (
     <Layout title="Place Order">
       <CheckoutWizard activeStep={3} />
-      <h1 className="mb-4 text-xl">Place Order</h1>
+      {LC && <h1 className="mb-4 text-xl">Your inquiry Details</h1>}
+      {NotLC && <h1 className="mb-4 text-xl">Place Order</h1>}
+      
       {!cartItems || cartItems.length === 0 ? (
   <div>
-    Cart is empty. <Link href="/">Go shopping</Link>
+    No items <Link href="/">Go Back</Link>
   </div>
 ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
             <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Shipping Address</h2>
-              <div>
-                {shippingAddress.fullName}, {shippingAddress.address},{' '}
-                {shippingAddress.city}, {shippingAddress.postalCode},{' '}
-                {shippingAddress.country}
+              <h2 className="mb-2 text-lg flex justify-center">Personal Info</h2>
+              <div className='flex justify-center'>
+                name :{shippingAddress.fullName}<br/>
+                adress : {shippingAddress.address}<br/>
+                city: {shippingAddress.city}<br/>
+                contact: {shippingAddress.postalCode}<br/>
+                country: {shippingAddress.country}<br/>
               </div>
               <div>
-                <Link href="/shipping">Edit</Link>
-              </div>
-            </div>
-            <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Payment Method</h2>
-              <div>{paymentMethod}</div>
-              <div>
-                <Link href="/payment">Edit</Link>
+                <Link href="/shipping" style={{color:"#6688D2", fontSize:30}}>Edit</Link>
               </div>
             </div>
             <div className="card overflow-x-auto p-5">
-              <h2 className="mb-2 text-lg">Order Items</h2>
+              {LC && (<h2 className="mb-2 text-lg">Inquiry Items</h2>)}
+              {NotLC && (<h2 className="mb-2 text-lg">Order Items</h2>)}
               <table className="min-w-full">
                 <thead className="border-b">
                   <tr>
@@ -152,32 +153,26 @@ export default function PlaceOrderScreen() {
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Tax</div>
-                    <div>To be Discussed</div>
+                    {LC && (<div>To be Discussed</div>)}
+                    {NotLC && (<div>BDT {itemsPrice*20/100}</div>)}
                   </div>
                 </li>
                 <li>
                   <div className="mb-2 flex justify-between">
                     <div>Shipping</div>
-                    <div>To Be Discussed</div>
+                    {LC && (<div>To be Discussed</div>)}
+                    {NotLC && (<div>BDT {itemsPrice*25/100}</div>)}
                   </div>
                 </li>
                 
                 <li>
+                  
                   <button
                     disabled={loading}
                     onClick={placeOrderHandler}
-                    className="primary-button w-full"
-                  >
-                    {loading ? 'Loading...' : 'Proceed To Import'}
-                  </button>
-                  <p>Dont have an import lisence?</p>
-                  <p>use our import services</p>
-                  <button
-                    disabled={loading}
-                    onClick={placeOrderHandler}
-                    className="primary-button1 w-full"
-                  >
-                    {loading ? 'Loading...' : 'TC IMPORT SERVICE'}
+                    className="ml-0 flex justify-center primary-button7 w-full flex-nowrap"
+                  ><p style={{ color: "black", fontSize: 25 }}>Lets Deal</p><Image src={`/images/deal.png`} width={40} height={40} className='ml-2'/> 
+                    
                   </button>
                 </li>
               </ul>

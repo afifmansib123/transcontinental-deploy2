@@ -121,6 +121,8 @@ function OrderScreen() {
     deliveredAt,
   } = order;
 
+  
+
   function createOrder(data, actions) {
     return actions.order
       .create({
@@ -170,6 +172,8 @@ function OrderScreen() {
     }
   }
 
+   
+
   return (
     <Layout title={`Order ${orderId}`}>
       <h1 className="mb-4 text-xl">{`Order ${orderId}`}</h1>
@@ -181,28 +185,19 @@ function OrderScreen() {
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
           <div className="card1  p-5 flex justify-center items-center" style={{backgroundColor:"#B4F2D5"}}><p style={{color:"green"}}>Your Order Has Been Recieved. Wait For Us to Contact You.</p></div>
-            <div className="card  p-5">
-              <h2 className="mb-2 text-lg">Shipping Address</h2>
-              <div>
-                {shippingAddress.fullName},{shippingAddress.phone}, {shippingAddress.address},{' '}
-                {shippingAddress.city}, {shippingAddress.postalCode},{' '}
-                {shippingAddress.country}
-              </div>
-              {isDelivered ? (
-                <div className="alert-success">Delivered at {deliveredAt}</div>
-              ) : (
-                <div className="alert-error">Not delivered</div>
-              )}
-            </div>
+            
 
             <div className="card p-5">
-              <h2 className="mb-2 text-lg">Payment Method</h2>
-              <div>{paymentMethod}</div>
+            
+              <div className='flex justify-center'>You Chose To Do {paymentMethod}</div>
+              {paymentMethod === "Direct Pay" && (<div>
               {isPaid ? (
                 <div className="alert-success">Paid at {paidAt}</div>
               ) : (
-                <div className="alert-error">Either You Did not Complete Debit/Credit/Paypal Payment or Chose other methods. Please wait for us to Contact you.</div>
-              )}
+                <div className="alert-error flex justify-center">Payment Not Recieved Yet</div>
+              )}</div>)}
+              {paymentMethod !== "Direct Pay" &&( <div className="alert-success flex justify-center">Our Customer Service will Contact You soon. Thank You For Choosing TC.</div>)}
+            
             </div>
 
             <div className="card overflow-x-auto p-5">
@@ -249,6 +244,7 @@ function OrderScreen() {
             </div>
           </div>
           <div>
+            {paymentMethod === "Direct Pay" && (<div>
             <div className="card  p-5">
               <h2 className="mb-2 text-lg">Order Summary</h2>
               <ul>
@@ -305,78 +301,34 @@ function OrderScreen() {
                 )}
               </ul>
             </div>
-            
-            <div className="card  p-6 flex items-center" style={{color:"RED", backgroundColor:"#D8F35E"}} >
-              <h2 className="mb-2 text-lg " style={{color:"RED", backgroundColor:"#D1FF00"}}>ATTENTION - PLEASE READ! </h2>
-              <p>Regarding alternative payment methods other than debit/credit cards or PayPal, our esteemed Customer Service team will promptly reach out to you. If your payment status displays as unpaid, Wait for our customer service to contact you.</p>
-            </div>
 
-            <div className="card  p-6 flex items-center" style={{color:"RED", backgroundColor:"#D8F35E"}} >
-              <p>debit/credit/paypal এর বাইরে যেকোনো পেমেন্ট পদ্ধতির সম্পর্কে, আমাদের customer service শীঘ্রই আপনার সাথে যোগাযোগ করবে। যদি আপনার পেমেন্ট unpaid হিসাবে প্রদর্শিত হয়, অনুগ্রহ করে আমাদের যোগাযোগের অপেক্ষা করুন।</p>
-            </div>
+            </div>)}
 
-            <div className="card p-5">
-              <h2 className="mb-2 text-lg">Available Payment Methods : </h2>
-            </div>
+            {paymentMethod !=="Direct Pay" && (<div className="card  p-5">
+            <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact And Inspect</p><br />
+            <button
+              className="ml-0 flex justify-center primary-button4 w-full"
+              onClick={()=>{window.location.href=`tel:${+660932503470}`}}
+            >
+              <Image src={`/images/call2.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "white", fontSize: 22 }}>Call</p><br />
+            </button> <br />
+            <button
+              className="ml-0 flex justify-center primary-button2 w-full"
+              onClick={()=>{window.location.href=`https://wa.me/+66932503470`}}
+            >
+              <Image src={`/images/wasap.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "White", fontSize: 22 }}>Whatsapp</p><br />
+            </button> <br />
 
-            <div className="card1  p-6  w-full" style = {{backgroundColor:"#D9F9EA"}} >
-            <Image className='mr-2'
-                            src={`/images/bank.png`}
-                            alt={"putki"}
-                            width={80}
-                            height={80}
-                            style={{
-                              maxWidth: '100%',
-                              height: 'auto',
-                            }}/><tr/> Krungsi Bank (Thailand Only) Prompt-pay/Transfer : 0932503470
-                      
-            </div>
-
-            <div className="card1  p-6  w-full" style = {{backgroundColor:"#D9F9EA"}} >
-            <Image className='mr-2'
-                            src={`/images/bikash.png`}
-                            alt={"putki"}
-                            width={80}
-                            height={80}
-                            style={{
-                              maxWidth: '100%',
-                              height: 'auto',
-                            }}/><tr/> Bikash (BD Only) - xxx
-                      
-            </div>
-
-            <div className="card1  p-6  w-full" style = {{backgroundColor:"#D9F9EA"}} >
-            <Image className='mr-2'
-                            src={`/images/trust.png`}
-                            alt={"putki"}
-                            width={80}
-                            height={80}
-                            style={{
-                              maxWidth: '100%',
-                              height: 'auto',
-                            }}/><tr/> Bikash (BD Only) - xxx
-                      
-            </div>
-
-           
-            <Link href={'https://wa.me/qr/5F5HNMVGOJ32N1'}>
-            <div className="card1  p-6  w-full" style = {{backgroundColor:"#D9F9EA"}} >
+            <button
+              className="ml-0 flex justify-center primary-button3 w-full"
+              onClick={()=>{window.location.href=`https://m.me/afif.mansib`}}
+            >
+              <Image src={`/images/ms1.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "black", fontSize: 22 }}
+              >Messenger</p><br />
+            </button>
+            </div>)}
 
 
-            <Image className='mr-2'
-                            src={`/images/lc.jpeg`}
-                            alt={"putki"}
-                            width={80}
-                            height={80}
-                            style={{
-                              maxWidth: '100%',
-                              height: 'auto',
-                            }}/><tr/> Letter of Credit
-                      
-            </div>
-            </Link>
-
-            
           </div>
         </div>
       )}

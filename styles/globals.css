@@ -48,6 +48,9 @@ a {
 .primary-button6 {
   @apply rounded bg-gray-400 py-2 px-4 shadow outline-none hover:bg-gray-500 active:bg-gray-800;
 }
+.primary-button7 {
+  @apply rounded bg-green-400 py-2 px-4 shadow outline-none hover:bg-green-500 active:bg-green-800;
+}
 .default-button {
   @apply rounded bg-blue-500 py-2  px-4 text-yellow-200 shadow outline-none hover:bg-blue-700  active:bg-gray-300;
 }

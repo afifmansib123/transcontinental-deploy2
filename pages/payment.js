@@ -5,6 +5,7 @@ import Cookies from 'js-cookie';
 import CheckoutWizard from '../components/CheckoutWizard';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
+import Image from 'next/image';
 
 export default function PaymentScreen() {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
@@ -42,8 +43,9 @@ export default function PaymentScreen() {
     <Layout title="Payment Method">
       <CheckoutWizard activeStep={2} />
       <form className="mx-auto max-w-screen-md" onSubmit={submitHandler}>
-        <h1 className="mb-4 text-xl">Payment Method</h1>
-        {['QR/Prompt-pay','Bikash', 'LC', 'Bank Transfer', 'PayPal', 'Cash On Delivery'].map((payment) => (
+        <h1 className="mb-4 text-xl flex justify-center">In Case Of International Trades</h1>
+        <h1 className="mb-4 text-xl flex justify-center">Please Make sure Once More Your Way Of Payment</h1>
+        {['Direct Pay', 'LC/Bank Trasfer/TC International Payment Services'].map((payment) => (
           <div key={payment} className="mb-4">
             <input
               name="paymentMethod"
@@ -63,11 +65,11 @@ export default function PaymentScreen() {
           <button
             onClick={() => router.push('/shipping')}
             type="button"
-            className="default-button"
-          >
-            Back
-          </button>
-          <button className="primary-button">Next</button>
+            className="ml-0 flex justify-center primary-button6 "
+          > <Image src={`/images/lefty.png`} width={40} height={40} className='mr-2'/> <p style={{ color: "black", fontSize: 25 }}>Back</p>
+           
+          </button><br/>
+          <button className="ml-0 flex justify-center primary-button6 "><p style={{ color: "black", fontSize: 25 }}>Next</p><Image src={`/images/rightside.webp`} width={40} height={40} className='ml-2'/> </button>
         </div>
       </form>
     </Layout>
