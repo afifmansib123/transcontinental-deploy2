@@ -83,10 +83,10 @@ export default function LoginScreen() {
           )}
         </div>
         <div className="flex justify-center mb-4 ">
-          <button className="primary-button w-full" style={{fontSize:20}}>Login</button>
+          <button className="primary-button1 w-full" style={{fontSize:20}}>Login</button>
         </div>
         
-        <div className="flex justify-center mb-4 ">
+        <div className="flex justify-center mb-4">
         <GoogleButton />
         </div>
         <br/>
