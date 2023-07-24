@@ -39,7 +39,7 @@ function CartScreen() {
       
       {cartItems.length === 0 ? (
         <div>
-          Cart is empty. <Link href="/">Go shopping</Link>
+          Cart is empty. <Link href="/">Go To Items</Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
@@ -108,12 +108,12 @@ function CartScreen() {
                 </div>
               </li>
               <li>
-                {LC && NotLC ? (<button
+                {LC && NotLC ? (<button style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
               className="ml-0 flex justify-center primary-button6 w-full flex-nowrap"
               onClick={()=>{return toast.error("You have LC and Direct Pay items together. Please inquire them seperately")}}
             >
               <Image src={`/images/rightside.webp`} width={40} height={40} className='mr-2'/> <p className='flex-nowrap' style={{ color: "black", fontSize: 25 }}>Cannot Proceed</p>
-            </button>) : (<button
+            </button>) : (<button style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
                   onClick={() => router.push('login?redirect=/shipping')}
                   className="ml-0 flex justify-center primary-button6 w-full"
                 ><Image src={`/images/rightside.webp`} width={40} height={40} className='mr-3'/> <p style={{ color: "black", fontSize: 25 }}>Proceed</p>

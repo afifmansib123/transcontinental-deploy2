@@ -27,7 +27,7 @@ export default function ProductItem({ product, addToCartHandler }) {
         <Link href={`/product/${product.slug}`}>
 
           
-        <button className="w-full rounded flex justify-center hover:backdrop-blur-10xl" style={{fontSize:20}}>
+        <button className="w-full rounded flex justify-center hover:backdrop-blur-10xl" style={{fontSize:18,color:"white",border:"1px solid white",padding:"10px", borderRadius: "4px"}}>
         <p className="ml-2 mb-0 flex justify-center" style={{color: "white"}}>See Details</p>
         <Image className='ml-2' src={`/images/slideright.png`} alt="google logo" height={25} width={25}/>
         </button>

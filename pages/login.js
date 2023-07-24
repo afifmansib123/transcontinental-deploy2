@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import { getError } from '../utils/error';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
-////
+import Image from 'next/image';
 import { GoogleButton } from '../components/googlebutton';
 
 export default function LoginScreen() {
@@ -82,32 +82,34 @@ export default function LoginScreen() {
             <div className="text-red-500 ">{errors.password.message}</div>
           )}
         </div>
-        <div className="flex justify-center mb-4 ">
-          <button className="primary-button1 w-full" style={{fontSize:20}}>Login</button>
+        <div className="flex justify-center mb-2">
+          <button className="primary-button1 w-full flex flex-nowrap justify-center " style={{fontSize:18,color:"black",border:"1px solid black",padding:"8px", borderRadius: "4px"}}>
+          <Image src={`/images/login1.png`} alt="google logo" height={30} width={30} className='mr-4'/>
+            Login</button>
         </div>
         
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-2">
         <GoogleButton />
         </div>
-        <br/>
+        
 
-        <div className="flex justify-center mb-4 " style={{fontSize:20}}>
+        <div className="flex justify-center mb-2" style={{ fontSize:20}}>
+        <Link className="flex justify-center"  href={`/register?redirect=${redirect || '/'}`}>
           Don&apos;t have an account? &nbsp;
-          <Link className="flex justify-center mb-4" style={{color:"green"}} href={`/register?redirect=${redirect || '/'}`}>Register importer account</Link>
-          
+          <p style={{color:"green", fontSize:20}}>Register importer account</p>
+          </Link>
         </div>
 
         
-        <div className="flex justify-center mb-4">
-        <p style={{fontSize:20}}>Start selling?
-
-        <Link style={{color:"green"}} href={`/registershop`}>
-          
-         Open a Shop/Exporter Account 
+        <div className="flex flex-nowrap justify-center mb-4">
+        <Link  href={`/registershop`} >
+        <p style={{fontSize:20, color: "green"}} >Start selling?
+Open a Shop/Exporter Account 
          
           
-          </Link>
+          
           </p>
+          </Link>
           </div>
       </form>
     </Layout>

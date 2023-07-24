@@ -170,7 +170,7 @@ export default function PlaceOrderScreen() {
                   <button
                     disabled={loading}
                     onClick={placeOrderHandler}
-                    className="ml-0 flex justify-center primary-button7 w-full flex-nowrap"
+                    className="ml-0 flex justify-center primary-button7 w-full flex-nowrap" style={{border:"1px solid black",padding:"10px", borderRadius: "4px", fontSize:20}}
                   ><p style={{ color: "black", fontSize: 25 }}>Lets Deal</p><Image src={`/images/deal.png`} width={40} height={40} className='ml-2'/> 
                     
                   </button>

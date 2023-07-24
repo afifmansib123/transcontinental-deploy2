@@ -306,20 +306,20 @@ function OrderScreen() {
 
             {paymentMethod !=="Direct Pay" && (<div className="card  p-5">
             <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact And Inspect</p><br />
-            <button
+            <button style={{border:"1px solid black",padding:"10px", borderRadius: "4px", fontSize:20}}
               className="ml-0 flex justify-center primary-button4 w-full"
               onClick={()=>{window.location.href=`tel:${+660932503470}`}}
             >
               <Image src={`/images/call2.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "white", fontSize: 22 }}>Call</p><br />
             </button> <br />
-            <button
+            <button style={{border:"1px solid black",padding:"10px", borderRadius: "4px", fontSize:20}}
               className="ml-0 flex justify-center primary-button2 w-full"
               onClick={()=>{window.location.href=`https://wa.me/+66932503470`}}
             >
               <Image src={`/images/wasap.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "White", fontSize: 22 }}>Whatsapp</p><br />
             </button> <br />
 
-            <button
+            <button style={{border:"1px solid black",padding:"10px", borderRadius: "4px", fontSize:20}}
               className="ml-0 flex justify-center primary-button3 w-full"
               onClick={()=>{window.location.href=`https://m.me/afif.mansib`}}
             >

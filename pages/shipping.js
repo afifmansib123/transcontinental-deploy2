@@ -151,7 +151,7 @@ useEffect(() => {
           )}
         </div>
         <div className="mb-4 flex justify-between">
-          <button className="ml-0 flex justify-center primary-button6 w-full"
+          <button className="ml-0 flex justify-center primary-button6 w-full" style={{border:"1px solid black",padding:"10px", borderRadius: "4px", fontSize:20}}
                 ><Image src={`/images/rightside.webp`} width={40} height={40} className='mr-3'/> <p style={{ color: "black", fontSize: 25 }}>Proceed</p></button>
         </div>
       </form>

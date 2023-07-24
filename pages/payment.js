@@ -65,11 +65,11 @@ export default function PaymentScreen() {
           <button
             onClick={() => router.push('/shipping')}
             type="button"
-            className="ml-0 flex justify-center primary-button6 "
+            className="ml-0 flex justify-center primary-button6 " style={{border:"1px solid black",padding:"10px", borderRadius: "4px", fontSize:20}}
           > <Image src={`/images/lefty.png`} width={40} height={40} className='mr-2'/> <p style={{ color: "black", fontSize: 25 }}>Back</p>
            
           </button><br/>
-          <button className="ml-0 flex justify-center primary-button6 "><p style={{ color: "black", fontSize: 25 }}>Next</p><Image src={`/images/rightside.webp`} width={40} height={40} className='ml-2'/> </button>
+          <button className="ml-0 flex justify-center primary-button6 " style={{border:"1px solid black",padding:"10px", borderRadius: "4px", fontSize:20}}><p style={{ color: "black", fontSize: 25 }}>Next</p><Image src={`/images/rightside.webp`} width={40} height={40} className='ml-2'/> </button>
         </div>
       </form>
     </Layout>

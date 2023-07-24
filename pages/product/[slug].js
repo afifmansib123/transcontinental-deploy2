@@ -112,14 +112,14 @@ export default function ProductScreen(props) {
             { product.payment !== "LC"?(
             <button
               className="ml-0 flex justify-center primary-button w-full"
-              onClick={addToCartHandler}
+              onClick={addToCartHandler} style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
             >
               <Image src={`/images/cartmain2.png`} width={40} height={40} className='mr-3' /> <p style={{ color: "white", fontSize: 25 }}>Add Item</p>
             </button>) : (<div><button
               className="ml-0 flex justify-center primary-button6 w-full"
-              onClick={addToCartHandler}
+              onClick={addToCartHandler} style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
             >
-              <Image src={`/images/rightside.webp`} width={40} height={40} className='mr-3'/> <p style={{ color: "black", fontSize: 25 }}>Proceed</p>
+              <Image src={`/images/rightside.webp`} width={40} height={40} className='mr-3'/> <p style={{ color: "black", fontSize: 25 }} >Proceed</p>
             </button><br></br>
             <p className='flex justify-center flex-nowrap'>This is an Import Item</p>
             <p className='flex justify-center flex-nowrap'>Cant be bought directly</p>
@@ -134,21 +134,21 @@ export default function ProductScreen(props) {
             <br />
             <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact And Inspect</p><br />
             <button
-              className="ml-0 flex justify-center primary-button4 w-full"
+              className="ml-0 flex justify-center primary-button4 w-full" style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
               onClick={()=>{window.location.href=`tel:${+660932503470}`}}
             >
               <Image src={`/images/call2.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "white", fontSize: 22 }}>Call</p><br />
             </button> <br />
             <button
               className="ml-0 flex justify-center primary-button2 w-full"
-              onClick={()=>{window.location.href=`https://wa.me/+66932503470`}}
+              onClick={()=>{window.location.href=`https://wa.me/+66932503470`}} style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
             >
               <Image src={`/images/wasap.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "White", fontSize: 22 }}>Whatsapp</p><br />
             </button> <br />
 
             <button
               className="ml-0 flex justify-center primary-button3 w-full"
-              onClick={()=>{window.location.href=`https://m.me/afif.mansib`}}
+              onClick={()=>{window.location.href=`https://m.me/afif.mansib`}} style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
             >
               <Image src={`/images/ms1.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "black", fontSize: 22 }}
               >Messenger</p><br />

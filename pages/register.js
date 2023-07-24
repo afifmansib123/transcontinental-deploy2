@@ -7,6 +7,7 @@ import { getError } from '../utils/error';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import Image from 'next/image';
 
 export default function LoginScreen() {
   const { data: session } = useSession();
@@ -52,7 +53,7 @@ export default function LoginScreen() {
         className="mx-auto max-w-screen-md"
         onSubmit={handleSubmit(submitHandler)}
       >
-        <h1 className="mb-4 text-xl">Create Account</h1>
+        <h1 className="mb-4 text-xl flex justify-center">Create Account</h1>
         <div className="mb-4">
           <label htmlFor="name">Name</label>
           <input
@@ -130,16 +131,19 @@ export default function LoginScreen() {
         </div>
 
         <div className="mb-4 ">
-          <button className="primary-button">Register</button>
+          <button className="flex flex-nowrap justify-center mb-2 w-full primary-button8" style={{border:"1px solid black",padding:"10px", borderRadius: "4px", fontSize:20}}><Image src={`/images/register4.jpeg`} alt="google logo" height={30} width={30} className='mr-4'/>Register</button>
         </div>
-        <div className="mb-4 ">
+        <div className="flex justify-center mb-4">
+        <p style={{fontSize:20}}>Start selling?
+
+        <Link style={{color:"green"}} href={`/registershop`} >
           
-          <Link className="linktor" legacyBehavior href={`/registershop`} style={{color:"green"}}>
+         Open a Shop/Exporter Account 
+         
           
-            Open a Shop/Exporter Account
-            
-            </Link>
-        </div>
+          </Link>
+          </p>
+          </div>
       </form>
     </Layout>
   );

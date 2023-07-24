@@ -11,6 +11,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
+//test-db-6
+
 export default function Home({ products, featuredProducts }) {
 
   const pageSize = 8; // Number of products to display per page
