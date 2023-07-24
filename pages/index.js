@@ -148,9 +148,9 @@ export default function Home({ products, featuredProducts }) {
 
       <div style={{ position: "relative" }}>
         <Image src={`/images/background4.gif`} width={100} height={100} className="full-screen"></Image>
-        <div className="image-overlay mb-0 mt-0">
-          <p className='flex justify-center mb-0 mt-0' style={{ fontSize: 21, color: "#1C448C" }}>WHO ARE WE?</p>
-          <p className="image-overlay-text" style={{ color: "#15336A" }}>TC is the leading import-export trade hub in Bangladesh, with HQ in both Thailand. Our platform facilitates import-export operations across diverse industries personalizing virtual storefronts,robust logistics networks, and dedicated support in smooth transactions. Committed to sustainability,trade and ethical sourcing.<Link style={{ color: "#D14343" }} href={`/aboutus`}>...see more</Link></p>
+        <div className="image-overlay">
+          <p className='flex flex-nowrap justify-center' style={{ fontSize: 13, color: "#1C448C" }}>What Is TC?</p>
+          <p className="image-overlay-text" style={{fontSize:12, color: "#15336A" }}>We are the premier cross-border trade hub in South East Asia, headquartered in Bangkok and Dhaka. Our mission is to facilitate seamless global trade for importers and exporters, offering the best prices and services to our esteemed customers worldwide.We deal with Heavy Machinery, Cars, Raw Materials, and various import items like steel, excavators, and construction materials. Choose a product from our website, and we'll facilitate the buying and import for you or provide guidance for self-importation.<Link style={{ color: "#D14343" }} href={`/aboutus`}>..see more</Link></p>
         </div>
       </div>
 
