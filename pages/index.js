@@ -65,7 +65,7 @@ export default function Home({ products, featuredProducts, carProducts }) {
             <Link href={`#`} passHref className="flex">
               <img src={product.banner} alt={product.name} className="carousel-image" />
 
-              {index === 1 && <div className="overlay-text" style={{ color: "#072644", fontSize: 30, top: 200 }}>First Trading Hub Of South-East Asia<br />Import Export Trade And Meet<br></br>Hundreds of Vendors Worldwide</div>}
+              {index === 1 && <div className="overlay-text" style={{ color: "#072644", fontSize: 30, top: 200 }}></div>}
             </Link>
           </div>
         ))}
