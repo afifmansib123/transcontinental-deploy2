@@ -93,36 +93,36 @@ export default function Home({ products, featuredProducts, carProducts }) {
         <div class="dropdown mb-2">
           <Image class="dropbtn" src={`/images/excicon4.jpeg`} height={250} width={250}></Image>
           <div class="dropdown-content " >
-            <a href="#"><Image class="dropbtn" src={`/images/miniicon1.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>(3~5) Tons </p></a>
-            <a href="#"><Image class="dropbtn" src={`/images/microexc.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(6~8) Tons </p></a>
-            <a href="#"><Image class="dropbtn" src={`/images/third.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(10-16) Tons </p></a>
-            <a href="#"><Image class="dropbtn" src={`/images/fourth.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(20) Tons </p></a><br/>
+            <a href={`search?query=&category=threemachine`}><Image class="dropbtn" src={`/images/miniicon1.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>(3~5) Tons </p></a>
+            <a href={`search?query=&category=sixmachine`}><Image class="dropbtn" src={`/images/microexc.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(6~8) Tons </p></a>
+            <a href={`search?query=&category=tenmachine`}><Image class="dropbtn" src={`/images/third.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(10-16) Tons </p></a>
+            <a href={`search?query=&category=twentymachine`}><Image class="dropbtn" src={`/images/fourth.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(20) Tons </p></a><br/>
           </div>
         </div>
 
         <div class="dropdown">
           <Image class="dropbtn" src={`/images/grader2.png`} height={250} width={250}></Image>
           <div class="dropdown-content">
-          <a href="#"><Image class="dropbtn" src={`/images/graders10.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Graders</p></a>
-            <a href="#"><Image class="dropbtn" src={`/images/rollers2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Rollers</p></a>
-            <a href="#"><Image class="dropbtn" src={`/images/paver1.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Pavers</p></a><br/>
+          <a href={`search?query=&category=grader`}><Image class="dropbtn" src={`/images/graders10.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Graders</p></a>
+            <a href={`search?query=&category=machine`}><Image class="dropbtn" src={`/images/rollers2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Rollers</p></a>
+            <a href={`search?query=&category=paver`}><Image class="dropbtn" src={`/images/paver1.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Pavers</p></a><br/>
           </div>
         </div>
 
         <div class="dropdown">
           <Image class="dropbtn" src={`/images/crane3.png`} height={250} width={250}></Image>
           <div class="dropdown-content">
-          <a href="#"><Image class="dropbtn" src={`/images/cranes6.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Cranes</p></a>
-            <a href="#"><Image class="dropbtn" src={`/images/wheel2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Wheel-loaders</p></a>
-            <a href="#"><Image class="dropbtn" src={`/images/tractor.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Tractors</p></a><br/>
+          <a href={`search?query=&category=cranes`}><Image class="dropbtn" src={`/images/cranes6.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Cranes</p></a>
+            <a href={`search?query=&category=wheelloader`}><Image class="dropbtn" src={`/images/wheel2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Wheel-loaders</p></a>
+            <a href={`search?query=&category=tractor`}><Image class="dropbtn" src={`/images/tractor.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Tractors</p></a><br/>
           </div>
         </div>
 
         <div class="dropdown">
           <Image class="dropbtn" src={`/images/parts2.jpeg`} height={250} width={250}></Image>
           <div class="dropdown-content">
-          <a href="#"><Image class="dropbtn" src={`/images/blades.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Spare Parts</p></a>
-            <a href="#"><Image class="dropbtn" src={`/images/more.webp`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>many more</p></a>
+          <a href={`search?query=&category=machine parts`}><Image class="dropbtn" src={`/images/blades.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Spare Parts</p></a>
+            <a href={`search?query=&category=`}><Image class="dropbtn" src={`/images/more.webp`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>many more</p></a>
             <br/>
           </div>
         </div>

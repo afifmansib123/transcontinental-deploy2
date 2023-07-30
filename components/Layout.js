@@ -237,24 +237,54 @@ export default function Layout({ title, children }) {
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`#`}>ALL ITEM CATAGORIES</Link>
                 </li><br/>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>machine</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Heavy Machinaries</Link>
                 </li>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=car`}>Car</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Mediam & light Machinaries</Link>
                 </li>
                 <li>
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=excavator`}>Excavator</Link>
                 </li>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=vegetables`}>Vegetables</Link>
-                </li><br/>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=newcar`}>New Car</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=oldcar`}>2nd Hand Car</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=thairung`}>Thairung Car</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=supercar`}>Super Cars</Link>
+                </li>
                 
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=fruits`}>Fruits</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=vegetables`}>Vegetables</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=raw`}>Raw Metarials</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=construction`}>Construction Items</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=car parts`}>Car Spare Parts</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine parts`}>Machinary Spare Parts</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=tools`}>Tools</Link>
+                </li>
+                <br/>
                 <li style={{ display: "flex", justifyContent: "center" , color: "white"}}>
                 <button className='flex flex-nowrap ml-2' style={{border:"1px solid white",padding:"10px", borderRadius: "4px"}} onClick={toggleMenu}>
                   Close <XCircleIcon className="ml-2 h-7 w-7" />
                 </button>
                 </li>
-               
               </ul>
             </div>
           </div>
