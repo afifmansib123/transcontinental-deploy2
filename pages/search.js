@@ -199,7 +199,7 @@ export default function Search(props) {
                 />
               ))}
             </div>
-            <ul className="flex">
+            <ul className="pagination flex justify-center">
               {products.length > 0 &&
                 [...Array(pages).keys()].map((pageNumber) => (
                   <li key={pageNumber}>

@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
 import NavbarBackground from '../public/images/navbar.png';
 import Image from 'next/image';
+import XCircleIcon from '@heroicons/react/24/outline/XCircleIcon';
 
 
 
@@ -58,6 +59,7 @@ export default function Layout({ title, children }) {
         <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css. That's a common CDN URL for loading Font Awesome 4.7.0."></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
 
       <ToastContainer position="bottom-center" limit={1} />
@@ -116,9 +118,9 @@ export default function Layout({ title, children }) {
 
           <div className="flex items-center justify-center pr-4 ">
             
-              <button  className="button1 flex items-center" onClick={toggleMenu}>
+              <button  className="button1 flex items-center" onClick={toggleMenu} style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}>
                 <Image src={`/images/boxpic.png`} alt="hello" height={30} width={25} />
-                <span className=" flex items-center ml-4 mr-4" style={{fontSize:23, color: "#4A4F48"}}>All catagories</span>
+                <span className=" flex items-center ml-4 mr-4" style={{fontSize:23, color: "black"}}>All catagories</span>
   
               </button>
               <br/>
@@ -231,21 +233,28 @@ export default function Layout({ title, children }) {
           <div className={`sliding-menu ${isOpen ? 'menu-open' : ''}`}>
             <div className="menu-content">
               <ul>
+              <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`#`}>ALL ITEM CATAGORIES</Link>
+                </li><br/>
                 <li>
-                  <Link href={`search?query=&category=machine`}>machine</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>machine</Link>
                 </li>
                 <li>
-                  <Link href={`search?query=&category=car`}>Car</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=car`}>Car</Link>
                 </li>
                 <li>
-                  <Link href={`search?query=&category=excavator`}>Excavator</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=excavator`}>Excavator</Link>
                 </li>
                 <li>
-                  <Link href={`search?query=&category=vegetables`}>Vegetables</Link>
-                </li>
-                <button className="button1" onClick={toggleMenu}>
-                  Close X
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=vegetables`}>Vegetables</Link>
+                </li><br/>
+                
+                <li style={{ display: "flex", justifyContent: "center" , color: "white"}}>
+                <button className='flex flex-nowrap ml-2' style={{border:"1px solid white",padding:"10px", borderRadius: "4px"}} onClick={toggleMenu}>
+                  Close <XCircleIcon className="ml-2 h-7 w-7" />
                 </button>
+                </li>
+               
               </ul>
             </div>
           </div>
@@ -266,8 +275,14 @@ export default function Layout({ title, children }) {
         </div>
 
 
-        <footer className="flex h-10 justify-center items-center shadow-inner">
-          <p>Copyright © Afif Mansib Chowdhury</p>
+        <footer className="flex h-20 justify-center items-center shadow-inner mt-4" style={{backgroundColor: "#A2B0BC"}}>
+          
+
+<a href="#" class="fa fa-facebook mr-2"></a>
+<a href="#" class="fa fa-instagram mr-2"></a>
+<a href="#" class="fa fa-linkedin mr-2"></a>
+<a href="#" class="fa fa-youtube mr-2"></a><br/>
+          
         </footer>
       </div>
 

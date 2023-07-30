@@ -31,7 +31,7 @@ a {
 }
 
 .primary-button {
-  @apply rounded bg-blue-600 py-2 px-4 shadow outline-none hover:bg-blue-900 active:bg-blue-950;
+  @apply rounded bg-blue-500 py-2 px-4 shadow outline-none hover:bg-blue-600 active:bg-blue-700;
 }
 .primary-button2 {
   @apply rounded bg-green-700 py-2 px-4 shadow outline-none hover:bg-green-800 active:bg-green-900;
@@ -123,15 +123,15 @@ textarea {
   left: -100%; /* Initially hides the menu off-screen */
   width: 40%; /* Adjust the width as desired */
   height: 100vh; /* Takes up the full height of the screen */
-  background-color: #B0CBFC
+  background-color:    #4B7DC7   ;
   ; /* Set the background color */
-  transition: left 0.3s ease; /* Add a smooth sliding animation */
+  transition: left 0.5s ease; /* Add a smooth sliding animation */
   z-index: 9999
 }
 
 @media (min-width: 768px) {
   .sliding-menu {
-    width: 25%; /* Adjust the width for larger screens */
+    width: 15%; /* Adjust the width for larger screens */
     left: -100%; /* Initially hides the menu off-screen for larger screens */
   }
 }
@@ -212,13 +212,13 @@ textarea {
 .pagination button {
   padding: 0.5rem 1rem;
   margin: 0 0.25rem;
-  border: 1px solid #ffb908;
+  border: 1px solid #ce9811;
   cursor: pointer;
-  background-color: rgb(34, 129, 184);
+  background-color: #D2DFF3;
 }
 
 .pagination button.active {
-  background-color: #003268;
+  background-color: #7BA6E8;
   color: white;
 }
 
@@ -289,12 +289,22 @@ top: 0
   padding: 10px;
 
 }
+.image-overlay1 {
+  position:absolute;
+  top: 10%;
+  left: 90%;
+  transform: translate(-70%, -10%);
+  background-color: white;
+  padding: 20px;
+  block-size: auto;
+}
 
 .image-overlay-text {
   color: black;
   font-size: 16px;
   margin: 0;
 }
+
 
 /* Dropdown Button */
 .dropbtn {
@@ -352,6 +362,42 @@ top: 0
   }
 }
 
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
 
 
 

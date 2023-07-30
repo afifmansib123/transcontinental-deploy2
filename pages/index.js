@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 //test-db-6
 
-export default function Home({ products, featuredProducts }) {
+export default function Home({ products, featuredProducts, carProducts }) {
 
   const pageSize = 8; // Number of products to display per page
   const [currentPage, setCurrentPage] = useState(1);
@@ -55,8 +55,8 @@ export default function Home({ products, featuredProducts }) {
     <Layout title="Home Page">
 
       <div className='welcome-header'>
-        <h1 className='flex justify-center' style={{ fontSize: 35, color: "white", whiteSpace: "nowrap" }}>NO.1 BUSINESS PORTAL OF ASIA</h1>
-        <h1 className='flex justify-center' style={{ fontSize: 20, color: "white", whiteSpace: "nowrap" }}>IMPORT EXPORT & TRADE</h1>
+        <h1 className='flex justify-center' style={{ fontSize: 35, color: "white", whiteSpace: "nowrap" , border:"1px solid white",padding:"10px", borderRadius: "4px"}}>NO.1 BUSINESS PORTAL OF ASIA</h1>
+        <h1 className='flex justify-center mt-1' style={{ fontSize: 20, color: "white", whiteSpace: "nowrap" , border:"1px solid white",padding:"0px", borderRadius: "0px" }}>IMPORT EXPORT & TRADE</h1>
       </div>
 
       <Carousel showThumbs={false} autoPlay interval={1700} className="full-screen object-fill" style={{ width: '100%', height: '100%' }}>
@@ -158,24 +158,27 @@ export default function Home({ products, featuredProducts }) {
 
 
 
-      <h2 className="h2 my-4 flex justify-center" style={{ color: "#0C3B7E", fontSize: 30 }}>Latest Arrivals</h2>
+      <h2 className="h2 my-4 flex flex-nowrap justify-center" style={{ color: "#0C3B7E", fontSize: 30 }}>TC Car Market for Car Importers</h2>
+      <h2 className="h2 my-4 flex flex-nowrap justify-center" style={{ color: "#0C3B7E", fontSize: 20 }}>IMPORT NEW OR OLD CARS</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {productsToShow.filter((product) => product.category === "excavator")
-          .slice(0, 4)
-          .map((product) => (
-            <ProductItem
-              product={product}
-              key={product.slug}
-              addToCartHandler={addToCartHandler}
-            ></ProductItem>
-          ))}
+      {carProducts && carProducts.slice(0, 4).map((product) => (
+          <ProductItem
+            product={product}
+            key={product.slug}
+            addToCartHandler={addToCartHandler}
+          ></ProductItem>
+        ))}
 
       </div>
 
+      <div style={{ position: "relative" }}>
+        <Image src={`/images/open.gif`} width={100} height={100} className="full-screen"></Image>
+        <div className="image-overlay1 flex flex-nowrap">
+          <p>We Provide Exporters / new Businessmen to Use Our Platforms to Sell Their Products.<br/> <Link className='flex justify-center flex-nowrap'   style={{ color: "#13545F" , backgroundColor:"#2D99AA", border:"1px solid black", borderRadius: "4px" }} href={`/registershop`}>OPEN SHOP</Link></p>
+        </div>
+      </div>
 
-
-
-      <div className="pagination">
+      <div className="pagination flex justify-center">
         {Array.from({ length: Math.ceil(products.length / pageSize) }).map((_, index) => (
           <button
             key={index}
@@ -194,10 +197,13 @@ export async function getServerSideProps() {
   await db.connect();
   const products = await Product.find().lean();
   const featuredProducts = await Product.find({ isFeatured: true }).lean();
+  const carProducts = products.filter((product) => product.category === "car");
+
   return {
     props: {
       featuredProducts: featuredProducts.map(db.convertDocToObj),
       products: products.map(db.convertDocToObj),
+      carProducts: carProducts.map(db.convertDocToObj),
     },
   };
 }

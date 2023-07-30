@@ -167,6 +167,7 @@ const data = {
       rating: 2.4,
       numReviews: 14,
       countInStock: 2,
+      isFeatured: true,
       description: 'One of the revolutions of Automotive Industry - Thailand Manufactured Thairung SUV',
     },
     {
