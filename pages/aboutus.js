@@ -17,6 +17,40 @@ Our core focus lies in connecting importers and exporters across the South East 
 Explore our user-friendly website to effortlessly browse through a myriad of products and take advantage of our streamlined buying and importation process. Trust in our dedicated team, committed to making your trading experience efficient, successful, and profitable. Join us on this transformative journey and embrace endless possibilities in the world of global trade.</p>
 
 <br></br>
+
+<h2 className="w-full flex justify-center" style={{fontSize:25, color: "#2F4993"}}>Meet the Team</h2><br/>
+<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6 justify-center">
+<p className="flex items-center justify-center">Maj. Mannan</p>
+<p className="flex items-center justify-center">Dr. Chayapol</p>
+<p className="flex items-center justify-center">Afif</p>
+<p className="flex items-center justify-center">Mohin</p>
+<p className="flex items-center justify-center">Saad</p>
+<p className="flex items-center justify-center">Litapat</p>
+</div>
+<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6 justify-center">
+<p className="flex items-center justify-center">Chairman</p>
+<p className="flex items-center justify-center">CTO</p>
+<p className="flex items-center justify-center">Founder & CEO</p>
+<p className="flex items-center justify-center">CMO</p>
+<p className="flex items-center justify-center">COO</p>
+<p className="flex items-center justify-center">Country Manager</p>
+</div>
+<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6 justify-center">
+<p className="flex items-center justify-center">Dhaka</p>
+<p className="flex items-center justify-center">Bangkok</p>
+<p className="flex items-center justify-center">Bangkok</p>
+<p className="flex items-center justify-center">Bangkok , New Delhi </p>
+<p className="flex items-center justify-center">Tokyo</p>
+<p className="flex items-center justify-center">Bangkok</p>
+</div>
+<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6">
+<Image  src={`/images/mannan1.jpeg`} width={200} height={200} style={{ objectFit: "cover" }} ></Image>
+<Image src={`/images/chpol1.jpeg`} width={200} height={200} style={{ objectFit: "cover" }} ></Image>
+<Image src={`/images/afif3.jpeg`} width={200} height={200} style={{ objectFit: "cover" }} ></Image>
+<Image src={`/images/mohin1.png`} width={200} height={200}></Image>
+<Image src={`/images/saad1.jpeg`} width={200} height={200}></Image>
+<Image src={`/images/waranya3.png`} width={200} height={200}></Image>
+</div><br/><br/>
         
 <div className="card p-5" style={{ color: "#091E5F", backgroundColor: "#D5D9E8" }}>      
 <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact Us</p><br /> 
