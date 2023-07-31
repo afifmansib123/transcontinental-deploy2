@@ -150,7 +150,7 @@ export default function Home({ products, featuredProducts, carProducts }) {
         <Image src={`/images/background4.gif`} width={100} height={100} className="full-screen"></Image>
         <div className="image-overlay">
           <p className='flex flex-nowrap justify-center' style={{ fontSize: 13, color: "#1C448C" }}>What Is TC?</p>
-          <p className="image-overlay-text" style={{fontSize:12, color: "#15336A" }}>We are the premier cross-border trade hub in South East Asia, headquartered in Bangkok and Dhaka. Our mission is to facilitate seamless global trade for importers and exporters, offering the best prices and services to our esteemed customers worldwide.We deal with Heavy Machinery, Cars, Raw Materials, and various import items like steel, excavators, and construction materials. Choose a product from our website, and we'll facilitate the buying and import for you or provide guidance for self-importation.<Link style={{ color: "#D14343" }} href={`/aboutus`}>..see more</Link></p>
+          <p className="image-overlay-text" style={{fontSize:12, color: "#15336A" }}><Link style={{ color: "#D14343" }} href={`/aboutus`}>WHO ARE WE?</Link></p>
         </div>
       </div>
 
