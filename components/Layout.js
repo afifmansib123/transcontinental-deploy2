@@ -74,10 +74,7 @@ export default function Layout({ title, children }) {
             <Link legacyBehavior href="/" className="text-lg font-bold">
               <a className="flex items-center text-lg font-bold">
                 <Image src={`/images/mainlogo.png`} width={190} height={120}></Image>
-                <div className='ml-2'>
-                  <h1 style={{fontSize:35, color:"#033570" }}>TRANSCONTINENTAL</h1>
-                  <h1 className='ml-12' style={{fontSize:35, color:"#5786BD" }}>CONNECTIONS</h1>
-                </div>
+                
               </a>
             </Link>
 
@@ -120,7 +117,7 @@ export default function Layout({ title, children }) {
             
               <button  className="button1 flex items-center" onClick={toggleMenu} style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}>
                 <Image src={`/images/boxpic.png`} alt="hello" height={30} width={25} />
-                <span className=" flex items-center ml-4 mr-4" style={{fontSize:23, color: "black"}}>All catagories</span>
+                <span className=" flex items-center ml-4 mr-4" style={{fontSize:23, color: "black"}}>catagories</span>
   
               </button>
               <br/>
@@ -234,13 +231,13 @@ export default function Layout({ title, children }) {
             <div className="menu-content">
               <ul>
               <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`#`}>ALL ITEM CATAGORIES</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`#`}>ALL ITEMS</Link>
                 </li><br/>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Heavy Machinaries</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Machinaries</Link>
                 </li>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Mediam & light Machinaries</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Machinaries</Link>
                 </li>
                 <li>
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=excavator`}>Excavator</Link>
@@ -268,13 +265,13 @@ export default function Layout({ title, children }) {
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=raw`}>Raw Metarials</Link>
                 </li>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=construction`}>Construction Items</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=construction`}>Construction</Link>
                 </li>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=car parts`}>Car Spare Parts</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=car parts`}>Car Spares</Link>
                 </li>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine parts`}>Machinary Spare Parts</Link>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine parts`}>Spares</Link>
                 </li>
                 <li>
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=tools`}>Tools</Link>

@@ -55,7 +55,7 @@ export default function Home({ products, featuredProducts, carProducts }) {
     <Layout title="Home Page">
 
       <div className='welcome-header'>
-        <h1 className='flex justify-center' style={{ fontSize: 35, color: "white", whiteSpace: "nowrap" , border:"1px solid white",padding:"10px", borderRadius: "4px"}}>NO.1 BUSINESS PORTAL OF ASIA</h1>
+        <h1 className='flex justify-center' style={{ fontSize: 20, color: "white", whiteSpace: "nowrap" , border:"1px solid white",padding:"10px", borderRadius: "4px"}}>#1 BUSINESS PORTAL</h1>
         <h1 className='flex justify-center mt-1' style={{ fontSize: 20, color: "white", whiteSpace: "nowrap" , border:"1px solid white",padding:"0px", borderRadius: "0px" }}>IMPORT EXPORT & TRADE</h1>
       </div>
 
@@ -174,7 +174,7 @@ export default function Home({ products, featuredProducts, carProducts }) {
       <div style={{ position: "relative" }}>
         <Image src={`/images/open.gif`} width={100} height={100} className="full-screen"></Image>
         <div className="image-overlay1 flex flex-nowrap">
-          <p>We Provide Exporters / new Businessmen to Use Our Platforms to Sell Their Products.<br/> <Link className='flex justify-center flex-nowrap'   style={{ color: "#13545F" , backgroundColor:"#2D99AA", border:"1px solid black", borderRadius: "4px" }} href={`/registershop`}>OPEN SHOP</Link></p>
+          <p>Sell/Export<br/> <Link className='flex justify-center'   style={{ color: "#13545F" , backgroundColor:"#2D99AA", border:"1px solid black", borderRadius: "4px" }} href={`/registershop`}>MY SHOP</Link></p>
         </div>
       </div>
 
