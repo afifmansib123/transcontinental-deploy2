@@ -18,48 +18,6 @@ Explore our user-friendly website to effortlessly browse through a myriad of pro
 
 <br></br>
 
-<h2 className="w-full flex justify-center" style={{fontSize:25, color: "#2F4993"}}>Meet the Team</h2><br/>
-<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6 justify-center">
-<p className="flex items-center justify-center">Maj. Mannan</p>
-<p className="flex items-center justify-center">Dr. Chayapol</p>
-<p className="flex items-center justify-center">Afif</p>
-<p className="flex items-center justify-center">Mohin</p>
-<p className="flex items-center justify-center">Saad</p>
-<p className="flex items-center justify-center">Litapat</p>
-</div>
-<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6 justify-center">
-<p className="flex items-center justify-center">Chairman</p>
-<p className="flex items-center justify-center">CTO</p>
-<p className="flex items-center justify-center">Founder & CEO</p>
-<p className="flex items-center justify-center">CMO</p>
-<p className="flex items-center justify-center">COO</p>
-<p className="flex items-center justify-center">Country Manager</p>
-</div>
-
-<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6 justify-center">
-<p className="flex items-center justify-center">Business Expert</p>
-<p className="flex items-center justify-center">Computer Scientist</p>
-<p className="flex items-center justify-center">Software Engineer</p>
-<p className="flex items-center justify-center">Marketing Expert</p>
-<p className="flex items-center justify-center">Logistics Expert</p>
-<p className="flex items-center justify-center">Sales Expert</p>
-</div>
-<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6 justify-center">
-<p className="flex items-center justify-center">Dhaka</p>
-<p className="flex items-center justify-center">Bangkok</p>
-<p className="flex items-center justify-center">Bangkok</p>
-<p className="flex items-center justify-center">Bangkok , New Delhi </p>
-<p className="flex items-center justify-center">Tokyo</p>
-<p className="flex items-center justify-center">Bangkok</p> <br/>
-</div>
-<div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-6">
-<Image  src={`/images/mannan6.png`} width={200} height={200} style={{ objectFit: "cover" }} ></Image>
-<Image src={`/images/chpol1.jpeg`} width={200} height={200} style={{ objectFit: "cover" }} ></Image>
-<Image src={`/images/afif4.jpeg`} width={200} height={200} style={{ objectFit: "cover" }} ></Image>
-<Image src={`/images/mohin1.png`} width={200} height={200}></Image>
-<Image src={`/images/saad5.jpeg`} width={200} height={200}></Image>
-<Image src={`/images/waranya6.png`} width={200} height={200}></Image>
-</div><br/><br/>
         
 <div className="card p-5" style={{ color: "#091E5F", backgroundColor: "#D5D9E8" }}>      
 <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact Us</p><br /> 

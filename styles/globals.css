@@ -161,15 +161,11 @@ textarea {
   height: 100%;
 }
 
-.sticky{
-  
-
-}
 
 
 
 /* Adjustments for smaller screen sizes */
-@media (max-width: 640px) {
+@media (max-width: 300px) {
   .sticky-header {
     flex-direction: column;
   }
@@ -398,6 +394,30 @@ top: 0
   background: #125688;
   color: white;
 }
+
+/* Base styles for everything */
+* {
+  box-sizing: border-box;
+  /* Add other common styles for all elements here */
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+  * {
+    font-size: 16px; /* Set a smaller font size for everything on larger screens */
+    /* Add other styles specific to larger screens here */
+  }
+}
+
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+  /* Add any specific styles for mobile screens here */
+}
+html,body{
+  overflow-x: hidden;
+}
+
+
 
 
 

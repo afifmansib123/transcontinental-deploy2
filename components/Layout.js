@@ -69,16 +69,14 @@ export default function Layout({ title, children }) {
         <header>
 
 
-          <nav className="flex-col flex items-center justify-between px-4 md:px-8">
+          <nav className="flex-col sticky-header flex items-center px-4 justify-content shadow-md">
 
             <Link legacyBehavior href="/" className="text-lg font-bold">
               <a className="flex items-center text-lg font-bold">
-              <div className="flex flex-col items-center">
                 <Image src={`/images/mainlogo.png`} width={190} height={120}></Image>
                 <div className='ml-2'>
-                  <h1 style={{ fontSize: 35, color: "#033570" }}>TRANSCONTINENTAL</h1>
-                  <h1 className='ml-12' style={{ fontSize: 35, color: "#5786BD" }}>CONNECTIONS</h1>
-                </div>
+                  <h1 style={{fontSize:35, color:"#033570" }}>TRANSCONTINENTAL</h1>
+                  <h1 className='ml-12' style={{fontSize:35, color:"#5786BD" }}>CONNECTIONS</h1>
                 </div>
               </a>
             </Link>
