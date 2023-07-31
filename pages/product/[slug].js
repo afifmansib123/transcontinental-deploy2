@@ -60,7 +60,7 @@ export default function ProductScreen(props) {
 
   return (
     <Layout title={product.name}>
-      <h1 className='flex items-center justify-center' style={{ backgroundColor: "#203F9F", fontSize: 25, color: "white" }}>BROUGHT TO YOU BY -{product.uploader}'S SHOP</h1>
+      <h1 className='flex items-center justify-center' style={{ backgroundColor: "#203F9F", fontSize: 25, color: "white" }}>{product.uploader}'S SHOP</h1>
       <div className="flex justify-start flex-nowrap">
         <Link href="/"> <Image src={`/images/back1.png`} width={30} height={30} /> back to products  </Link>
       </div>

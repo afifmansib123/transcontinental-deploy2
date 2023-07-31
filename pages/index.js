@@ -75,15 +75,9 @@ export default function Home({ products, featuredProducts, carProducts }) {
       <br />
 
       <Link href="search?query=">
-        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>SEARCH WITH EASE<Image src={`/images/y.png`} alt="hello" height={10} width={40} className='ml-3' /></h1>
+        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>SEARCH<Image src={`/images/y.png`} alt="hello" height={10} width={40} className='ml-3' /></h1>
         </Link>
         <br />
-        <div className="full-spanning-row" style={{ height: 80  }}>
-        <button className="full-width-button" style={{ fontSize: 25, color: "Black", backgroundColor: "#2567B5" }}><Link href="search?query=" >Catagories</Link></button>
-         <button className="full-width-button" style={{ fontSize: 25, color: "Black", backgroundColor: "#6790C0" }}><Link href="search?query="> Brands</Link></button>
-         <button className="full-width-button" style={{ fontSize: 25, color: "Black", backgroundColor: "#A8C2DF" }}><Link href="search?query="> Prices</Link></button>
-        <button className="full-width-button" style={{ fontSize: 25, color: "Black", backgroundColor: "#CEDDEE" }}><Link href="search?query="> Featured</Link></button>
-        </div>
       <br/> <br/>
 
       <h1 className='flex justify-center' style={{ fontSize: 29, color: "#0B145D", whiteSpace: "nowrap" }}>Import Heavy Machines</h1>
