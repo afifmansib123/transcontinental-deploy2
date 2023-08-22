@@ -100,7 +100,7 @@ function AdminDashboardScreen() {
           </ul>
         </div>
         <div className="md:col-span-3">
-          <h1 className="mb-4 text-xl">{username}'s SHOP</h1>
+          <h1 className="mb-4 text-xl">{username} SHOP</h1>
           {loading ? (
             <div>Loading...</div>
           ) : error ? (

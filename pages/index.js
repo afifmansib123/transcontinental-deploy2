@@ -11,7 +11,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-//test-db-6
+//deploy-tc-01
 
 export default function Home({ products, featuredProducts, carProducts }) {
 
@@ -143,7 +143,6 @@ export default function Home({ products, featuredProducts, carProducts }) {
       <div style={{ position: "relative" }}>
         <Image src={`/images/background4.gif`} width={100} height={100} className="full-screen"></Image>
         <div className="image-overlay">
-          <p className='flex flex-nowrap justify-center' style={{ fontSize: 13, color: "#1C448C" }}>What Is TC?</p>
           <p className="image-overlay-text" style={{fontSize:12, color: "#15336A" }}><Link style={{ color: "#D14343" }} href={`/aboutus`}>WHO ARE WE?</Link></p>
         </div>
       </div>

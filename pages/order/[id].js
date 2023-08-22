@@ -51,7 +51,7 @@ function OrderScreen() {
   const { query } = useRouter();
   const orderId = query.id;
 
-  const router = useRouter()
+  
 
   const [
     {
@@ -108,7 +108,7 @@ function OrderScreen() {
     }
   }, [order, orderId, paypalDispatch, successDeliver, successPay]);
   const {
-    shippingAddress,
+    
     paymentMethod,
     orderItems,
     itemsPrice,
@@ -117,8 +117,8 @@ function OrderScreen() {
     totalPrice,
     isPaid,
     paidAt,
-    isDelivered,
-    deliveredAt,
+    
+    
   } = order;
 
   

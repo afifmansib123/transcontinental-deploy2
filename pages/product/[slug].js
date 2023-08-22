@@ -32,35 +32,13 @@ export default function ProductScreen(props) {
     router.push('/cart');
   };
 
-  const sliderImages = [
-    {
-      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTdUmK6fRPfPQIMyOxUOjiTnR2VYizvkkWUxLhGoVJNobm5Id3fpRhsIGtPj3H06ujPb4&usqp=CAU",
-    },
-    {
-      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQduUpBWhSdgkWqqIrSmw5MMU697Xlx3SCjlB4eZSv0Q&s",
-    },
-    {
-      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTnzApyh1ZmbXLBUg_iFRio23hzRyAJfwBRfnVozXdEnu-NK4jFt2_gsYujKf-CbT6Cr_A&usqp=CAU",
-    },
-    {
-      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcTDnfOIY9gjVyoT4ulMp55roiV5KefqaDByUc0HdD8p3tdpXuwxTaXjhLdyUFeQzZ2ZwE&usqp=CAU",
-    },
-    {
-      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcR3IVlvufXIDZXxq0O8SVqwU2HeO6y7as0OXJl-YT55BA&s",
-    },
-    {
-      url: "https://encryptedtbn0.gstatic.com/images?q=tbn:ANd9GcQs_7aafRRY4vEbWz2wydowaogMmGI7mRVG6MQfZVtKDFXUGqt5iF-Mu0AYMQBEeznPkU&usqp=CAU",
-    },
-    {
-      url: "https://smartslider3.com/wpcontent/uploads/2019/01/photo_slideshow.jpg",
-    },
-  ];
+
 
 
 
   return (
     <Layout title={product.name}>
-      <h1 className='flex items-center justify-center' style={{ backgroundColor: "#203F9F", fontSize: 25, color: "white" }}>{product.uploader}'S SHOP</h1>
+      <h1 className='flex items-center justify-center' style={{ backgroundColor: "#203F9F", fontSize: 25, color: "white" }}>{product.uploader}&apos; SHOP</h1>
       <div className="flex justify-start flex-nowrap">
         <Link href="/"> <Image src={`/images/back1.png`} width={30} height={30} /> back to products  </Link>
       </div>
