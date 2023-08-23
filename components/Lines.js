@@ -42,8 +42,8 @@ const Lines = () => {
           
         `}
       </style>
-      <span className="w-[2px] h-full bg-red animate-line1"></span>
-      <span className="w-[2px] h-full bg-blue animate-line2"></span>
+      <span className="w-[1px] h-full bg-red animate-line1"></span>
+      <span className="w-[1px] h-full bg-blue animate-line2"></span>
     </div>
   );
 };

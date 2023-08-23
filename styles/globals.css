@@ -208,13 +208,13 @@ textarea {
 .pagination button {
   padding: 0.5rem 1rem;
   margin: 0 0.25rem;
-  border: 1px solid #ce9811;
+  border: 1px solid #01000d;
   cursor: pointer;
-  background-color: #D2DFF3;
+  background-color: #002271f8;
 }
 
 .pagination button.active {
-  background-color: #7BA6E8;
+  background-color: #001b43;
   color: white;
 }
 

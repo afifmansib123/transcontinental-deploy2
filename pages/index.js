@@ -143,7 +143,7 @@ export default function Home({ products, featuredProducts, carProducts }) {
       <div style={{ position: "relative" }}>
         <Image src={`/images/background4.gif`} width={100} height={100} className="full-screen"></Image>
         <div className="image-overlay">
-          <p className="image-overlay-text" style={{fontSize:12, color: "#15336A" }}><Link style={{ color: "#D14343" }} href={`/aboutus`}>WHO ARE WE?</Link></p>
+          <p className="image-overlay-text" style={{fontSize:12, color: "#15336A" }}><Link style={{ color: "#002657" }} href={`/aboutus`}>WHO ARE WE?</Link></p>
         </div>
       </div>
 
@@ -167,7 +167,7 @@ export default function Home({ products, featuredProducts, carProducts }) {
       <div style={{ position: "relative" }}>
         <Image src={`/images/open.gif`} width={100} height={100} className="full-screen"></Image>
         <div className="image-overlay1 flex flex-nowrap">
-          <p>Sell/Export<br/> <Link className='flex justify-center'   style={{ color: "#13545F" , backgroundColor:"#2D99AA", border:"1px solid black", borderRadius: "4px" }} href={`/registershop`}>MY SHOP</Link></p>
+          <p>Sell/Export<br/> <Link className='flex justify-center'   style={{ color: "white" , backgroundColor:"#002657", border:"1px solid black", borderRadius: "4px" }} href={`/registershop`}>MY SHOP</Link></p>
         </div>
       </div>
 
