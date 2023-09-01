@@ -75,7 +75,7 @@ export default function Home({ products, featuredProducts, carProducts }) {
       <br />
 
       <Link href="search?query=">
-        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>SEARCH<Image src={`/images/y.png`} alt="hello" height={10} width={40} className='ml-3' /></h1>
+        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>SEARCH<Image src={`/images/proceed1.png`} alt="hello" height={10} width={40} className='ml-3' /></h1>
         </Link>
         <br />
       <br/> <br/>
