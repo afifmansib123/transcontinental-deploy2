@@ -45,7 +45,7 @@ export default function ProductScreen(props) {
       <div className="grid md:grid-cols-5 md:gap-3">
         <div className="md:col-span-3">
           <SimpleImageSlider
-            width={300}
+            width={500}
             height={300}
             images={[
               { url: product.image1 },
