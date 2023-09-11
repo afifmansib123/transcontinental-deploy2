@@ -9,6 +9,7 @@ import Product from '../../models/Product';
 import db from '../../utils/db';
 import { Store } from '../../utils/Store';
 import SimpleImageSlider from "react-simple-image-slider";
+import { useMediaQuery } from 'react-responsive';
 
 export default function ProductScreen(props) {
   const { product } = props;
@@ -32,7 +33,14 @@ export default function ProductScreen(props) {
     router.push('/cart');
   };
 
+  //PC and phone view experiment
 
+  // Use react-responsive to check if the screen width is greater than a certain breakpoint
+  const isDesktop = useMediaQuery({ minWidth: 768 }); // Adjust the breakpoint as needed
+
+  // Set the width and height based on whether it's desktop or mobile
+  const sliderWidth = isDesktop ? 800 : 300; // Change 300 to the desired width for desktop
+  const sliderHeight = isDesktop ? 500 : 300;
 
 
 
@@ -45,8 +53,8 @@ export default function ProductScreen(props) {
       <div className="grid md:grid-cols-5 md:gap-3">
         <div className="md:col-span-3">
           <SimpleImageSlider
-            width={300}
-            height={300}
+            width={sliderWidth}
+            height={sliderHeight}
             images={[
               { url: product.image1 },
               { url: product.image2 },
