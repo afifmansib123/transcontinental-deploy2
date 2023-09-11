@@ -236,9 +236,6 @@ export default function Layout({ title, children }) {
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Machinaries</Link>
                 </li>
                 <li>
-                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Machinaries</Link>
-                </li>
-                <li>
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=excavator`}>Excavator</Link>
                 </li>
                 <li>

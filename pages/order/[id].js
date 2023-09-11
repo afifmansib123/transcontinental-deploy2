@@ -184,7 +184,7 @@ function OrderScreen() {
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
-          <div className="card1  p-5 flex justify-center items-center" style={{backgroundColor:"#B4F2D5"}}><p style={{color:"green"}}>Your Order Has Been Recieved. Wait For Us to Contact You.</p></div>
+          <div className="card1  p-5 flex justify-center items-center" style={{backgroundColor:"#B4F2D5"}}><p style={{color:"green"}}>Your Order Has Been Recieved. Please wait For Ou Customer Service to Contact You.</p></div>
             
 
             <div className="card p-5">
@@ -196,8 +196,8 @@ function OrderScreen() {
               ) : (
                 <div className="alert-error flex justify-center">Payment Not Recieved Yet</div>
               )}</div>)}
-              {paymentMethod !== "Direct Pay" &&( <div className="alert-success flex justify-center">Our Customer Service will Contact You soon. Thank You For Choosing TC.</div>)}
-            
+              {paymentMethod !== "Direct Pay" &&( <div className="alert-success flex justify-center">SHIPPING AND TAXATION details will be specified by our Team soon.If You're not an Importer already, our TC Shipping Services will give you a quotation on These fees as well. Thank You For Choosing TC.</div>)}
+              <div className="alert-warning-2 flex justify-center"><Link href="https://www.searates.com/shipping/request?utm_source=google&utm_medium=cpc&utm_campaign=20043541860&utm_content=147782309519&utm_term=freight%20to&gad=1&gclid=Cj0KCQjw9fqnBhDSARIsAHlcQYQsR8mS-PLMm4_1mk6ZOAFCZl3BQof5tepeKUMA0dsDFqqsj9Rui1YaAm05EALw_wcB" style={{color:"#069460", backgroundColor: "white"}}>CLICK HERE TO GET AN ESTIMATED QUOTE</Link></div>
             </div>
 
             <div className="card overflow-x-auto p-5">

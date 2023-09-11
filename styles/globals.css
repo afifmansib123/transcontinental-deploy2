@@ -80,6 +80,10 @@ textarea {
   @apply my-3 rounded-lg bg-green-100 p-3 text-green-700;
 }
 
+.alert-warning-2 {
+  @apply my-3 rounded-lg bg-pink-100 p-3 text-pink-700;
+}
+
 .carousel-image {
   height: 400px; /* Adjust the height as needed */
   width: auto;
