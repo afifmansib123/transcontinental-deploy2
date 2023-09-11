@@ -15,6 +15,13 @@ export default function ProductScreen(props) {
   const { product } = props;
   const { state, dispatch } = useContext(Store);
   const router = useRouter();
+
+
+  //PC and phone view experiment
+
+  // Use react-responsive to check if the screen width is greater than a certain breakpoint
+  const isDesktop = useMediaQuery({ minWidth: 768 }); // Adjust the breakpoint as needed
+
   if (!product) {
     return <Layout title="Produt Not Found">Produt Not Found</Layout>;
   }
@@ -33,10 +40,7 @@ export default function ProductScreen(props) {
     router.push('/cart');
   };
 
-  //PC and phone view experiment
-
-  // Use react-responsive to check if the screen width is greater than a certain breakpoint
-  const isDesktop = useMediaQuery({ minWidth: 768 }); // Adjust the breakpoint as needed
+  
 
   // Set the width and height based on whether it's desktop or mobile
   const sliderWidth = isDesktop ? 800 : 300; // Change 300 to the desired width for desktop
