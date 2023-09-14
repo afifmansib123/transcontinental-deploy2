@@ -167,7 +167,14 @@ export default function Home({ products, featuredProducts, carProducts }) {
       <div style={{ position: "relative" }}>
         <Image src={`/images/open.gif`} width={100} height={100} className="full-screen"></Image>
         <div className="image-overlay1 flex flex-nowrap">
-          <p>Sell/Export<br/> <Link className='flex justify-center'   style={{ color: "white" , backgroundColor:"#002657", border:"1px solid black", borderRadius: "4px" }} href={`/registershop`}>MY SHOP</Link></p>
+          <p>Sell/Export<br/> <Link className='flex justify-center'   style={{ color: "white" , backgroundColor:"#97B4D8", border:"1px solid black", borderRadius: "4px" }} href={`/registershop`}>MY SHOP</Link></p>
+        </div>
+      </div><br/><br/>
+
+      <div style={{ position: "relative" }}>
+        <Image src={`/images/bidding.gif`} width={100} height={100} className="full-screen"></Image>
+        <div className="image-overlay1 flex flex-nowrap">
+          <p className='items-center'>AUCTION SERVICES<br/> <Link className='flex justify-center'   style={{ color: "white" , backgroundColor:"#CDCA00", border:"1px solid black", borderRadius: "4px" }} href={`https://action-site-pi.vercel.app/`}>To Bid</Link></p>
         </div>
       </div>
 
