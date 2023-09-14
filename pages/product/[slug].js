@@ -43,7 +43,7 @@ export default function ProductScreen(props) {
   
 
   // Set the width and height based on whether it's desktop or mobile
-  const sliderWidth = isDesktop ? 800 : 300; // Change 300 to the desired width for desktop
+  const sliderWidth = isDesktop ? 700 : 300; // Change 300 to the desired width for desktop
   const sliderHeight = isDesktop ? 500 : 300;
 
 
