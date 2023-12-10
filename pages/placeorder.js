@@ -26,7 +26,7 @@ export default function PlaceOrderScreen() {
   }
   
   const shippingPrice = round2(itemsPrice * 0.30);
-  const taxPrice = round2(itemsPrice * 0.20);
+  const taxPrice = 0;
   const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
 
   const router = useRouter();
@@ -150,18 +150,12 @@ export default function PlaceOrderScreen() {
                     <div>BDT{itemsPrice}</div>
                   </div>
                 </li>
+                
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Tax</div>
+                    <div>Shipping & Tax</div>
                     {LC && (<div>To be Discussed</div>)}
                     {NotLC && (<div>BDT {itemsPrice*20/100}</div>)}
-                  </div>
-                </li>
-                <li>
-                  <div className="mb-2 flex justify-between">
-                    <div>Shipping</div>
-                    {LC && (<div>To be Discussed</div>)}
-                    {NotLC && (<div>BDT {itemsPrice*25/100}</div>)}
                   </div>
                 </li>
                 

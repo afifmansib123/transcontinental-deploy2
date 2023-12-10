@@ -233,6 +233,18 @@ export default function Layout({ title, children }) {
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`#`}>ALL ITEMS</Link>
                 </li><br/>
                 <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=latesttech`}>Latest Tech</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=robots`}>Robots</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=drones`}>Drones</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=gadgets`}>Gadgests</Link>
+                </li>
+                <li>
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=machine`}>Machinaries</Link>
                 </li>
                 <li>
@@ -271,6 +283,12 @@ export default function Layout({ title, children }) {
                 </li>
                 <li>
                   <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=tools`}>Tools</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=agriculture`}>agriculture</Link>
+                </li>
+                <li>
+                  <Link className='flex justify-center mb-1' style={{color:"white"}} href={`search?query=&category=more`}>more</Link>
                 </li>
                 <br/>
                 <li style={{ display: "flex", justifyContent: "center" , color: "white"}}>

@@ -128,7 +128,7 @@ function OrderScreen() {
       .create({
         purchase_units: [
           {
-            amount: { value: Math.ceil(totalPrice/72) },
+            amount: { value: Math.ceil(totalPrice/113) },
           },
         ],
       })
@@ -184,7 +184,7 @@ function OrderScreen() {
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
-          <div className="card1  p-5 flex justify-center items-center" style={{backgroundColor:"#B4F2D5"}}><p style={{color:"green"}}>Your Order Has Been Recieved. Please wait For Ou Customer Service to Contact You.</p></div>
+          <div className="card1  p-5 flex justify-center items-center" style={{backgroundColor:"#B4F2D5"}}><p style={{color:"green"}}>Your Order Has Been Recieved. Please wait For Our Customer Service to Contact You.</p></div>
             
 
             <div className="card p-5">
@@ -254,15 +254,10 @@ function OrderScreen() {
                     <div>BDT{itemsPrice}</div>
                   </div>
                 </li>{' '}
+                
                 <li>
                   <div className="mb-2 flex justify-between">
-                    <div>Tax</div>
-                    <div>BDT{taxPrice}</div>
-                  </div>
-                </li>
-                <li>
-                  <div className="mb-2 flex justify-between">
-                    <div>Shipping</div>
+                    <div>Shipping & Tax</div>
                     <div>BDT{shippingPrice}</div>
                   </div>
                 </li>

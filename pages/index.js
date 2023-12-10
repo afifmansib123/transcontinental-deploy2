@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 //deploy-tc-01
 
-export default function Home({ products, featuredProducts, carProducts }) {
+export default function Home({ products, featuredProducts, carProducts, latesttech }) {
 
   const pageSize = 8; // Number of products to display per page
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,91 +60,85 @@ export default function Home({ products, featuredProducts, carProducts }) {
       </div>
 
       <Carousel showThumbs={false} autoPlay interval={1700} className="full-screen object-fill" style={{ width: '100%', height: '100%' }}>
-        {featuredProducts.map((product, index) => (
-          <div key={product._id}>
-            <Link href={`#`} passHref className="flex">
-              <img src={product.banner} alt={product.name} className="carousel-image" />
+        
+              <img src="/images/im1.png" alt="noname" className="carousel-image" />
 
-              {index === 1 && <div className="overlay-text" style={{ color: "#072644", fontSize: 30, top: 200 }}></div>}
-            </Link>
-          </div>
-        ))}
       </Carousel>
 
       <br></br>
       <br />
 
       <Link href="search?query=">
-        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>SEARCH<Image src={`/images/proceed1.png`} alt="hello" height={10} width={40} className='ml-3' /></h1>
+        <h1 className='flex justify-center' style={{ fontSize: 25, color: "#10539D", whiteSpace: "nowrap" }}>SEARCH ALL CATAGORIES<Image src={`/images/proceed1.png`} alt="hello" height={10} width={40} className='ml-3' /></h1>
         </Link>
         <br />
       <br/> <br/>
 
-      <h1 className='flex justify-center' style={{ fontSize: 29, color: "#0B145D", whiteSpace: "nowrap" }}>Import Heavy Machines</h1>
 
-
-        <div className='grid grid-cols-4  gap-0 md:grid-cols-4 lg:grid-cols-4 items-center'>
-        <div class="dropdown mb-2">
-          <Image class="dropbtn" src={`/images/excicon4.jpeg`} height={250} width={250}></Image>
-          <div class="dropdown-content " >
-            <a href={`search?query=&category=threemachine`}><Image class="dropbtn" src={`/images/miniicon1.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>(3~5) Tons </p></a>
-            <a href={`search?query=&category=sixmachine`}><Image class="dropbtn" src={`/images/microexc.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(6~8) Tons </p></a>
-            <a href={`search?query=&category=tenmachine`}><Image class="dropbtn" src={`/images/third.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(10-16) Tons </p></a>
-            <a href={`search?query=&category=twentymachine`}><Image class="dropbtn" src={`/images/fourth.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(20) Tons </p></a><br/>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <Image class="dropbtn" src={`/images/grader2.png`} height={250} width={250}></Image>
-          <div class="dropdown-content">
-          <a href={`search?query=&category=grader`}><Image class="dropbtn" src={`/images/graders10.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Graders</p></a>
-            <a href={`search?query=&category=machine`}><Image class="dropbtn" src={`/images/rollers2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Rollers</p></a>
-            <a href={`search?query=&category=paver`}><Image class="dropbtn" src={`/images/paver1.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Pavers</p></a><br/>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <Image class="dropbtn" src={`/images/crane3.png`} height={250} width={250}></Image>
-          <div class="dropdown-content">
-          <a href={`search?query=&category=cranes`}><Image class="dropbtn" src={`/images/cranes6.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Cranes</p></a>
-            <a href={`search?query=&category=wheelloader`}><Image class="dropbtn" src={`/images/wheel2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Wheel-loaders</p></a>
-            <a href={`search?query=&category=tractor`}><Image class="dropbtn" src={`/images/tractor.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Tractors</p></a><br/>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <Image class="dropbtn" src={`/images/parts2.jpeg`} height={250} width={250}></Image>
-          <div class="dropdown-content">
-          <a href={`search?query=&category=machine parts`}><Image class="dropbtn" src={`/images/blades.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Spare Parts</p></a>
-            <a href={`search?query=&category=`}><Image class="dropbtn" src={`/images/more.webp`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>many more</p></a>
-            <br/>
-          </div>
-        </div>
-
-      </div>
 
       <div style={{ position: "relative" }}>
         <Image src={`/images/background4.gif`} width={100} height={50} className="full-screen"></Image>
         <div className="image-overlay">
-          <p className="image-overlay-text flex-nowrap" style={{fontSize:12, color: "#15336A" }}>Welcome To The First Trade Hub Of Bangladesh</p>
-          <p className="image-overlay-text flex-nowrap" style={{fontSize:12, color: "#15336A" }}>বাংলাদেশের প্রথম আন্তর্জাতিক আমদানি-রপ্তানি পোর্টালে আপনাদের সবাইকে স্বাগতম </p>
+        <p className='flex justify-center' style={{fontSize:15, color: "#15336A" }}>See The World Through eyes of Bangladesh</p>
+          <p className="image-overlay-text flex-nowrap" style={{fontSize:12, color: "#15336A" }}>TC আমদানি রপ্তানির সবচেয়ে বিশ্বস্ত পোর্টাল তৈরী করেছে আপনাদের সেবায়। পৃথিবীর সকল প্রান্ত থেকে BEST PRODUCTS AND SUPPLIERS আপনাদের বের করে দেয়া আমাদের দায়িত্ব . ধন্যবাদ Transcontinental Connections এর সাথে থাকার জন্য . </p>
+          
         </div>
       </div>
 
-
-
-      <h2 className="h2 my-4 flex justify-center" style={{ color: "#0B145D", fontSize: 30 }}>Latest Arrivals</h2>
+      <h2 className="h2 my-4 flex flex-nowrap justify-center w-full" style={{ color: "#0C3B7E", fontSize: 30 }}>Innovations And Tech</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {productsToShow.map((product) => (
+      {latesttech && latesttech.slice(0, 4).map((product) => (
           <ProductItem
             product={product}
             key={product.slug}
             addToCartHandler={addToCartHandler}
           ></ProductItem>
         ))}
+
       </div>
 
+      <h1 className='flex justify-center' style={{ fontSize: 29, color: "#0B145D", whiteSpace: "nowrap" }}>Import Heavy Machines</h1>
 
+
+<div className='grid grid-cols-4  gap-0 md:grid-cols-4 lg:grid-cols-4 items-center'>
+<div class="dropdown mb-2">
+  <Image class="dropbtn" src={`/images/excicon4.jpeg`} height={250} width={250}></Image>
+  <div class="dropdown-content " >
+    <a href={`search?query=&category=threemachine`}><Image class="dropbtn" src={`/images/miniicon1.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>(3~5) Tons </p></a>
+    <a href={`search?query=&category=sixmachine`}><Image class="dropbtn" src={`/images/microexc.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(6~8) Tons </p></a>
+    <a href={`search?query=&category=tenmachine`}><Image class="dropbtn" src={`/images/third.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(10-16) Tons </p></a>
+    <a href={`search?query=&category=twentymachine`}><Image class="dropbtn" src={`/images/fourth.jpeg`} height={250} width={220}></Image><p className='flex justify-center' style={{color:"#414DAF"}}>(20) Tons </p></a><br/>
+  </div>
+</div>
+
+<div class="dropdown">
+  <Image class="dropbtn" src={`/images/grader2.png`} height={250} width={250}></Image>
+  <div class="dropdown-content">
+  <a href={`search?query=&category=grader`}><Image class="dropbtn" src={`/images/graders10.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Graders</p></a>
+    <a href={`search?query=&category=machine`}><Image class="dropbtn" src={`/images/rollers2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Rollers</p></a>
+    <a href={`search?query=&category=paver`}><Image class="dropbtn" src={`/images/paver1.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Pavers</p></a><br/>
+  </div>
+</div>
+
+<div class="dropdown">
+  <Image class="dropbtn" src={`/images/crane3.png`} height={250} width={250}></Image>
+  <div class="dropdown-content">
+  <a href={`search?query=&category=cranes`}><Image class="dropbtn" src={`/images/cranes6.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Cranes</p></a>
+    <a href={`search?query=&category=wheelloader`}><Image class="dropbtn" src={`/images/wheel2.jpeg`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Wheel-loaders</p></a>
+    <a href={`search?query=&category=tractor`}><Image class="dropbtn" src={`/images/tractor.png`} height={250} width={250}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Tractors</p></a><br/>
+  </div>
+</div>
+
+<div class="dropdown">
+  <Image class="dropbtn" src={`/images/parts2.jpeg`} height={250} width={250}></Image>
+  <div class="dropdown-content">
+  <a href={`search?query=&category=machine parts`}><Image class="dropbtn" src={`/images/blades.jpeg`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>Spare Parts</p></a>
+    <a href={`search?query=&category=`}><Image class="dropbtn" src={`/images/more.webp`} height={250} width={220}></Image><p className='flex justify-center flex-nowrap ' style={{color:"#414DAF"}}>many more</p></a>
+    <br/>
+  </div>
+</div>
+
+</div>
 
 
 
@@ -168,12 +162,21 @@ export default function Home({ products, featuredProducts, carProducts }) {
         </div>
       </div><br/><br/>
 
-      <div style={{ position: "relative" }}>
-        <Image src={`/images/bidding.gif`} width={100} height={100} className="full-screen"></Image>
-        <div className="image-overlay1 flex flex-nowrap">
-          <p className='items-center'>AUCTION SERVICES<br/> <Link className='flex justify-center'   style={{ color: "white" , backgroundColor:"#CDCA00", border:"1px solid black", borderRadius: "4px" }} href={`https://action-site-pi.vercel.app/`}>To Bid</Link></p>
-        </div>
+
+
+      <h2 className="h2 my-4 flex justify-center" style={{ color: "#0B145D", fontSize: 30 }}>Latest In Arrivals</h2>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        {productsToShow.map((product) => (
+          <ProductItem
+            product={product}
+            key={product.slug}
+            addToCartHandler={addToCartHandler}
+          ></ProductItem>
+        ))}
       </div>
+
+     
+
 
       <div className="pagination flex justify-center">
         {Array.from({ length: Math.ceil(products.length / pageSize) }).map((_, index) => (
@@ -195,12 +198,14 @@ export async function getServerSideProps() {
   const products = await Product.find().lean();
   const featuredProducts = await Product.find({ isFeatured: true }).lean();
   const carProducts = products.filter((product) => product.category === "car");
+  const latesttech = products.filter((product) => product.category === "latesttech");
 
   return {
     props: {
       featuredProducts: featuredProducts.map(db.convertDocToObj),
       products: products.map(db.convertDocToObj),
       carProducts: carProducts.map(db.convertDocToObj),
+      latesttech: latesttech.map(db.convertDocToObj),
     },
   };
 }
