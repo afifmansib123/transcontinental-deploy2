@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 //deploy-tc-01
 
-export default function Home({ products, featuredProducts, carProducts, latesttech }) {
+export default function Home({ products, carProducts, latesttech }) {
 
   const pageSize = 8; // Number of products to display per page
   const [currentPage, setCurrentPage] = useState(1);

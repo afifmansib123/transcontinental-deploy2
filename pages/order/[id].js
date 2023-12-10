@@ -112,7 +112,6 @@ function OrderScreen() {
     paymentMethod,
     orderItems,
     itemsPrice,
-    taxPrice,
     shippingPrice,
     totalPrice,
     isPaid,
