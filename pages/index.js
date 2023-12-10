@@ -123,6 +123,14 @@ export default function Home({ products, featuredProducts, carProducts }) {
 
       </div>
 
+      <div style={{ position: "relative" }}>
+        <Image src={`/images/background4.gif`} width={100} height={50} className="full-screen"></Image>
+        <div className="image-overlay">
+          <p className="image-overlay-text flex-nowrap" style={{fontSize:12, color: "#15336A" }}>Welcome To The First Trade Hub Of Bangladesh</p>
+          <p className="image-overlay-text flex-nowrap" style={{fontSize:12, color: "#15336A" }}>বাংলাদেশের প্রথম আন্তর্জাতিক আমদানি-রপ্তানি পোর্টালে আপনাদের সবাইকে স্বাগতম </p>
+        </div>
+      </div>
+
 
 
       <h2 className="h2 my-4 flex justify-center" style={{ color: "#0B145D", fontSize: 30 }}>Latest Arrivals</h2>
@@ -134,17 +142,6 @@ export default function Home({ products, featuredProducts, carProducts }) {
             addToCartHandler={addToCartHandler}
           ></ProductItem>
         ))}
-      </div>
-
-
-      
-
-
-      <div style={{ position: "relative" }}>
-        <Image src={`/images/background4.gif`} width={100} height={100} className="full-screen"></Image>
-        <div className="image-overlay">
-          <p className="image-overlay-text" style={{fontSize:12, color: "#15336A" }}><Link style={{ color: "#002657" }} href={`/aboutus`}>WHO ARE WE?</Link></p>
-        </div>
       </div>
 
 
