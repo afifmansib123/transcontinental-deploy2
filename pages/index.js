@@ -100,7 +100,7 @@ export default function Home({ products, carProducts, latesttech , carspares}) {
       </div>
 
       <h2 className="h2 my-4 flex flex-nowrap justify-center" style={{ color: "#0C3B7E", fontSize: 30 }}>CAR / BIKE</h2>
-      <h2 className="h2 my-4 flex flex-nowrap justify-center" style={{ color: "#0C3B7E", fontSize: 20 }}>SPARES AND MOFIFICATIONS</h2>
+      <h2 className="h2 my-4 flex flex-nowrap justify-center" style={{ color: "#0C3B7E", fontSize: 20 }}>SPARES AND MODIFICATIONS</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
       {carspares && carspares.slice(0, 4).map((product) => (
           <ProductItem
