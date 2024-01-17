@@ -41,7 +41,7 @@ const data = {
       countInStock: 20,
       description: 'MITSUBISHI SR320E, MITSUBISHI 6D24-TCE1, 315 Hp, Equivalent To 160H / Cab / Blade 4.0 Meters, 19.4 Tons',
       isFeatured: true,
-      banner: '/images/featured-2.jpeg',
+      banner: '/images/featured-1.jpeg',
       
       
     },

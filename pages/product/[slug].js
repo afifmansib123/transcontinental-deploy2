@@ -43,7 +43,7 @@ export default function ProductScreen(props) {
   
 
   // Set the width and height based on whether it's desktop or mobile
-  const sliderWidth = isDesktop ? 700 : 300; // Change 300 to the desired width for desktop
+  const sliderWidth = isDesktop ? 700 : 370; // Change 300 to the desired width for desktop
   const sliderHeight = isDesktop ? 500 : 300;
 
 
@@ -125,13 +125,13 @@ export default function ProductScreen(props) {
             <p className=' flex justify-center' style={{ color: "Blue", fontSize: 25, whiteSpace: "nowrap" }}>Contact And Inspect</p><br />
             <button
               className="ml-0 flex justify-center primary-button4 w-full" style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
-              onClick={()=>{window.location.href=`tel:${+660932503470}`}}
+              onClick={()=>{window.location.href=`tel:${+6928148796}`}}
             >
               <Image src={`/images/call2.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "white", fontSize: 22 }}>Call</p><br />
             </button> <br />
             <button
               className="ml-0 flex justify-center primary-button2 w-full"
-              onClick={()=>{window.location.href=`https://wa.me/+66932503470`}} style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
+              onClick={()=>{window.location.href=`https://wa.me/+66928148796`}} style={{border:"1px solid black",padding:"10px", borderRadius: "4px"}}
             >
               <Image src={`/images/wasap.png`} width={40} height={40} /> <p className='ml-4 mt-1 flex justify-center' style={{ color: "White", fontSize: 22 }}>Whatsapp</p><br />
             </button> <br />

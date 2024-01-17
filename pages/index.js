@@ -13,7 +13,7 @@ import Image from 'next/image';
 
 //deploy-tc-01
 
-export default function Home({ products, carProducts, latesttech }) {
+export default function Home({ products, carProducts, latesttech , carspares}) {
 
   const pageSize = 8; // Number of products to display per page
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,9 +59,11 @@ export default function Home({ products, carProducts, latesttech }) {
         <h1 className='flex justify-center mt-1' style={{ fontSize: 20, color: "white", whiteSpace: "nowrap" , border:"1px solid white",padding:"0px", borderRadius: "0px" }}>IMPORT EXPORT & TRADE</h1>
       </div>
 
-      <Carousel showThumbs={false} autoPlay interval={1700} className="full-screen object-fill" style={{ width: '100%', height: '100%' }}>
+      <Carousel showThumbs={false} autoPlay interval={1700} className="full-screen object-fill flex-nowrap" style={{ width: '100%', height: '100%' }}>
         
-              <img src="/images/im1.png" alt="noname" className="carousel-image" />
+              <img src="/images/featured-1.jpeg" alt="noname" className="full-screen object-fill carousel-image" />
+              <img src="/images/background3.png" alt="noname" className="full-screen object-fill carousel-image" />
+              <img src="/images/featured-3.gif" alt="noname" className="full-screen object-fill carousel-image" />
 
       </Carousel>
 
@@ -80,14 +82,27 @@ export default function Home({ products, carProducts, latesttech }) {
         <Image src={`/images/background4.gif`} width={100} height={50} className="full-screen"></Image>
         <div className="image-overlay">
         <p className='flex justify-center' style={{fontSize:15, color: "#15336A" }}>See The World Through eyes of Bangladesh</p>
-          <p className="image-overlay-text flex-nowrap" style={{fontSize:12, color: "#15336A" }}>TC আমদানি রপ্তানির সবচেয়ে বিশ্বস্ত পোর্টাল তৈরী করেছে আপনাদের সেবায়। পৃথিবীর সকল প্রান্ত থেকে BEST PRODUCTS AND SUPPLIERS আপনাদের বের করে দেয়া আমাদের দায়িত্ব . ধন্যবাদ Transcontinental Connections এর সাথে থাকার জন্য . </p>
+          <p className="image-overlay-text flex-nowrap" style={{fontSize:12, color: "#15336A" }}>পৃথিবীর সকল প্রান্ত থেকে আমদানি রপ্তানির সবচেয়ে বিশ্বস্ত নেটওয়ার্ক আপনাদের পৌঁছানো আমাদের দায়িত্ব</p>
           
         </div>
       </div>
 
       <h2 className="h2 my-4 flex flex-nowrap justify-center w-full" style={{ color: "#0C3B7E", fontSize: 30 }}>Innovations And Tech</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-      {latesttech && latesttech.slice(0, 4).map((product) => (
+      {latesttech && latesttech.slice(0, 8).map((product) => (
+          <ProductItem
+            product={product}
+            key={product.slug}
+            addToCartHandler={addToCartHandler}
+          ></ProductItem>
+        ))}
+
+      </div>
+
+      <h2 className="h2 my-4 flex flex-nowrap justify-center" style={{ color: "#0C3B7E", fontSize: 30 }}>CAR / BIKE</h2>
+      <h2 className="h2 my-4 flex flex-nowrap justify-center" style={{ color: "#0C3B7E", fontSize: 20 }}>SPARES AND MOFIFICATIONS</h2>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      {carspares && carspares.slice(0, 4).map((product) => (
           <ProductItem
             product={product}
             key={product.slug}
@@ -199,6 +214,7 @@ export async function getServerSideProps() {
   const featuredProducts = await Product.find({ isFeatured: true }).lean();
   const carProducts = products.filter((product) => product.category === "car");
   const latesttech = products.filter((product) => product.category === "latesttech");
+  const carspares = products.filter((product) => product.category === "carspares");
 
   return {
     props: {
@@ -206,6 +222,7 @@ export async function getServerSideProps() {
       products: products.map(db.convertDocToObj),
       carProducts: carProducts.map(db.convertDocToObj),
       latesttech: latesttech.map(db.convertDocToObj),
+      carspares: carspares.map(db.convertDocToObj),
     },
   };
 }
